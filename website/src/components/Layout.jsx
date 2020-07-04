@@ -30,7 +30,6 @@ const Main = styled.div`
   border-color: ${colors(`app.border-color`)};
 `;
 const globalStyles = `
-  @import url('https://rsms.me/inter/inter.css');
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
   body {
