@@ -1,0 +1,38 @@
+{
+  "name": "gatsby-plugin-filbert",
+  "version": "0.0.1",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "javascript",
+    "react",
+    "preact",
+    "css",
+    "css-in-js",
+    "filbert-js",
+    "1kb",
+    "light-weight",
+    "styling",
+    "styled",
+    "emotion",
+    "styled-components",
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@filbert-js/server-stylesheet": "^0.0.1"
+  }
+}

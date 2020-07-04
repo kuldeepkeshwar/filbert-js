@@ -1,0 +1,9 @@
+tabWidth: 2
+semi: true
+singleQuote: true
+trailingComma: all
+arrowParens: always
+overrides:
+  - files: website/docs/*.md
+    options:
+      printWidth: 100

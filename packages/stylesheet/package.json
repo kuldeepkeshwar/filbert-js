@@ -1,0 +1,46 @@
+{
+  "name": "@filbert-js/stylesheet",
+  "version": "0.0.1",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "",
+  "source": "index.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "clean": "rm -rf ./dist",
+    "dev": "microbundle watch",
+    "build": "microbundle",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@filbert-js/types": "^0.0.1"
+  },
+  "peerDependencies": {
+    "@filbert-js/types": "^0.0.0"
+  },
+  "devDependencies": {
+    "microbundle": "^0.11.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "javascript",
+    "react",
+    "preact",
+    "css",
+    "css-in-js",
+    "filbert-js",
+    "1kb",
+    "light-weight",
+    "styling",
+    "styled",
+    "emotion",
+    "styled-components"
+  ],
+  "license": "MIT",
+  "gitHead": "00460640ba9373828e11101ea4429c46e9ef07a7"
+}

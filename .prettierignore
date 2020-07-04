@@ -1,0 +1,7 @@
+.cache
+package.json
+package-lock.json
+public
+dist
+node_modules
+*.log

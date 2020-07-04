@@ -1,0 +1,52 @@
+{
+  "name": "@filbert-js/core",
+  "version": "0.0.1",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
+  "homepage": "https://filbert-js.vercel.app",
+  "source": "index.js",
+  "main": "dist/index.js",
+  "umd:main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "prepare": "npm run build",
+    "clean": "rm -rf ./dist",
+    "dev": "microbundle watch --jsx React.createElement",
+    "build": "microbundle --jsx React.createElement",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@filbert-js/browser-stylesheet": "^0.0.1",
+    "@filbert-js/types": "^0.0.1",
+    "html-tags": "^3.1.0",
+    "react": "^16.8.6"
+  },
+  "peerDependencies": {
+    "@filbert-js/browser-stylesheet": "^0.0.0",
+    "@filbert-js/types": "^0.0.0",
+    "html-tags": "^3.1.0",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "microbundle": "^0.11.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "javascript",
+    "react",
+    "preact",
+    "css",
+    "css-in-js",
+    "filbert-js",
+    "1kb",
+    "light-weight",
+    "styling",
+    "styled",
+    "emotion",
+    "styled-components"
+  ],
+  "license": "MIT"
+}

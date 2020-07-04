@@ -1,0 +1,112 @@
+{
+  "name": "root",
+  "private": true,
+  "keywords": [
+    "styles",
+    "filbert",
+    "react",
+    "css",
+    "css-in-js"
+  ],
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^4.5.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-config-react": "^1.1.7",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-config-standard-react": "^5.0.0",
+    "eslint-plugin-flowtype": "^2.50.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-prettier": "^2.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.3.0",
+    "eslint-plugin-react-hooks": "^1.0.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "husky": "^3.0.9",
+    "lerna": "^3.16.4",
+    "prettier": "1.14.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard",
+      "standard-react",
+      "prettier",
+      "prettier/react"
+    ],
+    "plugins": [
+      "prettier",
+      "flowtype"
+    ],
+    "parser": "babel-eslint",
+    "rules": {
+      "prettier/prettier": "error",
+      "react/prop-types": 0,
+      "react/no-unused-prop-types": 0,
+      "standard/computed-property-even-spacing": 0,
+      "no-template-curly-in-string": 0,
+      "camelcase": 0,
+      "import/no-duplicates": 0,
+      "flowtype/define-flow-type": 2
+    },
+    "env": {
+      "browser": true
+    },
+    "overrides": [
+      {
+        "files": [
+          "*.test.js",
+          "**/__tests__/**"
+        ],
+        "env": {
+          "jest": true
+        }
+      },
+      {
+        "files": [
+          "**/packages/*/src/*",
+          "**/packages/*/src/**/*"
+        ],
+        "rules": {
+          "import/no-commonjs": 2
+        }
+      },
+      {
+        "files": [
+          "**/__fixtures__/*"
+        ],
+        "rules": {
+          "no-unused-vars": 0
+        },
+        "env": {
+          "jest": false
+        }
+      }
+    ]
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "website",
+      "examples/*"
+    ],
+    "nohoist": [
+      "**/dtslint"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,md}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "post-commit": "git update-index --again",
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "lint-staged": "^10.2.11"
+  }
+}

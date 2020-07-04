@@ -1,0 +1,42 @@
+{
+  "editor.minimap.enabled": false,
+  "editor.wordWrap": "off",
+  "sort-imports.suppress-warnings": true,
+  "search.exclude": {
+    "**/node_modules*": true
+  },
+  // Turns on auto format on save for all files types.
+  // This is also required to allow Prettier to auto format files on save.
+  // Turns it off for JavaScript since we use Prettier to auto format on save.
+  "javascript.format.enable": false,
+  "javascript.validate.enable": true,
+  "json.format.enable": false,
+  // Required to allow auto format on save with Prettier + ESLint + Vetur.
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  // eslint extension options
+  "eslint.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  // prettier extension setting
+  "editor.formatOnSave": true,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.configPath": ".prettierrc.yaml"
+}
