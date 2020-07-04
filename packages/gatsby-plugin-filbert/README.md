@@ -10,4 +10,4 @@ WIP
 yarn add gatsby-plugin-filbert
 ```
 
-More documentation is available at https://filbert-js-js.sh.
+More documentation is available at https://filbert-js.vercel.app.

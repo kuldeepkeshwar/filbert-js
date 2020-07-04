@@ -13,4 +13,4 @@ jobs:
       - name: Installing packages
         run: yarn
       - name: Run build
-        run: npx lerna run build
+        run: yarn build
