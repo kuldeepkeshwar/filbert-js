@@ -1,7 +1,7 @@
 import React from 'react';
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 if (isBrowser()) {
-  window.location = '/docs/install';
+  window.location = '/docs/introduction';
 }
 export default () => (
   <div>
