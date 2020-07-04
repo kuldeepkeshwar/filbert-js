@@ -34,14 +34,16 @@ export function SEO({
       ? `${site.siteMetadata.siteUrl}${metaImage.src}`
       : null;
   const canonical = pathname ? `${site.siteMetadata.siteUrl}${pathname}` : null;
-
+  const _title = `${site.siteMetadata.title} ${
+    title ? `| ${title}` : ``
+  } `.trim();
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={title}
-      titleTemplate={`${site.siteMetadata.title} | %s `}
+      title={_title}
+      // titleTemplate={`${site.siteMetadata.title} | %s `}
       link={
         canonical
           ? [
@@ -63,7 +65,7 @@ export function SEO({
         },
         {
           property: `og:title`,
-          content: title,
+          content: _title,
         },
         {
           property: `og:description`,
@@ -79,7 +81,7 @@ export function SEO({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: _title,
         },
         {
           name: `twitter:description`,
@@ -136,5 +138,3 @@ SEO.propTypes = {
   }),
   pathname: PropTypes.string,
 };
-
-SEO;
