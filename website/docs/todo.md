@@ -8,3 +8,4 @@
 - [ ] Bring size below 1kb
 - [ ] Themes for website
 - [ ] Add more description in documentation
+- [ ] Add Meta tags for website
