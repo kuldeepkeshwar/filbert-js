@@ -11,6 +11,7 @@ jobs:
       - uses: preactjs/compressed-size-action@v2
         with:
           repo-token: '${{ secrets.GITHUB_TOKEN }}'
+          build-script: 'size-action'
           # Any JS files anywhere within a dist directory:
           pattern: 'packages/**/dist/**/*.js'
 
