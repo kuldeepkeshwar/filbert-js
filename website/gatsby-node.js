@@ -60,7 +60,7 @@ exports.createPages = async ({ actions }) => {
     fromPath: `/`,
     isPermanent: false,
     redirectInBrowser: true,
-    toPath: `/docs/install`,
+    toPath: `/docs/introduction`,
   });
   const docTemplate = require.resolve(`./src/templates/doc.js`);
   docsYaml.forEach(({ items }) => {
