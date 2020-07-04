@@ -1,7 +1,6 @@
 import { Global, ThemeProvider, styled } from '@filbert-js/core';
 
 import { Header } from './Header';
-import { Helmet } from 'react-helmet';
 import React from 'react';
 import { Sidebar } from './Sidebar';
 import { colors } from './../themes/utils';
@@ -31,7 +30,6 @@ const Main = styled.div`
   border-color: ${colors(`app.border-color`)};
 `;
 const globalStyles = `
-  @import url('https://rsms.me/inter/inter.css');
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
   body {
@@ -46,11 +44,6 @@ const globalStyles = `
 export function Layout({ children }) {
   return (
     <ThemeProvider theme={lightTheme}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Filbert js</title>
-        <link rel="canonical" href="https://filbert-js.vercel.app" />
-      </Helmet>
       <Global styles={globalStyles} />
       <Screen>
         <Top>

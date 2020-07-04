@@ -3,6 +3,24 @@
   "private": true,
   "version": "0.0.1",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
+  "homepage": "https://filbert-js.vercel.app",
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "javascript",
+    "react",
+    "preact",
+    "css",
+    "css-in-js",
+    "filbert-js",
+    "1kb",
+    "light-weight",
+    "styling",
+    "styled",
+    "emotion",
+    "styled-components"
+  ],
+  "license": "MIT",
   "dependencies": {
     "@filbert-js/core": "^0.0.1",
     "gatsby-plugin-filbert": "^0.0.1",
@@ -20,6 +38,7 @@
     "gatsby": "^2.23.10",
     "gatsby-image": "^2.4.8",
     "gatsby-plugin-catch-links": "^2.3.7",
+    "gatsby-plugin-google-analytics": "^2.3.10",
     "gatsby-plugin-manifest": "^2.4.17",
     "gatsby-plugin-mdx": "^1.2.19",
     "gatsby-plugin-react-helmet": "^3.3.5",
@@ -36,7 +55,6 @@
     "unist-util-visit": "^2.0.2",
     "webpack-bundle-analyzer": "^3.8.0"
   },
-  "license": "MIT",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",

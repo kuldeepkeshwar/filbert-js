@@ -1,7 +1,12 @@
+const packageJson = require('./package.json');
+const { homepage, description, author, keywords } = packageJson;
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://filbert-js.vercel.app',
+    siteUrl: homepage,
     title: `filbert`,
+    description,
+    author,
+    keywords,
   },
   plugins: [
     {
@@ -53,6 +58,12 @@ module.exports = {
     //     // Add any options here
     //   },
     // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-171640923-1',
+      },
+    },
     `gatsby-transformer-yaml`,
 
     `gatsby-plugin-react-helmet`,

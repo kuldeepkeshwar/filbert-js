@@ -58,7 +58,7 @@ exports.createPages = async ({ actions }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
     fromPath: `/`,
-    isPermanent: false,
+    isPermanent: true,
     redirectInBrowser: true,
     toPath: `/docs/introduction`,
   });
