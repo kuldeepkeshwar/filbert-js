@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
+  "sideEffects": false,
   "source": "index.js",
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
