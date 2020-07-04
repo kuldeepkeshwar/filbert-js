@@ -10,7 +10,7 @@
   "scripts": {
     "prepare": "npm run build",
     "clean": "rm -rf ./dist",
-    "dev": "microbundle watch",
+    "develop": "microbundle watch",
     "build": "microbundle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

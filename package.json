@@ -9,6 +9,7 @@
     "css-in-js"
   ],
   "scripts": {
+    "develop":"lerna run --stream --parallel --ignore @filbert-js/examples-next-js develop",
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "size-action":"lerna run --ignore @filbert-js/website --ignore @filbert-js/examples-next-js build"
