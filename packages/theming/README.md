@@ -1,11 +1,11 @@
-# @filbert-js/style-sheet-context
+# @filbert-js/theming
 
-> StyleSheet Context for filbert-js
+> theming for filbert-js
 
 ## Install
 
 ```bash
-yarn add @filbert-js/style-sheet-context
+yarn add @filbert-js/theming
 ```
 
 ## Usage
