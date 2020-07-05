@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/browser-stylesheet",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
@@ -8,7 +8,6 @@
   "main": "dist/index.js",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
-  
   "scripts": {
     "prepare": "npm run build",
     "clean": "rm -rf ./dist",
@@ -17,8 +16,8 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/css-parser": "^0.0.1",
-    "@filbert-js/stylesheet": "^0.0.1"
+    "@filbert-js/css-parser": "^0.0.2",
+    "@filbert-js/stylesheet": "^0.0.2"
   },
   "peerDependencies": {
     "@filbert-js/css-parser": "^0.0.0",

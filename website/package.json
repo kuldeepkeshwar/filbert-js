@@ -1,7 +1,7 @@
 {
   "name": "@filbert-js/website",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
   "homepage": "https://filbert-js.vercel.app",
@@ -22,8 +22,8 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@filbert-js/core": "^0.0.1",
-    "gatsby-plugin-filbert": "^0.0.1",
+    "@filbert-js/core": "^0.0.2",
+    "gatsby-plugin-filbert": "^0.0.2",
     "lodash-es": "^4.17.15",
     "prism-react-renderer": "^1.1.1",
     "prismjs": "^1.20.0",
