@@ -11,6 +11,8 @@ yarn add @filbert-js/stylesheet
 ## Usage
 
 ```jsx
+// @editor
+
 import React from 'react';
 import { StyleSheet } from '@filbert-js/stylesheet';
 import { StyleSheetProvider } from '@filbert-js/style-sheet-context';
