@@ -16,13 +16,16 @@ const MenuItem = styled.span`
     color: ${colors(`text.link-hover`)};
   }
 `;
-
+const MenuHeading = styled.div`
+  margin-bottom: 1rem;
+`;
 export const Sidebar = () => {
   const { allMdx, allDocsYaml } = useStaticQuery(graphql`
     query allDocsYaml {
       allDocsYaml {
         nodes {
           items
+          title
         }
       }
       allMdx {
@@ -30,26 +33,52 @@ export const Sidebar = () => {
           fields {
             slug
             title
+            isPackage
           }
         }
       }
     }
   `);
-  const linkMap = allMdx.nodes.reduce((agg, { fields: { slug, title } }) => {
-    agg[title] = { slug, title };
-    return agg;
-  }, {});
-  let [links] = allDocsYaml.nodes.map((node) => {
-    return node.items;
+  const linkMap = allMdx.nodes.reduce(
+    (agg, { fields: { slug, title, isPackage } }) => {
+      if (isPackage) {
+        agg[slug] = { slug, title };
+      } else {
+        agg[title] = { slug, title };
+      }
+
+      return agg;
+    },
+    {},
+  );
+  const links = allDocsYaml.nodes.map(({ items, title }) => {
+    return { title, items: items.filter((title) => title !== 'TODO') };
   });
-  links = links.filter((title) => title !== 'TODO');
+
   return (
-    <Stack direction="vertical" gap="1rem">
-      {links.map((title) => (
-        <MenuItem>
-          <Link to={`/docs/${linkMap[title].slug}`}>{title}</Link>
-        </MenuItem>
-      ))}
+    <Stack direction="vertical" gap="2rem">
+      {links.map((link) => {
+        return (
+          <div>
+            <MenuHeading>{link.title}</MenuHeading>
+            <Stack direction="vertical" gap="1rem">
+              {link.items.map((title) => (
+                <MenuItem>
+                  <Link
+                    to={`${titleToURLPrefix[link.title]}${linkMap[title].slug}`}
+                  >
+                    {title}
+                  </Link>
+                </MenuItem>
+              ))}
+            </Stack>
+          </div>
+        );
+      })}
     </Stack>
   );
+};
+const titleToURLPrefix = {
+  'Getting Started': '/docs/',
+  Packages: '/packages/',
 };

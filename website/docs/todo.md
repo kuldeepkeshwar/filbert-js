@@ -16,6 +16,6 @@
   - [ ] Add more description in documentation
   - [x] Add Meta tags for website
   - [ ] Add Mobile layout
-  - [ ] List `README.md` from `packages`
+  - [x] List `README.md` from `packages`
 - Other
   - [ ] Add a example for vanilla(using `express.js`) Server-Side Rendering

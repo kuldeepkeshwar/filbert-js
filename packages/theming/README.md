@@ -11,7 +11,7 @@ yarn add @filbert-js/theming
 ## Usage
 
 ```jsx
-// @live
+// @editor
 
 import React from 'react';
 import { styled } from '@filbert-js/core';

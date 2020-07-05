@@ -63,17 +63,30 @@ exports.createPages = async ({ actions }) => {
     toPath: `/docs/introduction`,
   });
   const docTemplate = require.resolve(`./src/templates/doc.js`);
-  docsYaml.forEach(({ items }) => {
-    items.forEach((item) => {
-      const slug = _.kebabCase(item);
-      createPage({
-        path: `docs/${slug}`,
-        component: docTemplate,
-        context: {
-          slug: slug,
-        },
+  const packageTemplate = require.resolve(`./src/templates/package.js`);
+  docsYaml.forEach(({ items, title }) => {
+    if (title === 'Packages') {
+      items.forEach((slug) => {
+        createPage({
+          path: `packages/${slug}`,
+          component: packageTemplate,
+          context: {
+            slug: slug,
+          },
+        });
       });
-    });
+    } else {
+      items.forEach((item) => {
+        const slug = _.kebabCase(item);
+        createPage({
+          path: `docs/${slug}`,
+          component: docTemplate,
+          context: {
+            slug: slug,
+          },
+        });
+      });
+    }
   });
 };
 // Add custom url pathname for blog posts.
@@ -90,6 +103,11 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
         value = 'introduction';
       } else if (pkgName) {
         value = pkgName;
+        createNodeField({
+          node,
+          name: `isPackage`,
+          value: true,
+        });
       } else {
         value = fileNode.name;
       }
