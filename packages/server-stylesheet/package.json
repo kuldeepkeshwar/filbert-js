@@ -15,15 +15,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/core": "^0.0.1",
+    "@filbert-js/style-sheet-context": "^0.0.1",
     "@filbert-js/css-parser": "^0.0.1",
     "@filbert-js/stylesheet": "^0.0.1",
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@filbert-js/core": "^0.0.1-next.3",
-    "@filbert-js/css-parser": "^0.0.1-next.3",
-    "@filbert-js/stylesheet": "^0.0.1-next.3",
+    "@filbert-js/style-sheet-context": "^0.0.1",
+    "@filbert-js/css-parser": "^0.0.1",
+    "@filbert-js/stylesheet": "^0.0.1",
     "react": "^16.8.6"
   },
   "devDependencies": {

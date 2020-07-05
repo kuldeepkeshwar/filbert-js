@@ -13,7 +13,6 @@
     "@filbert-js/core": "^0.0.1",
     "@filbert-js/stylesheet": "^0.0.1",
     "next": "9.4.4",
-    "next-transpile-modules": "^3.3.0",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   }

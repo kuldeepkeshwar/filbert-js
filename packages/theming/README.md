@@ -1,3 +1,15 @@
+# @filbert-js/style-sheet-context
+
+> StyleSheet Context for filbert-js
+
+## Install
+
+```bash
+yarn add @filbert-js/style-sheet-context
+```
+
+## Usage
+
 ```jsx
 // @live
 
@@ -19,3 +31,5 @@ render(
   </ThemeProvider>,
 );
 ```
+
+More documentation is available at https://filbert-js.vercel.app.

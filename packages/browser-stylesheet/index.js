@@ -26,7 +26,6 @@ class Tag {
     return this._el.insertBefore(_el, _after);
   }
   append(child) {
-    console.log(child);
     if (typeof child === 'string') {
       // text node
       this._el.textContent = child;

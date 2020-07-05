@@ -3,13 +3,13 @@
 ```js
 // @editor
 
-import { renderToString } from "react-dom/server"
-import { createStylesheet } from "@filbert-js/server-stylesheet"
-import App from "./App"
+import { renderToString } from 'react-dom/server';
+import { createStylesheet } from '@filbert-js/server-stylesheet';
+import App from './App';
 
-const sheet = createStylesheet()
-const app = renderToString(sheet.collectStyles(<App />))
-const styleHTML = sheet.getStyles()
+const sheet = createStylesheet();
+const app = renderToString(sheet.collectStyles(<App />));
+const styleHTML = sheet.getStyles();
 // Or
 // const styleTags = sheet.getReactElements(); // give React elements
 
@@ -20,7 +20,7 @@ const html = `
     <div id="app">${app}</div>
   </body>
 </html>
-`
+`;
 ```
 
 ### Next.js: Server-Side Rendering
@@ -31,25 +31,25 @@ In `Next.js` world, create a file `pages/_document.js`
 // @editor
 // pages/_document.js
 
-import Document from "next/document"
-import { createStylesheet } from "@filbert-js/server-stylesheet"
+import Document from 'next/document';
+import { createStylesheet } from '@filbert-js/server-stylesheet';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
-    const sheet = createStylesheet()
-    const originalRenderPage = ctx.renderPage
+    const sheet = createStylesheet();
+    const originalRenderPage = ctx.renderPage;
     try {
       ctx.renderPage = () =>
         originalRenderPage({
-          enhanceApp: App => {
-            return props => {
-              return sheet.collectStyles(<App {...props} />)
-            }
-          }
-        })
-      const initialProps = await Document.getInitialProps(ctx)
+          enhanceApp: (App) => {
+            return (props) => {
+              return sheet.collectStyles(<App {...props} />);
+            };
+          },
+        });
+      const initialProps = await Document.getInitialProps(ctx);
 
-      const styleTags = sheet.getReactElements()
+      const styleTags = sheet.getReactElements();
       return {
         ...initialProps,
         styles: (
@@ -57,17 +57,17 @@ class MyDocument extends Document {
             {styleTags}
             {initialProps.styles}
           </>
-        )
-      }
+        ),
+      };
     } finally {
     }
   }
 }
 
-export default MyDocument
+export default MyDocument;
 ```
 
-> _Note: plugin coming soon 🔜_
+Check out [example](https://github.com/kuldeepkeshwar/filbert-js/tree/master/examples/next-js)
 
 ### Gatsby.js: Server-Side Rendering
 
@@ -77,24 +77,24 @@ In `Gatsby.js` world, create a file `gatsby-ssr.js`
 // @editor
 
 // gatsby-ssr.js
-import { createStylesheet } from "@filbert-js/server-stylesheet"
+import { createStylesheet } from '@filbert-js/server-stylesheet';
 
-const sheetByPathname = new Map()
+const sheetByPathname = new Map();
 
 export const wrapRootElement = ({ element, pathname }) => {
-  const sheet = createStylesheet()
-  sheetByPathname.set(pathname, sheet)
-  return sheet.collectStyles(element)
-}
+  const sheet = createStylesheet();
+  sheetByPathname.set(pathname, sheet);
+  return sheet.collectStyles(element);
+};
 
 export const onRenderBody = ({ setHeadComponents, pathname }) => {
-  const sheet = sheetByPathname.get(pathname)
+  const sheet = sheetByPathname.get(pathname);
   if (sheet) {
-    const styleTags = sheet.getReactElements()
-    setHeadComponents(styleTags)
-    sheetByPathname.delete(pathname)
+    const styleTags = sheet.getReactElements();
+    setHeadComponents(styleTags);
+    sheetByPathname.delete(pathname);
   }
-}
+};
 ```
 
 > _Note: plugin coming soon 🔜_

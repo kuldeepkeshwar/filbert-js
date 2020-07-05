@@ -1,8 +1,9 @@
-import { Global, ThemeProvider, styled } from '@filbert-js/core';
+import { Global, styled } from '@filbert-js/core';
 
 import { Header } from './Header';
 import React from 'react';
 import { Sidebar } from './Sidebar';
+import { ThemeProvider } from '@filbert-js/theming';
 import { colors } from './../themes/utils';
 import { tokens as lightTheme } from '../themes/light';
 
