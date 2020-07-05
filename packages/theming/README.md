@@ -1,3 +1,15 @@
+# @filbert-js/theming
+
+> theming for filbert-js
+
+## Install
+
+```bash
+yarn add @filbert-js/theming
+```
+
+## Usage
+
 ```jsx
 // @live
 
@@ -19,3 +31,5 @@ render(
   </ThemeProvider>,
 );
 ```
+
+More documentation is available at https://filbert-js.vercel.app.

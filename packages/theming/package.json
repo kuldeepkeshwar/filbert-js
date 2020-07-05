@@ -1,12 +1,11 @@
 {
-  "name": "@filbert-js/core",
+  "name": "@filbert-js/theming",
   "version": "0.0.1",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
-  "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
-  "homepage": "https://filbert-js.vercel.app",
+  "description": "",
+  "sideEffects": false,
   "source": "index.js",
   "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "scripts": {
     "prepare": "npm run build",
@@ -16,19 +15,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/theming":"^0.0.1",
-    "@filbert-js/style-sheet-context":"^0.0.1",
-    "@filbert-js/browser-stylesheet": "^0.0.1",
-    "@filbert-js/types": "^0.0.1",
-    "html-tags": "^3.1.0",
+    
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@filbert-js/theming":"^0.0.1",
-    "@filbert-js/style-sheet-context":"^0.0.1",
-    "@filbert-js/browser-stylesheet": "^0.0.1",
-    "@filbert-js/types": "^0.0.1",
-    "html-tags": "^3.1.0",
+    
     "react": "^16.8.6"
   },
   "devDependencies": {

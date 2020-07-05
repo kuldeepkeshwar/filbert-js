@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet } from '@filbert-js/stylesheet';
-import { StyleSheetProvider } from '@filbert-js/core';
+import { StyleSheetProvider } from '@filbert-js/style-sheet-context';
 import { cssParser } from '@filbert-js/css-parser';
 
 class Tag {

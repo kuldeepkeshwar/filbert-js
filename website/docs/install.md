@@ -15,5 +15,5 @@ yarn add @filbert-js/core
 Usage
 
 ```js
-import { styled, Global, keyframes, ThemeProvider } from "@filbert-js/core"
+import { styled, Global, keyframes } from '@filbert-js/core';
 ```

@@ -6,8 +6,8 @@ import {
 } from '@filbert-js/types';
 
 import React from 'react';
-import { StyleSheetContext } from './StyleSheetContext';
-import { ThemeContext } from './theming';
+import { StyleSheetContext } from '@filbert-js/style-sheet-context';
+import { ThemeContext } from '@filbert-js/theming';
 import { hash } from './hash';
 import htmlTags from 'html-tags';
 import { useStylesheet } from './hooks';

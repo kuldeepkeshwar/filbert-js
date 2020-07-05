@@ -1,7 +1,7 @@
 import { TYPES_GLOBAL, TYPES_STYLES } from '@filbert-js/types';
 
 import React from 'react';
-import { StyleSheetContext } from './StyleSheetContext';
+import { StyleSheetContext } from '@filbert-js/style-sheet-context';
 
 // invoke callback if value changes b/w render cycles
 

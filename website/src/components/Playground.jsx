@@ -17,6 +17,8 @@ export const scope = {
         return React;
       case '@filbert-js/core':
         return require('@filbert-js/core');
+      case '@filbert-js/theming':
+        return require('@filbert-js/theming');
 
       default:
         // eslint-disable-next-line no-throw-literal

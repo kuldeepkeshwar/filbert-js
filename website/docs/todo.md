@@ -1,11 +1,21 @@
 ## Todo
 
-- [ ] Media query implementation (`css-parser`)
-- [ ] Vendor prefixing
-- [ ] Component Selector
-- [ ] Enable Ref forwarding
-- [ ] Use CSSStyleSheet API
-- [ ] Bring size below 1kb
-- [ ] Themes for website
-- [ ] Add more description in documentation
-- [x] Add Meta tags for website
+- filbert-js
+  - [x] Add `css` API
+  - [x] Support Media Query
+  - [x] CSS AST
+  - [ ] Vendor prefixing
+  - [ ] Component Selector
+  - [ ] Enable Ref forwarding
+  - [ ] Use CSSStyleSheet API
+  - [x] Separate packages for Context
+  - [x] Separate packages for Theming
+  - [ ] Bring size below 1kb
+- Website
+  - [ ] Themes for website
+  - [ ] Add more description in documentation
+  - [x] Add Meta tags for website
+  - [ ] Add Mobile layout
+  - [ ] List `README.md` from `packages`
+- Other
+  - [ ] Add a example for vanilla(using `express.js`) Server-Side Rendering
