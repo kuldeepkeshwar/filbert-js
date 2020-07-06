@@ -114,5 +114,9 @@
   },
   "dependencies": {
     "lint-staged": "^10.2.11"
+  },
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/filbert-js"
   }
 }
