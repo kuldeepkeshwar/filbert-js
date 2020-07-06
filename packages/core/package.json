@@ -3,6 +3,7 @@
   "version": "0.0.2",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
+  "sideEffects": false,
   "homepage": "https://filbert-js.vercel.app",
   "source": "index.js",
   "main": "dist/index.js",
@@ -52,5 +53,9 @@
     "emotion",
     "styled-components"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "collective": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/filbert-js"
+  }
 }
