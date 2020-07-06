@@ -1,4 +1,4 @@
-[![version](https://img.shields.io/npm/v/@filbert-js/core)](https://www.npmjs.com/package/filbert)
+[![version](https://img.shields.io/npm/v/@filbert-js/core)](https://www.npmjs.com/package/@filbert-js/core)
 [![gzip size](https://img.badgesize.io/https://unpkg.com/@filbert-js/core@latest/dist/index.es.js?compression=gzip)](https://unpkg.com/@filbert-js/core)
 [![downloads](https://img.shields.io/npm/dw/@filbert-js/core)](https://www.npmjs.com/package/@filbert-js/core)
 
