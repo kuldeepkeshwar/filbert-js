@@ -47,17 +47,20 @@ const Main = styled.div`
   border-color: ${colors(`app.border-color`)};
 `;
 const ToggleButton = styled.button`
-  display: block;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  border-radius: 50%;
-  background-color: #3793e0;
-  padding: 1rem;
-  margin: 2rem;
-  animation: 0.25s ease-in animation-1m49nxd;
-  transition: 150ms ease-in-out background-color;
-  border: 0;
+  display: none;
+  @media screen and (max-width: 52em) {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    background-color: #3793e0;
+    padding: 1rem;
+    margin: 2rem;
+    animation: 0.25s ease-in animation-1m49nxd;
+    transition: 150ms ease-in-out background-color;
+    border: 0;
+  }
 `;
 const globalStyles = `
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
