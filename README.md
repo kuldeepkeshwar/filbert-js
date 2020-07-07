@@ -49,9 +49,9 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 ## Backers
 
 Thank you to all our backers! 🙏
-<a href="https://opencollective.com/filbert-js#backers" target="_blank"><img src="https://opencollective.com/filbert-js/backers.svg?width=890"/></a>
+<a href="https://opencollective.com/filbert-js#backers" target="_blank"><img src="https://opencollective.com/filbert-js/backers.svg"/></a>
 
 ## Sponsors
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-<a href="https://opencollective.com/filbert-js#sponsors" target="_blank"><img src="https://opencollective.com/filbert-js/sponsors.svg?width=890"/></a>
+<a href="https://opencollective.com/filbert-js#sponsors" target="_blank"><img src="https://opencollective.com/filbert-js/sponsors.svg"/></a>
