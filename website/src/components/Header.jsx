@@ -1,6 +1,6 @@
+import LogoIcon from './../images/icons/github.svg';
 import React from 'react';
 import { Stack } from './Stack';
-import logo from './../images/github.svg';
 export function Header() {
   return (
     <Stack direction="horizontal" align="end">
@@ -9,7 +9,7 @@ export function Header() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img src={logo} alt="Github" />
+        <LogoIcon />
       </a>
     </Stack>
   );
