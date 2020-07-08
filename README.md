@@ -20,7 +20,7 @@
    <br/>
     <br/>
      <br/>
-  <a href="https://filbert-js.vercel.app/">Getting started</a> 
+  <a href="https://filbert-js.vercel.app/docs/install">Getting started</a> 
 </p>
 
 It is a alternative to [styled-components](https://github.com/styled-components/styled-components)(~12.51kB) or [emotion](https://github.com/emotion-js/emotion)(~11.3kB) with similar API surface.

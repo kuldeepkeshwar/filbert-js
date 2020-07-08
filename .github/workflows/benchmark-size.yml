@@ -1,0 +1,16 @@
+name: Benchmark Bundle Size
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2-beta
+        with:
+          fetch-depth: 1
+      - name: Installing packages
+        run: yarn
+      - name: Run benchmark:size
+        run: yarn benchmarks-size
