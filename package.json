@@ -13,6 +13,7 @@
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
     "build-packages":"lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
+    "develop-packages":"lerna run --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",
     "benchmarks-size":"yarn build-packages && lerna run capture-stats && lerna run print-delta --stream"
   },
   "devDependencies": {
