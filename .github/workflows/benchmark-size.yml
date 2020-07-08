@@ -1,4 +1,4 @@
-name: Build Check
+name: Benchmark Bundle Size
 
 on: [pull_request]
 
