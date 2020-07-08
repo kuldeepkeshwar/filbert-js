@@ -5,26 +5,25 @@ import {
   RULE_SEPARATOR,
 } from './constants';
 
-const childSeparator = `$__child_${Date.now()}`;
+const childSeparator = `$_${Date.now()}`;
 
-class Node {
-  constructor({
-    children = [],
-    rules = [],
-    start = -1,
-    end = -1,
-    raw,
-    parent,
-  }) {
-    this.children = children;
-    this.rules = rules;
-    this.start = start;
-    this.end = end;
-    this.raw = raw;
-    this.raw_selector = null;
-    this.parent = parent;
-  }
+function Node({
+  children = [],
+  rules = [],
+  start = -1,
+  end = -1,
+  raw,
+  parent,
+}) {
+  this.children = children;
+  this.rules = rules;
+  this.start = start;
+  this.end = end;
+  this.raw = raw;
+  this.raw_selector = null;
+  this.parent = parent;
 }
+
 export function toAST(raw) {
   const root = new Node({
     start: 0,

@@ -10,7 +10,6 @@ export function StyleSheet({
   createElement,
   findElementByStyleId,
   cssParser,
-
   css,
 }) {
   const _css = css || {
