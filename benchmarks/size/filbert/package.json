@@ -15,7 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "capture-stats": "node ../common/build.js",
+    "capture-stats": "node ../bundle-size/build.js",
     "clean": "rm -rf ./build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
