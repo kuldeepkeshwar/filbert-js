@@ -25,4 +25,5 @@
 - Other
   - [ ] Add a example for vanilla(using `express.js`) Server-Side Rendering
   - [x] Add benchmark for bundle-size (filbert vs emotion vs styled-components)
-  - [ ] Add benchmark for runtime performance (filbert vs emotion vs styled-components)
+  - [x] Add benchmark for runtime performance (filbert vs emotion vs styled-components)
+  - [ ] Show benchmark stats in pull request.

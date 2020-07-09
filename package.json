@@ -14,7 +14,9 @@
     "build": "lerna run build",
     "build-packages":"lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
     "develop-packages":"lerna run --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",
-    "benchmarks-size":"yarn build-packages && lerna run capture-stats && lerna run print-delta --stream"
+    "benchmarks":"yarn build-packages && yarn benchmarks-size && yarn benchmarks-performance",
+    "benchmarks-size":"lerna run capture-stats && lerna run print-delta --stream",
+    "benchmarks-performance":"lerna run performance --stream"
   },
   "devDependencies": {
     
@@ -30,7 +32,8 @@
       "packages/*",
       "website",
       "examples/*",
-      "benchmarks/size/*"
+      "benchmarks/size/*",
+      "benchmarks/performance"
     ],
     "nohoist": [
       "**/dtslint"
