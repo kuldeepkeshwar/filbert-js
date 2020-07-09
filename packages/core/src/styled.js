@@ -4,7 +4,6 @@ import React from 'react';
 import { StyleSheetContext } from '@filbert-js/style-sheet-context';
 import { ThemeContext } from '@filbert-js/theming';
 import { hash } from './hash';
-import htmlTags from 'html-tags';
 import { interpolate } from './interpolate';
 import { useStylesheet } from './hooks';
 
@@ -56,8 +55,3 @@ export function styled(Component, options = {}) {
   return (styleTemplates, ...variables) =>
     componentFactory({ Component, options, styleTemplates, variables });
 }
-
-htmlTags.forEach((Component) => {
-  styled[Component] = (styleTemplates, ...variables) =>
-    componentFactory({ Component, styleTemplates, variables });
-});

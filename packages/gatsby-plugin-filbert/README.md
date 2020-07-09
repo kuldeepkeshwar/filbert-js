@@ -2,8 +2,6 @@
 
 > A Gatsby Plugin for filbert-js.
 
-WIP
-
 ## Install
 
 ```bash

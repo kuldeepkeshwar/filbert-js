@@ -13,14 +13,14 @@ const rotate = keyframes`
   }
 `;
 
-const AppLogo = styled.img`
+const AppLogo = styled('img')`
   height: 40vmin;
   pointer-events: none;
   @media (prefers-reduced-motion: no-preference) {
     animation: ${rotate} infinite 20s linear;
   }
 `;
-const AppHeader = styled.div`
+const AppHeader = styled('div')`
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -30,10 +30,10 @@ const AppHeader = styled.div`
   font-size: calc(10px + 2vmin);
   color: white;
 `;
-const AppLink = styled.a`
+const AppLink = styled('a')`
   color: #61dafb;
 `;
-const App = styled.span`
+const App = styled('span')`
   text-align: center;
 `;
 const globalCSS = `
