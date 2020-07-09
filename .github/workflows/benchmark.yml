@@ -1,4 +1,4 @@
-name: Benchmark Bundle Size
+name: Benchmarks(Bundle Size|Performance)
 
 on: [pull_request]
 
@@ -12,5 +12,5 @@ jobs:
           fetch-depth: 1
       - name: Installing packages
         run: yarn
-      - name: Run benchmark:size
-        run: yarn benchmarks-size
+      - name: Run benchmarks
+        run: yarn benchmarks
