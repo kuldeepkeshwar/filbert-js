@@ -2,7 +2,7 @@ import { Global, styled } from '@filbert-js/core';
 
 import React from 'react';
 
-const Text = styled.div`
+const Text = styled('div')`
   color: hotpink;
 `;
 export default function Home() {

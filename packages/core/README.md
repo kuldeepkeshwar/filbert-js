@@ -16,7 +16,7 @@ yarn add @filbert-js/core
 import React from 'react';
 import { styled, Global } from '@filbert-js/core';
 
-const Button = styled.button`
+const Button = styled('button')`
   background: pink;
   border: solid 1px grey;
 `;

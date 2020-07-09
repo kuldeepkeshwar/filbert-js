@@ -1,5 +1,5 @@
 ---
-title: "Styled Components"
+title: 'Styled Components'
 ---
 
 `styled` is a way to create React components that have styles attached to them
@@ -7,13 +7,13 @@ title: "Styled Components"
 ```jsx
 // @live
 
-import React from "react"
-import { styled } from "@filbert-js/core"
+import React from 'react';
+import { styled } from '@filbert-js/core';
 
-const Button = styled.button`
+const Button = styled('button')`
   background: pink;
   border: solid 1px grey;
-`
+`;
 
-render(<Button>This is a Button component.</Button>)
+render(<Button>This is a Button component.</Button>);
 ```

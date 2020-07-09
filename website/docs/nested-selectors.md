@@ -3,24 +3,24 @@ Use nested selectors to target elements inside the current class or React compon
 ```jsx
 // @live
 
-import React from "react"
-import { styled } from "@filbert-js/core"
+import React from 'react';
+import { styled } from '@filbert-js/core';
 
-const Paragraph = styled.p`
+const Paragraph = styled('p')`
   color: grey;
   button {
     margin: 0 1rem;
     background: #1f368f;
     color: white;
   }
-`
+`;
 
 render(
   <Paragraph>
     I'm grey!!
     <button>A button</button>
-  </Paragraph>
-)
+  </Paragraph>,
+);
 ```
 
 Use `&` to select the current class nested in another element:
@@ -28,15 +28,15 @@ Use `&` to select the current class nested in another element:
 ```jsx
 // @live
 
-import React from "react"
-import { styled } from "@filbert-js/core"
+import React from 'react';
+import { styled } from '@filbert-js/core';
 
-const Paragraph = styled.p`
+const Paragraph = styled('p')`
   color: grey;
   header & {
     color: red;
   }
-`
+`;
 
 render(
   <div>
@@ -44,6 +44,6 @@ render(
       <Paragraph>I'm red !!</Paragraph>
     </header>
     <Paragraph>I'm grey !!</Paragraph>
-  </div>
-)
+  </div>,
+);
 ```

@@ -1,7 +1,7 @@
 ## Todo
 
 - filbert-js
-  - [x] Add `css` API
+  - [ ] Add `css` API
   - [x] Support Media Query
   - [x] CSS AST
   - [ ] Vendor prefixing
@@ -11,11 +11,18 @@
   - [x] Separate packages for Context
   - [x] Separate packages for Theming
   - [ ] Bring size below 1kb
+  - [x] Remove `html-tags` dependency
+  - [x] Babel plugin for transformation `styled.div` -> `styled('div')`
+  - [ ] Make `gatsby-plugin-filbert` working
+  - [ ] Write test cases
 - Website
   - [ ] Themes for website
   - [ ] Add more description in documentation
+  - [ ] Document trade offs
   - [x] Add Meta tags for website
   - [x] Add Mobile layout
   - [x] List `README.md` from `packages`
 - Other
   - [ ] Add a example for vanilla(using `express.js`) Server-Side Rendering
+  - [x] Add benchmark for bundle-size (filbert vs emotion vs styled-components)
+  - [ ] Add benchmark for runtime performance (filbert vs emotion vs styled-components)

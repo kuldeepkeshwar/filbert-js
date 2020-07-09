@@ -16,7 +16,7 @@ yarn add @filbert-js/theming
 import React from 'react';
 import { styled } from '@filbert-js/core';
 import { ThemeProvider } from '@filbert-js/theming';
-const Button = styled.button`
+const Button = styled('button')`
   background: ${({ theme }) => theme.colors.brand};
   border: solid 1px grey;
 `;
