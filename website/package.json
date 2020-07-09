@@ -23,6 +23,10 @@
   "license": "MIT",
   "dependencies": {
     "@filbert-js/core": "^0.0.3",
+    "@filbert-js/css-parser": "^0.0.3",
+    "@filbert-js/style-sheet-context":"^0.0.3",
+    "@filbert-js/browser-stylesheet":"^0.0.3",
+    "@filbert-js/autoprefixer":"^0.0.3",
     "gatsby-plugin-filbert": "^0.0.3",
     "lodash-es": "^4.17.15",
     "prism-react-renderer": "^1.1.1",

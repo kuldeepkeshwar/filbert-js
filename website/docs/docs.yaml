@@ -14,6 +14,7 @@
     - Theming
     - Labels
     - Server Side Rendering
+    - Auto Prefixing
     - TODO
 # This loads the READMEs instead of files in docs/
 - title: Packages
@@ -22,6 +23,7 @@
     - '@filbert-js/theming'
     - '@filbert-js/server-stylesheet'
     - '@filbert-js/browser-stylesheet'
+    - '@filbert-js/autoprefixer'
     - '@filbert-js/css-ast'
     - '@filbert-js/style-sheet-context'
     - '@filbert-js/css-parser'

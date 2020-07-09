@@ -18,20 +18,20 @@ export function StyleSheet({
     [TYPES_KEYFRAMES]: {},
   };
 
-  function createStyleTag(id, styleType, componentType) {
+  function createStyleTag(id, styleType, label) {
     const el = createElement('style');
     el.setAttribute('data-type', 'styled-css');
     el.setAttribute('id', id);
     el.setAttribute('styled-type', styleType);
-    componentType && el.setAttribute('styled-component-type', componentType);
+    label && el.setAttribute('styled-component-type', label);
     return el;
   }
-  function createStyles(id, css, sourceAfter, componentType) {
+  function createStyles(id, css, sourceAfter, label) {
     const root = getRoot();
 
     if (!_css[TYPES_STYLES][id]) {
-      const el = createStyleTag(id, TYPES_STYLES, componentType);
-      const classBlock = cssParser(css, id);
+      const el = createStyleTag(id, TYPES_STYLES, label);
+      const classBlock = cssParser({ css, namespace: `.${id}` });
       el.append(classBlock);
       _css[TYPES_STYLES][id] = classBlock;
 

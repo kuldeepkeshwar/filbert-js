@@ -1,8 +1,9 @@
 import { TYPES_GLOBAL, TYPES_KEYFRAMES, TYPES_STYLES } from '@filbert-js/types';
 
 import { StyleSheet } from '@filbert-js/stylesheet';
-import { cssParser } from '@filbert-js/css-parser';
+import { createParser } from '@filbert-js/css-parser';
 
+const cssParser = createParser();
 const isBrowser = () => ![typeof window, typeof document].includes('undefined');
 class Tag {
   constructor(type, native) {
@@ -67,7 +68,7 @@ const init = () => {
   return { getRoot, createElement, findElementByStyleId, css };
 };
 
-export const createStylesheet = () => {
+export const createStylesheet = (options = {}) => {
   const { getRoot, createElement, findElementByStyleId, css } = init();
   return new StyleSheet({
     getRoot,
@@ -75,5 +76,6 @@ export const createStylesheet = () => {
     findElementByStyleId,
     cssParser,
     css,
+    ...options,
   });
 };
