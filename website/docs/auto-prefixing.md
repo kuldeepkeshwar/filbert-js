@@ -1,20 +1,23 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
-// You can delete this file if you're not using it
+```js
+// @editor
 import React from 'react';
+import ReactDOM from 'react-dom';
 import { StyleSheetProvider } from '@filbert-js/style-sheet-context';
 import { createParser } from '@filbert-js/css-parser';
 import { createStylesheet } from '@filbert-js/browser-stylesheet';
 import { prefix } from '@filbert-js/autoprefixer';
+import { App } from './App';
+import ReactDOM from 'react-dom';
+
 const cssParser = createParser({ prefix });
 const stylesheet = createStylesheet({ cssParser });
 
-export const wrapRootElement = ({ element, props }) => {
-  return (
-    <StyleSheetProvider stylesheet={stylesheet}>{element}</StyleSheetProvider>
-  );
-};
+ReactDOM.render(
+  <React.StrictMode>
+    <StyleSheetProvider stylesheet={stylesheet}>
+      <App />
+    </StyleSheetProvider>
+  </React.StrictMode>,
+  document.getElementById('root'),
+);
+```

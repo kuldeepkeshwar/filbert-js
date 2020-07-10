@@ -35,7 +35,7 @@ function componentFactory({
 
     const extraProps = Object.assign(
       {
-        className: [className, id].join(' ').trim(),
+        className: [StyledComponent.label, className, id].join(' ').trim(),
         [SOURCE_AFTER]: Component[IS_STYLED_COMPONENT] ? id : undefined,
       },
       _props,
@@ -46,7 +46,7 @@ function componentFactory({
   if (options.label) {
     StyledComponent.label = options.label;
   } else {
-    StyledComponent.label = id;
+    StyledComponent.label = `fj-${id}`;
   }
   id++;
   return StyledComponent;

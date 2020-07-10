@@ -1,4 +1,4 @@
-import { TYPES, TYPES_KEYFRAMES } from '@filbert-js/types';
+import { IS_STYLED_COMPONENT, TYPES, TYPES_KEYFRAMES } from '@filbert-js/types';
 
 export function interpolate(styleTemplates, variables, context) {
   const keyframes = [];
@@ -8,8 +8,9 @@ export function interpolate(styleTemplates, variables, context) {
     if (variable[TYPES] === TYPES_KEYFRAMES) {
       keyframes.push(variable);
       value = variable;
-    }
-    if (typeof variable === 'function') {
+    } else if (variable[IS_STYLED_COMPONENT]) {
+      value = `.${variable.label}`;
+    } else if (typeof variable === 'function') {
       value = variable(context);
     }
     return `${previous}${value}${current}`;

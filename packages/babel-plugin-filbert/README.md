@@ -10,7 +10,7 @@ A [Babel](https://babeljs.io/) plugin for filbert, converts `styled.div` syntax 
 
 Edit `.babelrc.json`
 
-```json
+```js
 // @editor
 {
   "presets": [...],

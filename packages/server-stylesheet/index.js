@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet } from '@filbert-js/stylesheet';
 import { StyleSheetProvider } from '@filbert-js/style-sheet-context';
-import { cssParser } from '@filbert-js/css-parser';
-
+import { createParser } from '@filbert-js/css-parser';
+const cssParser = createParser();
 class Tag {
   constructor(type) {
     this._type = type;
@@ -100,13 +100,14 @@ function collectStyles(stylesheet) {
     <StyleSheetProvider stylesheet={stylesheet}>{app}</StyleSheetProvider>
   );
 }
-export const createStylesheet = () => {
+export const createStylesheet = (options = {}) => {
   const { getRoot, createElement, findElementByStyleId } = init();
   const sheet = new StyleSheet({
     getRoot,
     createElement,
     findElementByStyleId,
     cssParser,
+    ...options,
   });
   const _getStyles = sheet.getStyles;
   sheet.getStyles = function() {

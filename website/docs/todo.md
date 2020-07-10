@@ -4,8 +4,8 @@
   - [ ] Add `css` API
   - [x] Support Media Query
   - [x] CSS AST
-  - [ ] Vendor prefixing
-  - [ ] Component Selector
+  - [x] Auto prefixing
+  - [x] Component Selector
   - [ ] Enable Ref forwarding
   - [ ] Use CSSStyleSheet API
   - [x] Separate packages for Context
