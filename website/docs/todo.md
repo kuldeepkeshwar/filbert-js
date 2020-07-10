@@ -5,7 +5,7 @@
   - [x] Support Media Query
   - [x] CSS AST
   - [x] Auto prefixing
-  - [ ] Component Selector
+  - [x] Component Selector
   - [ ] Enable Ref forwarding
   - [ ] Use CSSStyleSheet API
   - [x] Separate packages for Context

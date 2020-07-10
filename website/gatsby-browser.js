@@ -13,6 +13,7 @@ import { createStylesheet } from '@filbert-js/browser-stylesheet';
 import { prefix } from '@filbert-js/autoprefixer';
 const cssParser = createParser({ prefix });
 const stylesheet = createStylesheet({ cssParser });
+
 export const wrapRootElement = ({ element, props }) => {
   return (
     <StyleSheetProvider stylesheet={stylesheet}>{element}</StyleSheetProvider>
