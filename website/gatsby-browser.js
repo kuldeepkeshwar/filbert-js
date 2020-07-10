@@ -4,7 +4,6 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import { Layout } from './src/components/Layout';
 // You can delete this file if you're not using it
 import React from 'react';
 import { StyleSheetProvider } from '@filbert-js/style-sheet-context';
@@ -18,7 +17,4 @@ export const wrapRootElement = ({ element, props }) => {
   return (
     <StyleSheetProvider stylesheet={stylesheet}>{element}</StyleSheetProvider>
   );
-};
-export const wrapPageElement = ({ element, props }) => {
-  return <Layout {...props}>{element}</Layout>;
 };

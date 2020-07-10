@@ -6,7 +6,7 @@ import {
   Title,
 } from '../components/markdown-overrides';
 
-// import { Layout } from '../components/Layout';
+import { Layout } from '../components/Layout';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Playground from '../components/Playground';
@@ -26,21 +26,21 @@ export default ({ data: { doc } }) => {
   return (
     <>
       <SEO title={__title} />
-      {/* <Layout> */}
-      <Title>{__title}</Title>
-      <MDXProvider
-        components={{
-          'live-code': Playground,
-          'static-code': StaticCode,
-          blockquote: Blockquote,
-          p: Paragraph,
-          pre: Pre,
-          h3: H3,
-        }}
-      >
-        <MDXRenderer children={body} />
-      </MDXProvider>
-      {/* </Layout> */}
+      <Layout>
+        <Title>{__title}</Title>
+        <MDXProvider
+          components={{
+            'live-code': Playground,
+            'static-code': StaticCode,
+            blockquote: Blockquote,
+            p: Paragraph,
+            pre: Pre,
+            h3: H3,
+          }}
+        >
+          <MDXRenderer children={body} />
+        </MDXProvider>
+      </Layout>
     </>
   );
 };
