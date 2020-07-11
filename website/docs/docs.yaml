@@ -3,6 +3,7 @@
     - Introduction
     - Install
     - Styled Components
+    - CSS
     - Nested Selectors
     - With Props
     - Override Component Style
@@ -16,7 +17,7 @@
     - Labels
     - Server Side Rendering
     - Auto Prefixing
-    - TODO
+    - Todo
 # This loads the READMEs instead of files in docs/
 - title: Packages
   items:

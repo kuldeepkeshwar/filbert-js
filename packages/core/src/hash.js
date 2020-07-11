@@ -1,5 +1,6 @@
 //https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
-export function hash(str, prefix = 'css') {
+import { CLASS_PREFIX } from '@filbert-js/types';
+export function hash(str, prefix = CLASS_PREFIX) {
   let hash = 0;
   for (let i = 0; i < str.length; i++) {
     const chr = str.charCodeAt(i);

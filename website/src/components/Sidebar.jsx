@@ -52,7 +52,7 @@ export const Sidebar = () => {
     {},
   );
   const links = allDocsYaml.nodes.map(({ items, title }) => {
-    return { title, items: items.filter((title) => title !== 'TODO') };
+    return { title, items: items.filter((title) => title !== 'Todo') };
   });
 
   return (
