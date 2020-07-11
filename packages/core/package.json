@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/core",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
   "sideEffects": false,
@@ -17,10 +17,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.3",
-    "@filbert-js/style-sheet-context": "^0.0.3",
-    "@filbert-js/theming": "^0.0.3",
-    "@filbert-js/types": "^0.0.3",
+    "@filbert-js/browser-stylesheet": "^0.0.4",
+    "@filbert-js/style-sheet-context": "^0.0.4",
+    "@filbert-js/theming": "^0.0.4",
+    "@filbert-js/types": "^0.0.4",
     "react": "^16.8.6"
   },
   "peerDependencies": {

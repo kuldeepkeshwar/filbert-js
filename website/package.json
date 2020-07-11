@@ -1,7 +1,7 @@
 {
   "name": "@filbert-js/website",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
   "homepage": "https://filbert-js.vercel.app",
@@ -22,12 +22,12 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@filbert-js/core": "^0.0.3",
-    "@filbert-js/css-parser": "^0.0.3",
-    "@filbert-js/style-sheet-context":"^0.0.3",
-    "@filbert-js/browser-stylesheet":"^0.0.3",
-    "@filbert-js/autoprefixer":"^0.0.3",
-    "gatsby-plugin-filbert": "^0.0.3",
+    "@filbert-js/autoprefixer": "^0.0.4",
+    "@filbert-js/browser-stylesheet": "^0.0.4",
+    "@filbert-js/core": "^0.0.4",
+    "@filbert-js/css-parser": "^0.0.4",
+    "@filbert-js/style-sheet-context": "^0.0.4",
+    "gatsby-plugin-filbert": "^0.0.4",
     "lodash-es": "^4.17.15",
     "prism-react-renderer": "^1.1.1",
     "prismjs": "^1.20.0",
@@ -37,7 +37,7 @@
     "react-live": "^2.2.2"
   },
   "devDependencies": {
-    "babel-plugin-filbert": "^0.0.3",
+    "babel-plugin-filbert": "^0.0.4",
     "babel-standalone": "^6.26.0",
     "escape-goat": "1.3.0",
     "gatsby": "^2.23.10",

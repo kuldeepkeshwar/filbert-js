@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/examples-next-js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "private": true,
   "scripts": {
@@ -10,8 +10,8 @@
     "start": "next start"
   },
   "dependencies": {
-    "@filbert-js/core": "^0.0.3",
-    "@filbert-js/stylesheet": "^0.0.3",
+    "@filbert-js/core": "^0.0.4",
+    "@filbert-js/stylesheet": "^0.0.4",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-dom": "16.13.1"
