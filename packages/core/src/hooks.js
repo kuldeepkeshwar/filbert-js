@@ -26,20 +26,20 @@ export function useGlobalStylesheet({ id, styles }) {
   );
 }
 
-export function useStylesheet({ hash, styles, sourceAfter, label }) {
+export function useStylesheet({ className, styles, sourceAfter, label }) {
   const stylesheet = React.useContext(StyleSheetContext);
   const latestRef = React.useRef();
 
   const stylesheetRef = React.useRef();
   stylesheetRef.current = stylesheet;
 
-  stylesheetRef.current.createStyles(hash, styles, sourceAfter, label);
+  stylesheetRef.current.createStyles(className, styles, sourceAfter, label);
 
-  latestRef.current = hash;
+  latestRef.current = className;
 
   React.useEffect(
     () => {
-      const previous = hash;
+      const previous = className;
       return () => {
         const latest = latestRef.current;
         if (previous !== latest) {
@@ -47,7 +47,7 @@ export function useStylesheet({ hash, styles, sourceAfter, label }) {
         }
       };
     },
-    [hash],
+    [className],
   );
 
   React.useEffect(() => {
