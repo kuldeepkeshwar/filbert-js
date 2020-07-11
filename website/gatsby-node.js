@@ -54,6 +54,9 @@ exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
   //   });
   // }
 };
+function isCapital(word) {
+  return word.toUpperCase() === word;
+}
 exports.createPages = async ({ actions }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
@@ -77,7 +80,7 @@ exports.createPages = async ({ actions }) => {
       });
     } else {
       items.forEach((item) => {
-        const slug = _.kebabCase(item);
+        const slug = isCapital(item) ? item : _.kebabCase(item);
         createPage({
           path: `docs/${slug}`,
           component: docTemplate,
@@ -114,7 +117,7 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
     } else {
       value = fileNode.name;
     }
-    const title = _.startCase(value);
+    const title = isCapital(value) ? value : _.startCase(value);
     createNodeField({
       node,
       name: `slug`,

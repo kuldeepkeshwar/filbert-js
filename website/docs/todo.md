@@ -1,7 +1,7 @@
 ## Todo
 
 - filbert-js
-  - [ ] Add `css` API
+  - [x] Add `css` API
   - [x] Support Media Query
   - [x] CSS AST
   - [x] Auto prefixing

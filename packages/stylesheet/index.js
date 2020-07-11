@@ -17,7 +17,7 @@ export function StyleSheet({
     [TYPES_STYLES]: {},
     [TYPES_KEYFRAMES]: {},
   };
-
+  const root = getRoot();
   function createStyleTag(id, styleType, label) {
     const el = createElement('style');
     el.setAttribute('data-type', 'styled-css');
@@ -27,8 +27,6 @@ export function StyleSheet({
     return el;
   }
   function createStyles(id, css, sourceAfter, label) {
-    const root = getRoot();
-
     if (!_css[TYPES_STYLES][id]) {
       const el = createStyleTag(id, TYPES_STYLES, label);
       const classBlock = cssParser({ css, namespace: `.${id}` });
@@ -42,15 +40,14 @@ export function StyleSheet({
         root.append(el);
       }
     } else {
-      const el = root.getChildById(id);
       // ensure source order
       if (sourceAfter) {
+        const el = root.getChildById(id);
         root.insertBefore(el, root.getChildById(sourceAfter));
       }
     }
   }
   function createKeyframes(keyframe) {
-    const root = getRoot();
     if (!_css[TYPES_KEYFRAMES][keyframe]) {
       const el = createStyleTag(keyframe, TYPES_KEYFRAMES);
       const classBlock = `@keyframes ${keyframe} {${keyframe[RAW]}}`;
@@ -60,7 +57,6 @@ export function StyleSheet({
     }
   }
   function createGlobalStyles(id, css) {
-    const root = getRoot();
     if (!_css[TYPES_GLOBAL][id]) {
       const el = createStyleTag(id, TYPES_GLOBAL);
       const classBlock = css.trim();
@@ -76,7 +72,6 @@ export function StyleSheet({
     }
   }
   function removeStyles(hash, type) {
-    const root = getRoot();
     if (TYPES_STYLES === type && _css[type][hash]) {
       const elUsingCls = findElementByStyleId(hash);
       if (!elUsingCls) {
@@ -89,7 +84,6 @@ export function StyleSheet({
     }
   }
   function getStyles() {
-    const root = getRoot();
     return { root, css: _css };
   }
 
