@@ -3,17 +3,13 @@ import { RAW, TYPE } from '@filbert-js/types';
 import { hash } from './hash';
 import { interpolate } from './interpolate';
 
-export function factory({ type, context, label }) {
+export function factory(type, label, context) {
   return function(styleTemplates, ...variables) {
-    const [styleBlock, keyframes] = interpolate(
-      styleTemplates,
-      variables,
-      context,
-    );
-    const selector = hash(styleBlock, label || type);
+    const [css, keyframes] = interpolate(styleTemplates, variables, context);
+    const selector = hash(css, label || type);
     return {
       [TYPE]: type,
-      [RAW]: [styleBlock, keyframes],
+      [RAW]: [css, keyframes],
       toString: () => selector,
     };
   };

@@ -1,6 +1,7 @@
 ```jsx
 // @live
-// this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
+/* This comment tells babel to convert jsx to calls 
+to a function called jsx instead of React.createElement*/
 /** @jsx jsx */
 import React from 'react';
 import { css, jsx } from '@filbert-js/core';

@@ -28,7 +28,7 @@ export function StyleSheet({
     ].forEach(([key, value]) => value && el.setAttribute(key, value));
     return el;
   }
-  function createStyles(id, css, sourceAfter, label) {
+  function createStyles(id, css, sourceOrder, label) {
     if (!_css[TYPES_STYLES][id]) {
       const el = createStyleTag(id, TYPES_STYLES, label);
       const styles = cssParser({ css, namespace: `.${id}` });
@@ -36,16 +36,16 @@ export function StyleSheet({
       _css[TYPES_STYLES][id] = styles;
 
       // ensure source order
-      if (sourceAfter) {
-        root.insertBefore(el, root.getChildById(sourceAfter));
+      if (sourceOrder) {
+        root.insertBefore(el, root.getChildById(sourceOrder));
       } else {
         root.append(el);
       }
     } else {
       // ensure source order
-      if (sourceAfter) {
+      if (sourceOrder) {
         const el = root.getChildById(id);
-        root.insertBefore(el, root.getChildById(sourceAfter));
+        root.insertBefore(el, root.getChildById(sourceOrder));
       }
     }
   }
