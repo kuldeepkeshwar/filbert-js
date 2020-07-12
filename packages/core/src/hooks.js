@@ -5,7 +5,7 @@ import { StyleSheetContext } from '@filbert-js/style-sheet-context';
 
 // invoke callback if value changes b/w render cycles
 
-export function useGlobalStylesheet({ id, styles }) {
+export function useGlobalStylesheet(id, styles) {
   const stylesheet = React.useContext(StyleSheetContext);
   const stylesheetRef = React.useRef();
   stylesheetRef.current = stylesheet;
@@ -26,14 +26,14 @@ export function useGlobalStylesheet({ id, styles }) {
   );
 }
 
-export function useStylesheet({ className, styles, sourceAfter, label }) {
+export function useStylesheet(className, styles, sourceOrder, label) {
   const stylesheet = React.useContext(StyleSheetContext);
   const latestRef = React.useRef();
 
   const stylesheetRef = React.useRef();
   stylesheetRef.current = stylesheet;
 
-  stylesheetRef.current.createStyles(className, styles, sourceAfter, label);
+  stylesheetRef.current.createStyles(className, styles, sourceOrder, label);
 
   latestRef.current = className;
 

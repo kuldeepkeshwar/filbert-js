@@ -7,6 +7,6 @@ export function Global({ styles }) {
     counter++;
     return 'global-' + counter;
   });
-  useGlobalStylesheet({ id, styles });
+  useGlobalStylesheet(id, styles);
   return null;
 }
