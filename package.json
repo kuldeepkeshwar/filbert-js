@@ -17,7 +17,7 @@
     "benchmarks": "yarn build-packages && yarn benchmarks-size && yarn benchmarks-performance",
     "benchmarks-size": "lerna run capture-stats && lerna run print-delta --stream",
     "benchmarks-performance": "lerna run performance --stream",
-    "publish-ci": "lerna publish from-package -y --no-verify-access"
+    "release": "yarn build-packages && changeset publish"
   },
   "devDependencies": {
     "husky": "^3.0.9",
