@@ -26,13 +26,19 @@ export function useGlobalStylesheet(id, styles) {
   );
 }
 
-export function useStylesheet(className, styles, sourceOrder, label) {
-  const stylesheet = React.useContext(StyleSheetContext);
+export function useStylesheet(
+  keyframes,
+  className,
+  styles,
+  sourceOrder,
+  label,
+) {
+  const sheet = React.useContext(StyleSheetContext);
   const latestRef = React.useRef();
 
   const stylesheetRef = React.useRef();
-  stylesheetRef.current = stylesheet;
-
+  stylesheetRef.current = sheet;
+  keyframes.forEach((frame) => sheet.createKeyframes(frame));
   stylesheetRef.current.createStyles(className, styles, sourceOrder, label);
 
   latestRef.current = className;
