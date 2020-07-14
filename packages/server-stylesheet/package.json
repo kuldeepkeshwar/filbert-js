@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/server-stylesheet",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
@@ -15,15 +15,15 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/css-parser": "^0.0.4",
-    "@filbert-js/style-sheet-context": "^0.0.4",
-    "@filbert-js/stylesheet": "^0.0.4",
+    "@filbert-js/css-parser": "^0.1.0",
+    "@filbert-js/style-sheet-context": "^0.1.0",
+    "@filbert-js/stylesheet": "^0.1.0",
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@filbert-js/css-parser": "^0.0.1",
-    "@filbert-js/style-sheet-context": "^0.0.1",
-    "@filbert-js/stylesheet": "^0.0.1",
+    "@filbert-js/css-parser": "^0.1.0",
+    "@filbert-js/style-sheet-context": "^0.1.0",
+    "@filbert-js/stylesheet": "^0.1.0",
     "react": "^16.8.6"
   },
   "devDependencies": {

@@ -1,19 +1,19 @@
 {
-    "name": "benchmarks-performance",
-    "version": "0.0.4",
-    "private": true,
-    "dependencies": {
-        "@emotion/cache": "^10.0.29",
-        "@emotion/core": "^10.0.28",
-        "@filbert-js/core": "^0.0.4",
-        "@filbert-js/server-stylesheet": "^0.0.4",
-        "benchmark": "^2.1.4",
-        "create-emotion-server": "^10.0.27",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1",
-        "styled-components": "^5.1.1"
-    },
-    "scripts": {
-        "performance": "node ./index.js"
-    }
+  "name": "benchmarks-performance",
+  "version": "0.0.5",
+  "private": true,
+  "dependencies": {
+    "@emotion/cache": "^10.0.29",
+    "@emotion/core": "^10.0.28",
+    "@filbert-js/core": "^0.1.0",
+    "@filbert-js/server-stylesheet": "^0.1.0",
+    "benchmark": "^2.1.4",
+    "create-emotion-server": "^10.0.27",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.1.1"
+  },
+  "scripts": {
+    "performance": "node ./index.js"
+  }
 }
