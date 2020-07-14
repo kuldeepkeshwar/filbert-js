@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/stylesheet",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
@@ -16,10 +16,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/types": "^0.0.4"
+    "@filbert-js/types": "^0.0.5"
   },
   "peerDependencies": {
-    "@filbert-js/types": "^0.0.0"
+    "@filbert-js/types": "^0.0.5"
   },
   "devDependencies": {
     "microbundle": "^0.11.0"
