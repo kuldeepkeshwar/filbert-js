@@ -8,7 +8,7 @@ class Tag {
     this._type = type;
     this._attributes = [];
     this._children = [];
-    this._parent = null;
+    this._parent = undefined;
   }
   remove() {
     this._parent && this._parent.removeChild(this);
@@ -35,7 +35,7 @@ class Tag {
         return tag;
       }
     }
-    return null;
+    return undefined;
   }
   insertBefore(el, after) {
     const index = this._children.findIndex((item) => item === after);
@@ -91,7 +91,7 @@ const init = () => {
     return new Tag(type);
   }
   function findElementByStyleId(cls) {
-    return null;
+    return undefined;
   }
   return { getRoot, createElement, findElementByStyleId };
 };

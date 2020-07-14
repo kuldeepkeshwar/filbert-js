@@ -20,7 +20,7 @@ function Node({
   this.start = start;
   this.end = end;
   this.raw = raw;
-  this.raw_selector = null;
+  this.raw_selector = undefined;
   this.parent = parent;
 }
 
