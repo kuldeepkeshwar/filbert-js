@@ -22,7 +22,7 @@ function overrides(el) {
   return el;
 }
 const init = () => {
-  const root = isBrowser() ? overrides(document.head) : null;
+  const root = isBrowser() ? overrides(document.head) : undefined;
   const css = {
     [TYPES_GLOBAL]: {},
     [TYPES_STYLES]: {},

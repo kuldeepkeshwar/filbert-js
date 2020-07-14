@@ -15,7 +15,7 @@ export function styled(Component, options = {}) {
   return (styleTemplates, ...variables) => {
     function S(props, ref) {
       const theme = React.useContext(ThemeContext);
-      const obj = factory(null, options.label, {
+      const obj = factory(undefined, options.label, {
         ...props,
         theme,
       })(styleTemplates, ...variables);
