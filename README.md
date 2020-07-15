@@ -99,3 +99,7 @@ Thank you to all our backers! 🙏
 
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
 <a href="https://opencollective.com/filbert-js#sponsors" target="_blank"><img src="https://opencollective.com/filbert-js/sponsors.svg"/></a>
+
+
+## Acknowledgements
+Without [styled-components](https://github.com/styled-components/styled-components)/[emotion](https://github.com/emotion-js/emotion), filbert wouldn't exist. Thanks for all the wonderful people who have contributed towards those projects 🙏
