@@ -12,7 +12,7 @@
 <p align="center">
  <br/>
   <br/>
-  <img src="https://i.imgur.com/kneuDIt.png" width="150" alt="filbert" />
+  <img src="https://raw.githubusercontent.com/kuldeepkeshwar/filbert-js/master/filbert.png" width="150" alt="filbert" />
   <br/>
   <b>Filbert</b>
   <br/>
@@ -24,6 +24,50 @@
 </p>
 
 It is a alternative to [styled-components](https://github.com/styled-components/styled-components)(~12.51kB) or [emotion](https://github.com/emotion-js/emotion)(~11.3kB) with similar API surface.
+
+# Features
+
+| Name                        | Status |
+| --------------------------- | ------ |
+| CSS                         | ✓      |
+| Nested Selectors            | ✓      |
+| Dynamic Styling(Prop based) | ✓      |
+| Override Component Style    | ✓      |
+| Global                      | ✓      |
+| Pseudo Selector             | ✓      |
+| Media Queries               | ✓      |
+| Keyframe                    | ✓      |
+| Theming                     | ✓      |
+| Component Selector          | ✓      |
+| Styles As Object Literals   | 🔜     |
+| Server-side Rendering       | ✓      |
+| Client-side Hydration       | ✓      |
+| Vendor Prefixing            | ✓      |
+| Extract CSS File            | ✓      |
+| React Native                | 🔜     |
+| Integration(`Gatsby`)       | ✓      |
+| Integration(`Next.js`)      | ✓      |
+
+# Benchmarks
+
+- [Server side rendering](https://github.com/kuldeepkeshwar/filbert-js/tree/master/benchmarks/performance)
+
+  <p>
+  <img src="https://raw.githubusercontent.com/kuldeepkeshwar/filbert-js/master/filbert-benchmark-ssr.png" width="100%" alt="filbert" />
+  </p>
+
+- [Mount deep/wide tree](https://github.com/necolas/react-native-web/tree/master/packages/benchmarks#mount-deepwide-tree)
+
+  <p>
+  <img src="https://raw.githubusercontent.com/kuldeepkeshwar/filbert-js/master/filbert-benchmark-deep-tree.png" width="100%" alt="filbert" />
+  <img src="https://raw.githubusercontent.com/kuldeepkeshwar/filbert-js/master/filbert-benchmark-wide-tree.png" width="100%" alt="filbert" />
+  </p>
+
+- [Update dynamic styles](https://github.com/necolas/react-native-web/tree/master/packages/benchmarks#update-dynamic-styles)
+  <p>
+  <img src="https://raw.githubusercontent.com/kuldeepkeshwar/filbert-js/master/filbert-benchmark-dynamic-styles.png" width="100%" alt="filbert" />
+  </p>
+  <br/>
 
 ## Contributors ✨
 
