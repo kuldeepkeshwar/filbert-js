@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-filbert",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "babel plugin for filbert-js",
   "sideEffects": false,
