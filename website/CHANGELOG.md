@@ -1,5 +1,14 @@
 # @filbert-js/website
 
+## 0.0.7
+
+### Patch Changes
+
+- 9965e28: Make Gatsby plugin filbert work.
+  - move `packages/gatsby-plugin-filbert/src/gatsby-ssr.js` to `packages/gatsby-plugin-filbert/gatsby-ssr.js` for gatsby to resolve plugin.
+- Updated dependencies [9965e28]
+  - gatsby-plugin-filbert@0.0.6
+
 ## 0.0.6
 
 ### Patch Changes
