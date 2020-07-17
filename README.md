@@ -71,7 +71,7 @@ It is a alternative to [styled-components](https://github.com/styled-components/
 
 ## 🤝 How to Contribute
 
-Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! :muscle::purple_heart:
+Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! 💪💜
 
 Check out our [**Contributing Guide**](https://github.com/kuldeepkeshwar/filbert-js/blob/master/CONTRIBUTING.md)
 
