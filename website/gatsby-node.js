@@ -81,8 +81,10 @@ exports.createPages = async ({ actions }) => {
     } else {
       items.forEach((item) => {
         const slug = isCapital(item) ? item : _.kebabCase(item);
+        const prefix =
+          'Getting Started' === title ? 'docs' : _.kebabCase(title);
         createPage({
-          path: `docs/${slug}`,
+          path: `${prefix}/${slug}`,
           component: docTemplate,
           context: {
             slug: slug,

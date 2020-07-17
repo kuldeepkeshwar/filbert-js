@@ -52,7 +52,7 @@ export const Sidebar = () => {
     {},
   );
   const links = allDocsYaml.nodes.map(({ items, title }) => {
-    return { title, items: items.filter((title) => title !== 'Todo') };
+    return { title, items: items.filter((t) => t !== 'Todo') };
   });
 
   return (
@@ -81,4 +81,5 @@ export const Sidebar = () => {
 const titleToURLPrefix = {
   'Getting Started': '/docs/',
   Packages: '/packages/',
+  Miscellaneous: '/miscellaneous/',
 };

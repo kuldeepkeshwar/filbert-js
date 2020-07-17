@@ -68,12 +68,6 @@ module.exports = {
           ],
         },
       },
-      // { // TODO: not working as of now, need to fix
-      //   resolve: require.resolve('gatsby-plugin-filbert'),
-      //   options: {
-      //     // Add any options here
-      //   },
-      // },
       {
         resolve: 'gatsby-plugin-react-svg',
         options: {
@@ -89,7 +83,7 @@ module.exports = {
         },
       },
       `gatsby-transformer-yaml`,
-
+      'gatsby-plugin-filbert',
       `gatsby-plugin-react-helmet`,
       'gatsby-plugin-sharp',
       'gatsby-transformer-sharp',
