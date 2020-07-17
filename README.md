@@ -69,6 +69,12 @@ It is a alternative to [styled-components](https://github.com/styled-components/
   </p>
   <br/>
 
+## 🤝 How to Contribute
+
+Whether you're helping us fix bugs, improve the docs, or spread the word, we'd love to have you as part of the community! 💪💜
+
+Check out our [**Contributing Guide**](https://github.com/kuldeepkeshwar/filbert-js/blob/master/CONTRIBUTING.md)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -100,6 +106,6 @@ Thank you to all our backers! 🙏
 Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
 <a href="https://opencollective.com/filbert-js#sponsors" target="_blank"><img src="https://opencollective.com/filbert-js/sponsors.svg"/></a>
 
-
 ## Acknowledgements
+
 Without [styled-components](https://github.com/styled-components/styled-components)/[emotion](https://github.com/emotion-js/emotion), filbert wouldn't exist. Thanks for all the wonderful people who have contributed towards those projects 🙏
