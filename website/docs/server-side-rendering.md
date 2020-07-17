@@ -67,7 +67,7 @@ class MyDocument extends Document {
 export default MyDocument;
 ```
 
-Check out [example](https://github.com/kuldeepkeshwar/filbert-js/tree/master/examples/next-js)
+Check out [official nextjs example](https://github.com/vercel/next.js/tree/canary/examples/with-filbert)
 
 ### Gatsby.js: Server-Side Rendering
 
@@ -97,4 +97,6 @@ export const onRenderBody = ({ setHeadComponents, pathname }) => {
 };
 ```
 
-> _Note: plugin coming soon 🔜_
+Or
+
+Directly use [gatsby-plugin-filbert](https://github.com/kuldeepkeshwar/filbert-js/tree/master/packages/gatsby-plugin-filbert)
