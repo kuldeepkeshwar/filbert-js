@@ -1,3 +1,4 @@
+import { colors } from '../themes/utils';
 import { styled } from '@filbert-js/core';
 export const Title = styled.h1`
   font-size: 2rem;
@@ -25,5 +26,15 @@ export const Blockquote = styled.div`
   padding: 1em 10px 1em 10px;
   p {
     margin: 0;
+  }
+`;
+export const Anchor = styled.a`
+  display: inline;
+  cursor: pointer;
+  text-decoration: none;
+  color: ${colors(`text.link`)};
+
+  :hover {
+    color: ${colors(`text.link-hover`)};
   }
 `;
