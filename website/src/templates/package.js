@@ -1,4 +1,5 @@
 import {
+  Anchor,
   Blockquote,
   H3,
   Paragraph,
@@ -34,6 +35,7 @@ export default ({ data: { doc } }) => {
             p: Paragraph,
             pre: Pre,
             h3: H3,
+            a: Anchor,
           }}
         >
           <MDXRenderer children={body} />
