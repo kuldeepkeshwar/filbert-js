@@ -1,11 +1,11 @@
 {
   "name": "benchmarks-performance",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "dependencies": {
     "@emotion/cache": "^10.0.29",
     "@emotion/core": "^10.0.28",
-    "@filbert-js/core": "^0.0.6",
+    "@filbert-js/core": "^0.0.7",
     "@filbert-js/server-stylesheet": "^0.0.5",
     "benchmark": "^2.1.4",
     "create-emotion-server": "^10.0.27",
