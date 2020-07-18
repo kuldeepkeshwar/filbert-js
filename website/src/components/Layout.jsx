@@ -54,7 +54,7 @@ const ToggleButton = styled.button`
     bottom: 0;
     right: 0;
     border-radius: 50%;
-    background-color: #3793e0;
+    background-color: #036fca;
     padding: 1rem;
     margin: 2rem;
     animation: 0.25s ease-in animation-1m49nxd;
