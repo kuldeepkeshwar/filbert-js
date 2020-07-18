@@ -13,7 +13,7 @@ import { prefix } from '@filbert-js/autoprefixer';
 const cssParser = createParser({ prefix });
 const stylesheet = createStylesheet({ cssParser });
 
-export const wrapRootElement = ({ element, props }) => {
+export const wrapRootElement = ({ element }) => {
   return (
     <StyleSheetProvider stylesheet={stylesheet}>{element}</StyleSheetProvider>
   );

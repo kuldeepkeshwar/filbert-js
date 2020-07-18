@@ -1,12 +1,12 @@
 - filbert-js
 
   - [ ] Use CSSStyleSheet API
-  - [ ] Make `gatsby-plugin-filbert` working
   - [ ] Add Typescript support
   - [ ] Alternate execution path for static styles(using babel plugin)
   - [ ] Support `object` syntax for styling
   - [ ] Bring size below 1kb
   - [ ] Write test cases
+  - [x] Make `gatsby-plugin-filbert` working
   - [x] Enable Ref forwarding
   - [x] Support `as` prop
   - [x] Remove `html-tags` dependency
@@ -27,8 +27,8 @@
   - [x] Add Mobile layout
   - [x] List `README.md` from `packages`
 - Other
-  - [ ] Add a official `example` for [next.js](https://github.com/vercel/next.js)
   - [ ] Add a example for vanilla(using `express.js`) Server-Side Rendering
   - [ ] Show benchmark stats in pull request.
+  - [x] Add a official example for [next.js](https://github.com/vercel/next.js)
   - [x] Add benchmark for bundle-size (filbert vs emotion vs styled-components)
   - [x] Add benchmark for runtime performance (filbert vs emotion vs styled-components)

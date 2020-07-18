@@ -6,13 +6,15 @@ import { factory } from './factory';
 
 export const css = factory(TYPES_STYLES);
 export const keyframes = factory(TYPES_KEYFRAMES);
-export function jsx(type, { css, className = '', ...props }, children) {
+export function jsx() {
+  const { css, className = '', ...props } = arguments[1] || {};
   const sheet = __sheet;
   if (css) {
     const [styleBlock, keyframes] = css[RAW];
     keyframes.forEach((frame) => sheet.createKeyframes(frame));
     sheet.createStyles(css.toString(), styleBlock, undefined, css[TYPE]);
     props.className = `${css} ${className}`.trim();
+    arguments[1] = props;
   }
-  return React.createElement(type, props, children);
+  return React.createElement.apply(null, arguments);
 }
