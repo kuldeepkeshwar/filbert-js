@@ -1,9 +1,9 @@
 {
   "name": "benchmarks-filbert",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "private": true,
   "dependencies": {
-    "@filbert-js/core": "^0.0.6",
+    "@filbert-js/core": "^0.0.7",
     "@filbert-js/theming": "^0.0.5",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

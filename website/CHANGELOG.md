@@ -1,5 +1,15 @@
 # @filbert-js/website
 
+## 0.0.8
+
+### Patch Changes
+
+- 28ecee8: - Add `babel-plugin-filbert`/ `gatsby-browser.js` to `gatsby-plugin-filbert`
+  - remove `babel-plugin-filbert`/ `gatsby-browser.js` from `website`
+  - Fix `jsx` API: handle null `props` case & `children`
+- Updated dependencies [28ecee8]
+  - @filbert-js/core@0.0.7
+
 ## 0.0.7
 
 ### Patch Changes
