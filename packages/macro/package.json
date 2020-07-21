@@ -1,0 +1,35 @@
+{
+  "name": "@filbert-js/macro",
+  "version": "0.0.1",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "babel plugin macro for filbert-js",
+  "sideEffects": false,
+  "source": "index.js",
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "babel-plugin-macros",
+    "babel-plugin",
+    "javascript",
+    "react",
+    "preact",
+    "css",
+    "css-in-js",
+    "filbert-js",
+    "1kb",
+    "light-weight",
+    "styling",
+    "styled",
+    "emotion",
+    "styled-components"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/helper-module-imports": "7.10.4",
+    "babel-plugin-macros": "2.8.0"
+    
+  }
+}
