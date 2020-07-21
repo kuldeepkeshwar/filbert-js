@@ -35,5 +35,6 @@
     - '@filbert-js/css-parser'
     - '@filbert-js/stylesheet'
     - '@filbert-js/types'
+    - '@filbert-js/macro'
     - 'babel-plugin-filbert'
     - 'gatsby-plugin-filbert'
