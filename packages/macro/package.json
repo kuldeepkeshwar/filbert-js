@@ -5,7 +5,7 @@
   "description": "babel plugin macro for filbert-js",
   "sideEffects": false,
   "source": "index.js",
-  "main": "index.js",
+  "main": "dist/macro.cjs.js",
   "publishConfig": {
     "access": "public"
   },

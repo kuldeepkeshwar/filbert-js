@@ -1,6 +1,7 @@
-import { Global, ThemeProvider, keyframes, styled } from './css-in-js';
+import { Global, keyframes, styled } from '@filbert-js/core';
 
 import React from 'react';
+import { ThemeProvider } from '@filbert-js/theming';
 import logo from './logo.svg';
 
 // Create the keyframes

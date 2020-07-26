@@ -5,7 +5,7 @@
   "description": "babel plugin for filbert-js",
   "sideEffects": false,
   "source": "index.js",
-  "main": "index.js",
+  "main": "dist/babel-plugin-filbert.cjs.js",
   "publishConfig": {
     "access": "public"
   },

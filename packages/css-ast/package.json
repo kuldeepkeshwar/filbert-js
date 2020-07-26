@@ -5,18 +5,20 @@
   "description": "",
   "sideEffects": false,
   "source": "index.js",
-  "main": "dist/index.js",
-  "umd:main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
+  "main": "dist/css-ast.cjs.js",
+  "umd:main": "dist/css-ast.umd.min.js",
+  "module": "dist/css-ast.esm.js",
   "scripts": {
-    "prepare": "npm run build",
+    
     "clean": "rm -rf ./dist",
-    "develop": "microbundle watch",
-    "build": "microbundle --no-sourcemap",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "preconstruct": {
+    "source": "index",
+    "umdName": "filbertjsCSSAST"
+  },
   "devDependencies": {
-    "microbundle": "^0.11.0"
+    
   },
   "publishConfig": {
     "access": "public"

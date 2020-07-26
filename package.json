@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "filbert-js-monorepo",
   "private": true,
   "keywords": [
     "styles",
@@ -9,17 +9,17 @@
     "css-in-js"
   ],
   "scripts": {
-    "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
-    "postinstall": "lerna bootstrap",
+    "postinstall": "opencollective postinstall && preconstruct dev",
     "build": "lerna run build",
-    "build-packages": "lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
-    "develop-packages": "lerna run --parallel --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",
+    "build-packages": "preconstruct build",
+    "develop-packages": "preconstruct watch",
     "benchmarks": "yarn build-packages && yarn benchmarks-size && yarn benchmarks-performance",
     "benchmarks-size": "lerna run capture-stats && lerna run print-delta --stream",
     "benchmarks-performance": "lerna run performance --stream",
     "release": "changeset publish"
   },
   "devDependencies": {
+    "@preconstruct/cli": "^1.1.15",
     "husky": "^3.0.9",
     "lerna": "^3.16.4",
     "prettier": "1.14.3"
@@ -58,5 +58,24 @@
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/filbert-js"
+  },
+  "preconstruct": {
+    "packages": [
+      "packages/autoprefixer",
+      "packages/css-ast",
+      "packages/server-stylesheet",
+      "packages/types",
+      "packages/css-parser",
+      "packages/style-sheet-context",
+      "packages/browser-stylesheet",
+      "packages/stylesheet",
+      "packages/core",
+      "packages/theming"
+    ],
+    "globals": {
+      "react": "React",
+      "@filbert-js/style-sheet-context": "filbertjsStylesheetContext",
+      "@filbert-js/theming": "filbertjsTheming"
+    }
   }
 }

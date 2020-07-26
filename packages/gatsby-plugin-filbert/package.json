@@ -4,7 +4,7 @@
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
-  "main": "index.js",
+  "main": "dist/gatsby-plugin-filbert.cjs.js",
   "keywords": [
     "javascript",
     "react",
