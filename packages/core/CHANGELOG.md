@@ -1,5 +1,13 @@
 # @filbert-js/core
 
+## 0.0.8
+
+### Patch Changes
+
+- 002e3f5: - Prepend #**PURE** comment to help minifiers with dead code elimination (=DCE)
+  - Remove `StyleSheetContext` from `styled` api
+  - Refactored website(sidebar)
+
 ## 0.0.7
 
 ### Patch Changes
