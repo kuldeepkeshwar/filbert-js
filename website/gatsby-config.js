@@ -37,13 +37,7 @@ module.exports = {
           path: `${__dirname}/docs`,
         },
       },
-      {
-        resolve: 'gatsby-source-filesystem',
-        options: {
-          name: 'docs_yaml',
-          path: `${__dirname}/docs/docs.yaml`,
-        },
-      },
+
       {
         resolve: `gatsby-plugin-manifest`,
         options: {
@@ -82,7 +76,7 @@ module.exports = {
           trackingId: 'UA-171640923-1',
         },
       },
-      `gatsby-transformer-yaml`,
+
       'gatsby-plugin-filbert',
       `gatsby-plugin-react-helmet`,
       'gatsby-plugin-sharp',
