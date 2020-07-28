@@ -2,8 +2,6 @@ const path = require('path');
 const docsYaml = require('./docs-yaml')();
 const _ = require('lodash');
 
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
 global.Babel = require('babel-standalone');
 
 exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
@@ -57,6 +55,41 @@ exports.onCreateWebpackConfig = ({ stage, actions, plugins, getConfig }) => {
 function isCapital(word) {
   return word.toUpperCase() === word;
 }
+
+const docs = [];
+docsYaml.forEach(({ items, title }) => {
+  const isPackage = title === 'Packages';
+  items.forEach((name) => {
+    const fileName = isCapital(name) ? name : _.kebabCase(name);
+    const prefix = 'Getting Started' === title ? 'docs' : _.kebabCase(title);
+    docs.push({
+      isPackage: isPackage,
+      name: name,
+      fileName: isPackage ? name : fileName,
+      slug: `${prefix}/${isPackage ? name : fileName}`,
+      group: title,
+    });
+  });
+});
+
+exports.sourceNodes = ({ actions, createNodeId, createContentDigest }) => {
+  const { createNode } = actions;
+
+  // Data can come from anywhere, but for now create it manually
+  const data = { items: docs };
+  const nodeMeta = {
+    id: createNodeId(`docs-map`),
+    parent: null,
+    children: [],
+    internal: {
+      type: `DocMap`,
+      contentDigest: createContentDigest(data),
+    },
+  };
+
+  const node = Object.assign({}, data, nodeMeta);
+  createNode(node);
+};
 exports.createPages = async ({ actions }) => {
   const { createPage, createRedirect } = actions;
   createRedirect({
@@ -67,31 +100,14 @@ exports.createPages = async ({ actions }) => {
   });
   const docTemplate = require.resolve(`./src/templates/doc.js`);
   const packageTemplate = require.resolve(`./src/templates/package.js`);
-  docsYaml.forEach(({ items, title }) => {
-    if (title === 'Packages') {
-      items.forEach((slug) => {
-        createPage({
-          path: `packages/${slug}`,
-          component: packageTemplate,
-          context: {
-            slug: slug,
-          },
-        });
-      });
-    } else {
-      items.forEach((item) => {
-        const slug = isCapital(item) ? item : _.kebabCase(item);
-        const prefix =
-          'Getting Started' === title ? 'docs' : _.kebabCase(title);
-        createPage({
-          path: `${prefix}/${slug}`,
-          component: docTemplate,
-          context: {
-            slug: slug,
-          },
-        });
-      });
-    }
+  docs.forEach(({ slug, isPackage }) => {
+    createPage({
+      path: slug,
+      component: isPackage ? packageTemplate : docTemplate,
+      context: {
+        slug: slug,
+      },
+    });
   });
 };
 // Add custom url pathname for blog posts.
@@ -100,30 +116,26 @@ exports.onCreateNode = async ({ node, actions, getNode }) => {
 
   if (node.internal.type === `Mdx` && typeof node.slug === `undefined`) {
     const fileNode = getNode(node.parent);
-
     let value;
     if (fileNode.name === 'README') {
       const pkgName = getNameForPackage(fileNode.absolutePath);
       if (pkgName === 'root') {
         value = 'introduction';
-      } else if (pkgName) {
-        value = pkgName;
-        createNodeField({
-          node,
-          name: `isPackage`,
-          value: true,
-        });
       } else {
-        value = fileNode.name;
+        value = pkgName;
       }
     } else {
       value = fileNode.name;
     }
-    const title = isCapital(value) ? value : _.startCase(value);
+
+    const [doc] = docs.filter((doc) => doc.fileName === value);
+    const title = doc.name;
+    const slug = doc.slug;
+
     createNodeField({
       node,
       name: `slug`,
-      value: value,
+      value: slug,
     });
     createNodeField({
       node,
