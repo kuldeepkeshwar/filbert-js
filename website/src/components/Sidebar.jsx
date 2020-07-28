@@ -1,7 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import React from 'react';
-import { Stack } from './Stack';
+import { Stack } from 'layout-ui';
 import { colors } from '../themes/utils';
 import { styled } from '@filbert-js/core';
 

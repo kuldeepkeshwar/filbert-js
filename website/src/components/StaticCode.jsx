@@ -1,8 +1,6 @@
-import { LiveError, LivePreview, LiveProvider } from 'react-live';
-
 import { Editor } from './Editor';
 import React from 'react';
-import { Stack } from './Stack';
+import { Stack } from 'layout-ui';
 
 export default ({ code, compiled }) => {
   return (

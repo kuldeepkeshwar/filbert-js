@@ -22,6 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "layout-ui": "^0.0.1",
     "@filbert-js/core": "^0.0.8",
     "lodash-es": "^4.17.15",
     "prism-react-renderer": "^1.1.1",
@@ -38,6 +39,7 @@
     "gatsby-image": "^2.4.8",
     "gatsby-plugin-filbert": "^0.0.8",
     "gatsby-plugin-catch-links": "^2.3.7",
+    "gatsby-plugin-filbert": "^0.0.7",
     "gatsby-plugin-google-analytics": "^2.3.10",
     "gatsby-plugin-manifest": "^2.4.17",
     "gatsby-plugin-mdx": "^1.2.19",

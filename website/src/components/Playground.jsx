@@ -2,7 +2,7 @@ import { LiveError, LivePreview, LiveProvider } from 'react-live';
 
 import { Editor } from './Editor';
 import React from 'react';
-import { Stack } from './Stack';
+import { Stack } from 'layout-ui';
 import { styled } from '@filbert-js/core';
 
 export const scope = {

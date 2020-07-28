@@ -1,6 +1,6 @@
 import LogoIcon from './../images/icons/github.svg';
 import React from 'react';
-import { Stack } from './Stack';
+import { Stack } from 'layout-ui';
 export function Header() {
   return (
     <Stack direction="horizontal" align="end">
