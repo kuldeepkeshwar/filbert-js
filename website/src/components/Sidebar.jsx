@@ -20,55 +20,43 @@ const MenuHeading = styled.div`
   margin-bottom: 1rem;
 `;
 export const Sidebar = () => {
-  const { allMdx, allDocsYaml } = useStaticQuery(graphql`
-    query allDocsYaml {
-      allDocsYaml {
+  const { allDocMap } = useStaticQuery(graphql`
+    query Sidebar {
+      allDocMap {
         nodes {
-          items
-          title
-        }
-      }
-      allMdx {
-        nodes {
-          fields {
+          items {
+            group
+            name
             slug
-            title
-            isPackage
           }
         }
       }
     }
   `);
-  const linkMap = allMdx.nodes.reduce(
-    (agg, { fields: { slug, title, isPackage } }) => {
-      if (isPackage) {
-        agg[slug] = { slug, title };
-      } else {
-        agg[title] = { slug, title };
-      }
 
-      return agg;
-    },
-    {},
-  );
-  const links = allDocsYaml.nodes.map(({ items, title }) => {
-    return { title, items: items.filter((t) => t !== 'Todo') };
-  });
+  const links = allDocMap.nodes.reduce((agg, { items }) => {
+    items.forEach((item) => {
+      if (item.name !== 'Todo') {
+        if (agg[item.group]) {
+          agg[item.group].push(item);
+        } else {
+          agg[item.group] = [item];
+        }
+      }
+    });
+    return agg;
+  }, {});
 
   return (
     <Stack direction="vertical" gap="2rem">
-      {links.map((link) => {
+      {Object.keys(links).map((group) => {
         return (
           <div>
-            <MenuHeading>{link.title}</MenuHeading>
+            <MenuHeading>{group}</MenuHeading>
             <Stack direction="vertical" gap="1rem">
-              {link.items.map((title) => (
+              {links[group].map((item) => (
                 <MenuItem>
-                  <Link
-                    to={`${titleToURLPrefix[link.title]}${linkMap[title].slug}`}
-                  >
-                    {title}
-                  </Link>
+                  <Link to={`/${item.slug}`}>{item.name}</Link>
                 </MenuItem>
               ))}
             </Stack>
@@ -77,9 +65,4 @@ export const Sidebar = () => {
       })}
     </Stack>
   );
-};
-const titleToURLPrefix = {
-  'Getting Started': '/docs/',
-  Packages: '/packages/',
-  Miscellaneous: '/miscellaneous/',
 };
