@@ -21,6 +21,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "@author",
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
   "license": "MIT"
 }
