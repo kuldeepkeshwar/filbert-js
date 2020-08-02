@@ -7,7 +7,7 @@ const packages = require('./docs-yaml')().filter(
 module.exports = {
   siteMetadata: {
     siteUrl: homepage,
-    title: `filbert`,
+    title: `@title`,
     description,
     author,
     keywords,
@@ -15,7 +15,7 @@ module.exports = {
   plugins: packages
     .map((pkg) =>
       path.resolve(
-        `${__dirname}/../packages/${pkg.replace('@filbert-js/', '')}/README.md`,
+        `${__dirname}/../packages/${pkg.replace('@packages/', '')}/README.md`,
       ),
     )
     .map((file) => ({
@@ -41,13 +41,13 @@ module.exports = {
       {
         resolve: `gatsby-plugin-manifest`,
         options: {
-          name: `filbert`,
-          short_name: `filbert`,
+          name: `@title`,
+          short_name: `@title`,
           start_url: `/`,
           background_color: `#663399`,
           theme_color: `#663399`,
-          display: `filbert`,
-          icon: `../filbert.png`, // This path is relative to the root of the site.
+          display: `@title`,
+          icon: `@icon`, // This path is relative to the root of the site.
         },
       },
       {
@@ -73,7 +73,7 @@ module.exports = {
       {
         resolve: `gatsby-plugin-google-analytics`,
         options: {
-          trackingId: 'UA-171640923-1',
+          trackingId: '@GA-ID',
         },
       },
 

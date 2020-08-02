@@ -7,7 +7,6 @@ export default () => {
   return (
     <div>
       <div>loading..</div>
-      <div>redirecting you to https://filbert-js.vercel.app</div>
     </div>
   );
 };

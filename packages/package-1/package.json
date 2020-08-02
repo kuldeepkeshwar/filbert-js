@@ -1,7 +1,7 @@
 {
-  "name": "@filbert-js/types",
-  "version": "0.0.5",
-  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "name": "@packages/package-1",
+  "version": "0.0.0",
+  "repository": "https://github.com/kuldeepkeshwar/@packages",
   "description": "",
   "sideEffects": false,
   "source": "index.js",
@@ -21,21 +21,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
-  "keywords": [
-    "javascript",
-    "react",
-    "preact",
-    "css",
-    "css-in-js",
-    "filbert-js",
-    "1kb",
-    "light-weight",
-    "styling",
-    "styled",
-    "emotion",
-    "styled-components"
-  ],
-  "license": "MIT",
-  "gitHead": "00460640ba9373828e11101ea4429c46e9ef07a7"
+  "author": "@author",
+  "license": "MIT"
 }
