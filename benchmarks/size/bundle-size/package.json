@@ -1,0 +1,11 @@
+{
+    "name": "benchmarks-bundle-size",
+    "version": "0.0.4",
+    "private": true,
+    "dependencies": {
+        "react-scripts": "3.4.1"
+    },
+    "scripts": {
+        "print-delta": "node ./delta.js"
+    }
+}

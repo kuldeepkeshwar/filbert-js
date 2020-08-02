@@ -1,11 +1,22 @@
 {
-  "name": "@packages/root",
+  "name": "root",
   "private": true,
+  "keywords": [
+    "styles",
+    "filbert",
+    "react",
+    "css",
+    "css-in-js"
+  ],
   "scripts": {
+    "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
     "postinstall": "lerna bootstrap",
     "build": "lerna run build",
-    "build-packages": "lerna run  --stream --ignore @packages/website build",
-    "develop": "lerna run --stream --scope @packages/website --include-dependencies develop",
+    "build-packages": "lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
+    "develop-packages": "lerna run --parallel --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",
+    "benchmarks": "yarn build-packages && yarn benchmarks-size && yarn benchmarks-performance",
+    "benchmarks-size": "lerna run capture-stats && lerna run print-delta --stream",
+    "benchmarks-performance": "lerna run performance --stream",
     "release": "changeset publish"
   },
   "devDependencies": {
@@ -19,7 +30,10 @@
   "workspaces": {
     "packages": [
       "packages/*",
-      "website"
+      "website",
+      "examples/*",
+      "benchmarks/size/*",
+      "benchmarks/performance"
     ],
     "nohoist": [
       "**/dtslint"
@@ -43,6 +57,6 @@
   },
   "collective": {
     "type": "opencollective",
-    "url": "https://opencollective.com/@packages"
+    "url": "https://opencollective.com/filbert-js"
   }
 }

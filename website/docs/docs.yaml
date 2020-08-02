@@ -2,7 +2,39 @@
   items:
     - Introduction
     - Install
+    - Styled Components
+    - CSS
+    - Nested Selectors
+    - With Props
+    - Override Component Style
+    - Pseudo Elements
+    - Style Any Component
+    - Global
+    - Media Queries
+    - Keyframes
+    - Theming
+    - Component Selector
+    - Labels
+    - Server Side Rendering
+    - Auto Prefixing
+    - Using As Prop
+    - Todo
+- title: Miscellaneous
+  items:
+    - Under The Hood
 # This loads the READMEs instead of files in docs/
 - title: Packages
   items:
-    - '@packages/package-1'
+    - '@filbert-js/core'
+    - '@filbert-js/theming'
+    - '@filbert-js/server-stylesheet'
+    - '@filbert-js/browser-stylesheet'
+    - '@filbert-js/autoprefixer'
+    - '@filbert-js/css-ast'
+    - '@filbert-js/style-sheet-context'
+    - '@filbert-js/css-parser'
+    - '@filbert-js/stylesheet'
+    - '@filbert-js/types'
+    - '@filbert-js/macro'
+    - 'babel-plugin-filbert'
+    - 'gatsby-plugin-filbert'
