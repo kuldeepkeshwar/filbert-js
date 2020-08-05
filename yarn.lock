@@ -1526,6 +1526,17 @@
     unique-filename "^1.1.1"
     which "^1.3.1"
 
+"@filbert-js/core@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@filbert-js/core/-/core-0.0.7.tgz#230424b8d3744caa786e939452b29e0ac512a122"
+  integrity sha512-CMYuqHA6r8aMABHp7NklsMGsuFaujRKTUKIruegJN5TNvbqpR+93G9+xTP5ZpLipFyFNAEDwMsVXyCvxMmH3Mg==
+  dependencies:
+    "@filbert-js/browser-stylesheet" "^0.0.5"
+    "@filbert-js/style-sheet-context" "^0.0.5"
+    "@filbert-js/theming" "^0.0.5"
+    "@filbert-js/types" "^0.0.5"
+    react "^16.8.6"
+
 "@graphql-tools/schema@^6.0.11":
   version "6.0.14"
   resolved "https://registry.yarnpkg.com/@graphql-tools/schema/-/schema-6.0.14.tgz#f095e2c90f66d21a248b60c4bd32cb367d6722cc"
@@ -4586,6 +4597,11 @@ babel-plugin-extract-import-names@^1.6.11:
   integrity sha512-vJRNOsWoxE9ufDm5XZR0KoKknA6loyiw0LNdLX1q4P+tLyzqi01HSLXyuBJqYpXYciVPCNHI7WBUnEhyQY+NTg==
   dependencies:
     "@babel/helper-plugin-utils" "7.10.4"
+
+babel-plugin-filbert@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/babel-plugin-filbert/-/babel-plugin-filbert-0.0.5.tgz#6a4590ac621bc86633288058385c895a3d6736ff"
+  integrity sha512-lNk6ORwZU6aj20PoNRTD98s/0z93CjWy5PZjTSQDVVoiiJc9YARl7lLQ13bPd2LPfcBVt7wU9KNk40Vyp5sAEQ==
 
 babel-plugin-istanbul@^5.1.0:
   version "5.2.0"
@@ -9424,6 +9440,15 @@ gatsby-plugin-catch-links@^2.3.7:
     "@babel/runtime" "^7.10.3"
     escape-string-regexp "^1.0.5"
 
+gatsby-plugin-filbert@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-filbert/-/gatsby-plugin-filbert-0.0.7.tgz#861cdd21c9bebf4dfc623861b561b43b4bccea24"
+  integrity sha512-IjqM94PppniyLztK5DHhcNQ5+TnmqZFXr1qjOIg+fRtfBIFSZSllNZWOJRI+lksEZQN/63rZ1xuey7QiGzwIBQ==
+  dependencies:
+    "@filbert-js/autoprefixer" "^0.0.5"
+    "@filbert-js/server-stylesheet" "^0.0.5"
+    babel-plugin-filbert "0.0.5"
+
 gatsby-plugin-google-analytics@^2.3.10:
   version "2.3.11"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.3.11.tgz#201769a27ae9ca5852c25af004d83635ef1e1f14"
@@ -12820,10 +12845,10 @@ latest-version@5.1.0, latest-version@^5.0.0:
   dependencies:
     package-json "^6.3.0"
 
-layout-ui@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/layout-ui/-/layout-ui-0.0.1.tgz#59aa59c7c56cebcd3605880c721bb2c5382ef73b"
-  integrity sha512-kOVgRzztO+KKwk8Z3hD4N55R/XUmTtT1Dz8SHxmDJAc6ptUuKdMy6W4iMFXu4d5kWLyA0tkXBD5c24Q89Dr8nA==
+layout-ui@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/layout-ui/-/layout-ui-0.0.2.tgz#0b49ccf7169b5e810d768834ace96aff71da53e8"
+  integrity sha512-2kUfMlm5RD69al8BDV16LfXliRSRGrpEJEdT+lxDIontWWAJRhFaXQvF9SrBVI3tKumjmrFyMGEjNhJCOs3xhA==
   dependencies:
     "@filbert-js/browser-stylesheet" "^0.0.5"
     "@filbert-js/core" "^0.0.7"
