@@ -20,7 +20,7 @@
     "release": "changeset publish"
   },
   "devDependencies": {
-    "husky": "^3.0.9",
+    "husky": "^4.2.5",
     "lerna": "^3.16.4",
     "prettier": "1.14.3"
   },
