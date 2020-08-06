@@ -1,7 +1,6 @@
 const visit = require('unist-util-visit');
 const escapeGoat = require('escape-goat');
 const Babel = require('babel-standalone');
-
 const livePattern = /^\s*\/\/ @live/;
 const editorPattern = /^\s*\/\/ @editor/;
 

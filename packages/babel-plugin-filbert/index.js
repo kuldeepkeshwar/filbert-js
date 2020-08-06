@@ -39,7 +39,12 @@ function addPragmaImport(path, t, pragmaOptions) {
     path.unshiftContainer('body', importDeclaration);
   }
 }
-const imports = { styled: 'styled', css: 'css', keyframes: 'keyframes' };
+const imports = {
+  Global: 'Global',
+  styled: 'styled',
+  css: 'css',
+  keyframes: 'keyframes',
+};
 const pragmaOptions = {
   import: 'jsx',
   export: 'jsx',
@@ -55,7 +60,7 @@ function extractPragmaOptions(state) {
     return { pragma: pragmaOptions.import, pragmaFrag: 'React.Fragment' };
   }
 }
-module.exports = function (babel, options = {}) {
+module.exports = function(babel, options = {}) {
   const { types: t } = babel;
   const _imports = { ...imports, ...options.imports };
   // Enable pure by default if it is not set by the user
@@ -65,7 +70,7 @@ module.exports = function (babel, options = {}) {
     name: 'transform-filbert',
     visitor: {
       Program: {
-        exit: function (path, state) {
+        exit: function(path, state) {
           if (state.pragmaDetected) {
             addPragmaImport(path, t, pragmaOptions);
             babel.traverse(
@@ -77,7 +82,7 @@ module.exports = function (babel, options = {}) {
           }
         },
       },
-      JSXAttribute: function (path, state) {
+      JSXAttribute: function(path, state) {
         if (path.node.name.name === 'css') {
           state.pragmaDetected = true;
         }
