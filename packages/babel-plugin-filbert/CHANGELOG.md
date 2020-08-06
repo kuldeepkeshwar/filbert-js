@@ -1,5 +1,11 @@
 # babel-plugin-filbert
 
+## 0.0.7
+
+### Patch Changes
+
+- 4affc53: remove pragma annotation dependency
+
 ## 0.0.6
 
 ### Patch Changes

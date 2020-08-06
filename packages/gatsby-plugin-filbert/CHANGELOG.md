@@ -1,5 +1,12 @@
 # gatsby-plugin-filbert
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [4affc53]
+  - babel-plugin-filbert@0.0.7
+
 ## 0.0.8
 
 ### Patch Changes
