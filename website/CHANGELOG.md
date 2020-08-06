@@ -1,5 +1,11 @@
 # @filbert-js/website
 
+## 0.0.10
+
+### Patch Changes
+
+- 4affc53: remove pragma annotation dependency
+
 ## 0.0.9
 
 ### Patch Changes
