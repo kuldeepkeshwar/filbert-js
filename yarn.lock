@@ -12826,10 +12826,10 @@ latest-version@5.1.0, latest-version@^5.0.0:
   dependencies:
     package-json "^6.3.0"
 
-layout-ui@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/layout-ui/-/layout-ui-0.0.1.tgz#59aa59c7c56cebcd3605880c721bb2c5382ef73b"
-  integrity sha512-kOVgRzztO+KKwk8Z3hD4N55R/XUmTtT1Dz8SHxmDJAc6ptUuKdMy6W4iMFXu4d5kWLyA0tkXBD5c24Q89Dr8nA==
+layout-ui@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/layout-ui/-/layout-ui-0.0.2.tgz#0b49ccf7169b5e810d768834ace96aff71da53e8"
+  integrity sha512-2kUfMlm5RD69al8BDV16LfXliRSRGrpEJEdT+lxDIontWWAJRhFaXQvF9SrBVI3tKumjmrFyMGEjNhJCOs3xhA==
   dependencies:
     "@filbert-js/browser-stylesheet" "^0.0.5"
     "@filbert-js/core" "^0.0.7"

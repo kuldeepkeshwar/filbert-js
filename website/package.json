@@ -22,7 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "layout-ui": "^0.0.1",
+    "layout-ui": "^0.0.2",
     "@filbert-js/core": "^0.0.8",
     "lodash-es": "^4.17.15",
     "prism-react-renderer": "^1.1.1",
