@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
-    "postinstall": "lerna bootstrap",
+    "postinstall": "lerna bootstrap && yarn build-packages",
     "build": "lerna run build",
     "build-packages": "lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
     "develop-packages": "lerna run --parallel --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",
