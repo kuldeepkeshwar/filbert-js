@@ -4,8 +4,8 @@ import { hash } from './hash';
 import { interpolate } from './interpolate';
 
 export function factory(type, label, context) {
-  return function(styleTemplates, ...variables) {
-    const [css, keyframes] = interpolate(styleTemplates, variables, context);
+  return function() {
+    const [css, keyframes] = interpolate.apply(context, arguments);
     const selector = hash(css, label || type);
     return {
       [TYPE]: type,

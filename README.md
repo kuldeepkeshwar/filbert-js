@@ -27,26 +27,28 @@ It is a alternative to [styled-components](https://github.com/styled-components/
 
 # Features
 
-| Name                                                                                                             | Status |
-| ---------------------------------------------------------------------------------------------------------------- | ------ |
-| [CSS](https://filbert-js.vercel.app/docs/CSS)                                                                    | ✅     |
-| [Nested Selectors](https://filbert-js.vercel.app/docs/nested-selectors)                                          | ✅     |
-| [Dynamic Styling(Prop based)](https://filbert-js.vercel.app/docs/with-props)                                     | ✅     |
-| [Override Component Style](https://filbert-js.vercel.app/docs/override-component-style)                          | ✅     |
-| [Global](https://filbert-js.vercel.app/docs/global)                                                              | ✅     |
-| [Pseudo Selector](https://filbert-js.vercel.app/docs/pseudo-elements)                                            | ✅     |
-| [Media Queries ](https://filbert-js.vercel.app/docs/media-queries)                                               | ✅     |
-| [Keyframe](https://filbert-js.vercel.app/docs/keyframes)                                                         | ✅     |
-| [Theming](https://filbert-js.vercel.app/docs/theming)                                                            | ✅     |
-| [Component Selector](https://filbert-js.vercel.app/docs/component-selector)                                      | ✅     |
-| Styles As Object Literals                                                                                        | 🔜     |
-| [Server-side Rendering](https://filbert-js.vercel.app/docs/server-side-rendering)                                | ✅     |
-| [Client-side Hydration](https://filbert-js.vercel.app/docs/server-side-rendering)                                | ✅     |
-| [Vendor Prefixing ](https://filbert-js.vercel.app/docs/auto-prefixing)                                           | ✅     |
-| [Extract CSS File](https://filbert-js.vercel.app/docs/server-side-rendering)                                     | ✅     |
-| React Native                                                                                                     | 🔜     |
-| [Integration(`Gatsby`)](https://filbert-js.vercel.app/docs/server-side-rendering#gatsbyjs-server-side-rendering) | ✅     |
-| [Integration(`Next.js`)](https://filbert-js.vercel.app/docs/server-side-rendering#nextjs-server-side-rendering)  | ✅     |
+| Name                                                                                           | Status |
+| ---------------------------------------------------------------------------------------------- | ------ |
+| [CSS](https://filbert-js.vercel.app/docs/CSS)                                                  | ✅     |
+| [Nested Selectors](https://filbert-js.vercel.app/docs/nested-selectors)                        | ✅     |
+| [Dynamic Styling(Prop based)](https://filbert-js.vercel.app/docs/with-props)                   | ✅     |
+| [Override Component Style](https://filbert-js.vercel.app/docs/override-component-style)        | ✅     |
+| [Global](https://filbert-js.vercel.app/docs/global)                                            | ✅     |
+| [Pseudo Selector](https://filbert-js.vercel.app/docs/pseudo-elements)                          | ✅     |
+| [Media Queries ](https://filbert-js.vercel.app/docs/media-queries)                             | ✅     |
+| [Keyframe](https://filbert-js.vercel.app/docs/keyframes)                                       | ✅     |
+| [Theming](https://filbert-js.vercel.app/docs/theming)                                          | ✅     |
+| [Component Selector](https://filbert-js.vercel.app/docs/component-selector)                    | ✅     |
+| Styles As Object Literals                                                                      | 🔜     |
+| [Server-side Rendering](https://filbert-js.vercel.app/docs/server-side-rendering)              | ✅     |
+| [Client-side Hydration](https://filbert-js.vercel.app/docs/server-side-rendering)              | ✅     |
+| [Vendor Prefixing ](https://filbert-js.vercel.app/docs/auto-prefixing)                         | ✅     |
+| [Extract CSS File](https://filbert-js.vercel.app/docs/server-side-rendering)                   | ✅     |
+| React Native                                                                                   | 🔜     |
+| [Integration(`Create React App`)](https://filbert-js.vercel.app/integrations/create-react-app) | ✅     |
+| [Integration(`Preact`)](https://filbert-js.vercel.app/integrations/preact)                     | ✅     |
+| [Integration(`Gatsby`)](https://filbert-js.vercel.app/integrations/gatsby)                     | ✅     |
+| [Integration(`Next.js`)](https://filbert-js.vercel.app/integrations/nextjs)                    | ✅     |
 
 # Benchmarks
 

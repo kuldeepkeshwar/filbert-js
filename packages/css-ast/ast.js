@@ -64,8 +64,9 @@ function buildRules(block, raw) {
       return agg;
     }
     if (ruleStr.indexOf(childSeparator) === -1) {
-      const [name, value] = ruleStr.split(RULE_SEPARATOR);
-      agg.push({ name: name.trim(), value: value.trim() });
+      // split only property name, combine back value(s)
+      const [name, ...value] = ruleStr.split(RULE_SEPARATOR);
+      agg.push({ name: name.trim(), value: value.join(RULE_SEPARATOR).trim() });
     } else {
       const [raw_selector, childIndex] = ruleStr.split(childSeparator);
       block.children[childIndex].raw_selector = raw_selector.trim();
