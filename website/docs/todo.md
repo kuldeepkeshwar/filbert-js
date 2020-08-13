@@ -29,10 +29,7 @@
 - Other
   - [ ] Add a example for vanilla(using `express.js`) Server-Side Rendering
   - [ ] Show benchmark stats in pull request.
-  - [ ] Add a example for `Gatsby`
-  - [ ] Add a example for `Tailwind`
-  - [x] Add a example for `Next.js`
-  - [x] Add a example for `Create React App`
-  - [x] Add a example for `Preact`
+  - [ ] Add Integration examples/links with `CRA`/`Gatsby`/`Nextjs`/`Preact`/`twin.macro`
+  - [x] Add a official example for [next.js](https://github.com/vercel/next.js)
   - [x] Add benchmark for bundle-size (filbert vs emotion vs styled-components)
   - [x] Add benchmark for runtime performance (filbert vs emotion vs styled-components)
