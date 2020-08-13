@@ -12,13 +12,14 @@ import { useStylesheet } from './hooks';
 
 let id = 1;
 export function styled(Component, options = {}) {
-  return (styleTemplates, ...variables) => {
+  return function f() {
+    const args = arguments;
     function S(props, ref) {
       const theme = React.useContext(ThemeContext);
       const obj = factory(undefined, options.label, {
         ...props,
         theme,
-      })(styleTemplates, ...variables);
+      }).apply(null, args);
 
       const [styles, keyframes] = obj[RAW];
 
