@@ -19,8 +19,6 @@ function resolveValue(keyframes, context, variable) {
     value = `.${variable.label}`;
   } else if (typeof variable === 'function') {
     value = variable(context);
-  } else if (typeof variable === 'object') {
-    value = Object.keys(variable).reduce();
   }
   return value;
 }
