@@ -8,6 +8,12 @@
     "css",
     "css-in-js"
   ],
+  "resolutions": {
+    "**/react": "16.12.0",
+    "**/react-dom": "16.12.0",
+    "**/@filbert-js/core": "^0.0.9",
+    "**/@filbert-js/browser-stylesheet": "^0.0.6"
+  },
   "scripts": {
     "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
     "postinstall": "lerna bootstrap && yarn build-packages",
