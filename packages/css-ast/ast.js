@@ -81,10 +81,12 @@ function buildRules(block, raw) {
     }
     if (ruleStr.indexOf(childSeparator) === -1) {
       // split only property name, combine back value(s)
-      const [name, value] = ruleStr.split(RULE_SEPARATOR);
+      let [name, value] = ruleStr.split(RULE_SEPARATOR);
+      name = name.trim();
+      value = value.trim();
       agg.push({
         name: name.trim(),
-        value: holes[value] ? holes[value] : value,
+        value: typeof holes[value] != 'undefined' ? holes[value] : value,
       });
     } else {
       const [raw_selector, childIndex] = ruleStr.split(childSeparator);
