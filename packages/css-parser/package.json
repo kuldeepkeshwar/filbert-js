@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/css-parser",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
@@ -16,10 +16,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/css-ast": "^0.0.6"
+    "@filbert-js/css-ast": "^0.0.7"
   },
   "peerDependencies": {
-    "@filbert-js/css-ast": "^0.0.6"
+    "@filbert-js/css-ast": "^0.0.7"
   },
   "devDependencies": {
     "microbundle": "^0.11.0"

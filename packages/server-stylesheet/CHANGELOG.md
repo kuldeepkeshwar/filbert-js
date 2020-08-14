@@ -1,5 +1,12 @@
 # @filbert-js/server-stylesheet
 
+## 0.0.7
+
+### Patch Changes
+
+- @filbert-js/css-parser@0.0.7
+- @filbert-js/style-sheet-context@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

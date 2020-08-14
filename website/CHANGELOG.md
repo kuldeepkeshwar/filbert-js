@@ -1,5 +1,11 @@
 # @filbert-js/website
 
+## 0.0.12
+
+### Patch Changes
+
+- @filbert-js/core@0.0.10
+
 ## 0.0.11
 
 ### Patch Changes
