@@ -1,5 +1,12 @@
 # @filbert-js/core
 
+## 0.0.10
+
+### Patch Changes
+
+- @filbert-js/browser-stylesheet@0.0.7
+- @filbert-js/style-sheet-context@0.0.7
+
 ## 0.0.9
 
 ### Patch Changes

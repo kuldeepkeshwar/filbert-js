@@ -1,5 +1,11 @@
 # @filbert-js/css-ast
 
+## 0.0.7
+
+### Patch Changes
+
+- a30ad13: special handling for css property's value of types url /string with quotes
+
 ## 0.0.6
 
 ### Patch Changes

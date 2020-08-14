@@ -1528,26 +1528,24 @@
     which "^1.3.1"
 
 "@filbert-js/browser-stylesheet@^0.0.5":
-  version "0.0.6"
+  version "0.0.7"
   dependencies:
-    "@filbert-js/css-parser" "^0.0.6"
+    "@filbert-js/css-parser" "^0.0.7"
     "@filbert-js/stylesheet" "^0.0.5"
 
 "@filbert-js/core@^0.0.7":
-  version "0.0.9"
+  version "0.0.10"
   dependencies:
-    "@filbert-js/browser-stylesheet" "^0.0.6"
-    "@filbert-js/style-sheet-context" "^0.0.6"
+    "@filbert-js/browser-stylesheet" "^0.0.7"
+    "@filbert-js/style-sheet-context" "^0.0.7"
     "@filbert-js/theming" "^0.0.5"
     "@filbert-js/types" "^0.0.5"
     react "^16.8.6"
 
 "@filbert-js/style-sheet-context@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@filbert-js/style-sheet-context/-/style-sheet-context-0.0.5.tgz#9db85b87f64c05d75f115ee8d1b5166868995046"
-  integrity sha512-W2K9Q2hoqv/8Kab0NLCyAOHq+Xw6weRGKWctM7YeeWNeCE5iXS9OgkQ/UQXdawq8p6LtaTG9c59Qct+bEMjNEA==
+  version "0.0.7"
   dependencies:
-    "@filbert-js/browser-stylesheet" "^0.0.5"
+    "@filbert-js/browser-stylesheet" "^0.0.7"
     react "^16.8.6"
 
 "@graphql-tools/schema@^6.0.11":
