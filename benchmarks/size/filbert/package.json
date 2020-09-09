@@ -6,7 +6,7 @@
     "@filbert-js/core": "^0.0.10",
     "@filbert-js/theming": "^0.0.5",
     "@testing-library/jest-dom": "^5.11.2",
-    "@testing-library/react": "^9.3.2",
+    "@testing-library/react": "^11.0.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
