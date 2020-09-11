@@ -8,7 +8,7 @@
 
 [![gzip size](https://img.badgesize.io/https://unpkg.com/@filbert-js/core@latest/dist/index.es.js?compression=gzip)](https://unpkg.com/@filbert-js/core)
 [![downloads](https://img.shields.io/npm/dw/@filbert-js/core)](https://www.npmjs.com/package/@filbert-js/core)
-
+[![Discord](https://img.shields.io/discord/754036922606944366.svg)](https://discord.gg/aUyVNJX)
 <p align="center">
  <br/>
   <br/>
