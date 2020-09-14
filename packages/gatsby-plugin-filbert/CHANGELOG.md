@@ -1,5 +1,12 @@
 # gatsby-plugin-filbert
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies [e4ecedd]
+  - @filbert-js/autoprefixer@0.0.6
+
 ## 0.0.11
 
 ### Patch Changes
