@@ -21,7 +21,7 @@
     "react": "^16.8.6"
   },
   "devDependencies": {
-    "microbundle": "^0.11.0"
+    "microbundle": "^0.12.3"
   },
   "publishConfig": {
     "access": "public"
