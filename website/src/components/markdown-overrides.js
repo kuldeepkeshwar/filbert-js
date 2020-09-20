@@ -16,11 +16,12 @@ export const Paragraph = styled.p`
 `;
 export const Pre = styled.pre`
   padding: 10px 20px;
-  background-color: #f6f8fa;
+  background: ${colors(`app.background-color`)};
   border-radius: 6px;
+  color: ${colors(`text.body`)};
 `;
 export const Blockquote = styled.div`
-  background: #f9f9f9;
+  background: ${colors(`app.background-color`)};
   border-left: 10px solid #ccc;
   margin: 1.5em 0;
   padding: 1em 10px 1em 10px;
