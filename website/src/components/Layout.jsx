@@ -7,8 +7,7 @@ import React from 'react';
 import { Sidebar } from './Sidebar';
 import { ThemeProvider } from '@filbert-js/theming';
 import { colors } from './../themes/utils';
-import { tokens as lightTheme } from '../themes/light';
-import { tokens as darkTheme } from '../themes/dark';
+import { useTheme } from '../themes/hook';
 
 const Screen = styled.div`
   display: grid;
@@ -36,7 +35,6 @@ const Side = styled.div`
   grid-area: 2 / 1 / 3 / 1;
   @media screen and (max-width: 52em) {
     display: ${({ toggle }) => (toggle ? 'none' : 'block')};
-    
   }
 `;
 
@@ -66,45 +64,33 @@ const ToggleButton = styled.button`
     border: 0;
   }
 `;
-const globalStyles = `
-  
-  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
 
+export function Layout({ children }) {
+  const [theme, toggleTheme] = useTheme();
+  const [toggle, setToggle] = React.useState(true);
+
+  const globalStyles = `
+  @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background: ${colors(`app.background-color`)};
-    color: ${colors(`app.color`)};
-  }
-  
+    background: ${colors(`app.background-color`)({ theme })};
+    color: ${colors(`app.color`)({ theme })};
+  }  
   * {
     box-sizing: border-box;
   }
 `;
-
-export function Layout({ children }) {
-  const [toggle, setToggle] = React.useState(true);
-  const [theme, setTheme] = React.useState('light');
-  const toggleTheme = () => {
-    if (theme === 'light') {
-      setTheme('dark');
-    } else {
-      setTheme('light');
-    }
-  }
-
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider theme={theme}>
       <Global styles={globalStyles} />
       <Screen>
         <Top>
           <Header toggleTheme={toggleTheme} />
         </Top>
-
         <Side toggle={toggle}>
           <Sidebar />
         </Side>
-
         <Main toggle={toggle}>{children}</Main>
       </Screen>
       <ToggleButton onClick={() => setToggle(!toggle)}>
