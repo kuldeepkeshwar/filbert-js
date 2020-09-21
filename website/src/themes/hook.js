@@ -5,14 +5,18 @@ import { tokens as lightTheme } from './light';
 
 const themes = { light: lightTheme, dark: darkTheme };
 function getThemeName() {
-  const localTheme = window.localStorage.getItem('theme');
-  return window.matchMedia &&
-    window.matchMedia('(prefers-color-scheme: dark)').matches &&
-    !localTheme
-    ? 'dark'
-    : localTheme
-    ? localTheme
-    : 'light';
+  if(typeof window==='object'){
+    const localTheme = window.localStorage.getItem('theme');
+    return window.matchMedia &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches &&
+      !localTheme
+      ? 'dark'
+      : localTheme
+      ? localTheme
+      : 'light';
+  }else{
+    return 'light';
+  }
 }
 export const useTheme = () => {
   const [theme, setTheme] = useState(getThemeName());
