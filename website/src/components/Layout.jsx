@@ -61,11 +61,7 @@ const ToggleButton = styled.button`
     border: 0;
   }
 `;
-
-export function Layout({ children }) {
-  const [toggle, setToggle] = React.useState(true);
-
-  const globalStyles = `
+const globalStyles = `
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   body {
     font-family: 'Inter', sans-serif;
@@ -77,6 +73,9 @@ export function Layout({ children }) {
     box-sizing: border-box;
   }
 `;
+export function Layout({ children }) {
+  const [toggle, setToggle] = React.useState(true);
+
   return (
     <>
       <Global styles={globalStyles} />
