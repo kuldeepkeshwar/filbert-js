@@ -1,0 +1,162 @@
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 28px;
+  --space-8: 32px;
+  --space-9: 36px;
+  --space-10: 40px;
+  --space-11: 44px;
+  --space-12: 48px;
+  --space-13: 52px;
+  --space-14: 56px;
+  --space-15: 60px;
+  --space-16: 64px;
+
+  --radii-0: 0;
+  --radii-1: 2px;
+  --radii-2: 4px;
+  --radii-3: 16px;
+  --radii-4: 50%;
+
+  --font-size-0: 0;
+  --font-size-1: 10px;
+  --font-size-2: 12px;
+  --font-size-3: 14px;
+  --font-size-4: 16px;
+  --font-size-5: 20px;
+  --font-size-6: 24px;
+  --font-size-7: 32px;
+  --font-size-8: 48px;
+  --font-size-9: 64px;
+  --font-size-10: 72px;
+
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+
+  --line-height-compact: 1.2;
+  --line-height-default: 1.6;
+  --line-height-cosy: 2;
+
+  --breakpoint-0: 576px;
+  --breakpoint-1: 768px;
+  --breakpoint-2: 992px;
+
+  --duration-0: 0;
+  --duration-1: 75ms;
+  --duration-2: 100ms;
+  --duration-3: 150ms;
+  --duration-4: 200ms;
+  --duration-5: 300ms;
+  --duration-6: 500ms;
+  --duration-7: 1000ms;
+  --duration-8: 2500ms;
+
+  --shadow-0: none;
+  --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-4: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+
+  --colors-white: #fff;
+
+  --colors-red-100: #f8e4e4;
+  --colors-red-200: #efa6a6;
+  --colors-red-300: #e06161;
+  --colors-red-400: #d95252;
+  --colors-red-500: #d12d2d;
+  --colors-red-600: #b41f1f;
+  --colors-red-700: #a20808;
+  --colors-red-800: #821919;
+  --colors-red-900: #5e1717;
+
+  --colors-yellow-100: #fdf3d7;
+  --colors-yellow-200: #faecc2;
+  --colors-yellow-300: #f8e8ba;
+  --colors-yellow-400: #fae29f;
+  --colors-yellow-500: #ffd97e;
+  --colors-yellow-600: #f4ca64;
+  --colors-yellow-700: #caa53d;
+  --colors-yellow-800: #8c6d1f;
+  --colors-yellow-900: #5c4813;
+
+  --colors-blue-100: #eff8ff;
+  --colors-blue-200: #b7dbf7;
+  --colors-blue-300: #a8d1f2;
+  --colors-blue-400: #63a2d8;
+  --colors-blue-500: #036fca;
+  --colors-blue-600: #217cc9;
+  --colors-blue-700: #2368a2;
+  --colors-blue-800: #1a4971;
+  --colors-blue-900: #203d54;
+
+  --colors-green-100: #e3fcec;
+  --colors-green-200: #a8eec1;
+  --colors-green-300: #8ff2b2;
+  --colors-green-400: #4be38c;
+  --colors-green-500: #22d66f;
+  --colors-green-600: #38c172;
+  --colors-green-700: #259d58;
+  --colors-green-800: #197741;
+  --colors-green-900: #145239;
+
+  --colors-gray-100: #f5faff;
+  --colors-gray-200: #e1e7ec;
+  --colors-gray-300: #d1d9e0;
+  --colors-gray-400: #c8d0d7;
+  --colors-gray-500: #aebecd;
+  --colors-gray-600: #929fb1;
+  --colors-gray-700: #6e7a8a;
+  --colors-gray-800: #404b5a;
+  --colors-gray-900: #202833;
+}
+
+.theme-dark {
+  --colors-text-subtle: var(--colors-gray-200);
+  --colors-text-body: var(--colors-white);
+  --colors-text-link: var(--colors-blue-400);
+  --colors-text-link-hover: var(--colors-white);
+
+  --colors-error-background: var(--colors-red-100);
+  --colors-error-border: var(--colors-red-300);
+  --colors-error-text: var(--colors-red-700);
+
+  --colors-app-background: var(--colors-gray-900);
+  --colors-app-color: var(--colors-white);
+  --colors-app-border-color: var(--colors-gray-200);
+
+  --font-size-heading-page: var(--font-size-8);
+  --font-size-heading-section: var(--font-size-6);
+  --font-size-heading-paragraph: var(--font-size-4);
+}
+
+.theme-light {
+  --colors-text-subtle: var(--colors-gray-700);
+  --colors-text-body: var(--colors-gray-800);
+  --colors-text-link: var(--colors-blue-500);
+  --colors-text-link-hover: var(--colors-blue-700);
+
+  --colors-error-background: var(--colors-red-100);
+  --colors-error-border: var(--colors-red-300);
+  --colors-error-text: var(--colors-red-700);
+
+  --colors-app-background: var(--colors-white);
+  --colors-app-color: var(--colors-gray-900);
+  --colors-app-border-color: var(--colors-gray-200);
+
+  --font-size-heading-page: var(--font-size-8);
+  --font-size-heading-section: var(--font-size-6);
+  --font-size-heading-paragraph: var(--font-size-4);
+}

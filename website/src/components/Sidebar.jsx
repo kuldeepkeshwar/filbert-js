@@ -2,7 +2,6 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import React from 'react';
 import { Stack } from 'layout-ui';
-import { colors } from '../themes/utils';
 import { styled } from '@filbert-js/core';
 
 const MenuItem = styled.span`
@@ -10,10 +9,10 @@ const MenuItem = styled.span`
     display: inline;
     cursor: pointer;
     text-decoration: none;
-    color: ${colors(`text.link`)};
+    color: var(--colors-text-link);
   }
   a:hover {
-    color: ${colors(`text.link-hover`)};
+    color: var(--colors-text-link-hover);
   }
 `;
 const MenuHeading = styled.div`

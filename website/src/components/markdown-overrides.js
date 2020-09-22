@@ -1,4 +1,3 @@
-import { colors } from '../themes/utils';
 import { styled } from '@filbert-js/core';
 export const Title = styled.h1`
   font-size: 2rem;
@@ -16,12 +15,12 @@ export const Paragraph = styled.p`
 `;
 export const Pre = styled.pre`
   padding: 10px 20px;
-  background: ${colors(`app.background-color`)};
+  background: var(--colors-app-background);
   border-radius: 6px;
-  color: ${colors(`text.body`)};
+  color: var(--colors-text-body);
 `;
 export const Blockquote = styled.div`
-  background: ${colors(`app.background-color`)};
+  background: var(--colors-app-background);
   border-left: 10px solid #ccc;
   margin: 1.5em 0;
   padding: 1em 10px 1em 10px;
@@ -33,9 +32,9 @@ export const Anchor = styled.a`
   display: inline;
   cursor: pointer;
   text-decoration: none;
-  color: ${colors(`text.link`)};
+  color: var(--colors-text-link);
 
   :hover {
-    color: ${colors(`text.link-hover`)};
+    color: var(--colors-text-link-hover);
   }
 `;
