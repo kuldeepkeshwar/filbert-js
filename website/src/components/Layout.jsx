@@ -12,7 +12,7 @@ const Screen = styled.div`
   grid-template-rows: 40px auto;
   grid-column-gap: 1rem;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 0 2rem 1rem 2rem;
   width: 100%;
   max-width: 64em;
 
@@ -24,6 +24,11 @@ const Screen = styled.div`
 `;
 const Top = styled.div`
   grid-area: 1 / 1 / 2 / 3;
+  padding-top: 1rem;
+  position: sticky;
+  top: 0;
+  background: inherit;
+  z-index: 1;
   @media screen and (max-width: 52em) {
     grid-area: 1 / 1 / 2 /2;
   }
