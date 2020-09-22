@@ -5,7 +5,7 @@ import { tokens as lightTheme } from './light';
 
 const themes = { light: lightTheme, dark: darkTheme };
 function getThemeName() {
-  if(typeof window==='object'){
+  if (typeof window === 'object') {
     const localTheme = window.localStorage.getItem('theme');
     return window.matchMedia &&
       window.matchMedia('(prefers-color-scheme: dark)').matches &&
@@ -14,7 +14,7 @@ function getThemeName() {
       : localTheme
       ? localTheme
       : 'light';
-  }else{
+  } else {
     return 'light';
   }
 }

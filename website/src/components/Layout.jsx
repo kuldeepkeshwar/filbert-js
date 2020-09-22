@@ -5,9 +5,6 @@ import HamburgerIcon from './../images/icons/hamburger.svg';
 import { Header } from './Header';
 import React from 'react';
 import { Sidebar } from './Sidebar';
-import { ThemeProvider } from '@filbert-js/theming';
-import { colors } from './../themes/utils';
-import { useTheme } from '../themes/hook';
 
 const Screen = styled.div`
   display: grid;
@@ -19,8 +16,8 @@ const Screen = styled.div`
   width: 100%;
   max-width: 64em;
 
-  background: ${colors(`app.background-color`)};
-  color: ${colors(`app.color`)};
+  background: var(--colors-app-background);
+  color: var(--colors-app-color);
   @media screen and (max-width: 52em) {
     grid-template-columns: 1fr;
   }
@@ -44,9 +41,9 @@ const Main = styled.div`
     grid-area: 2 / 1 / 2 /2;
     display: ${({ toggle }) => (toggle ? 'block' : 'none')};
   }
-  background: ${colors(`app.background-color`)};
-  color: ${colors(`app.color`)};
-  border-color: ${colors(`app.border-color`)};
+  background: var(--colors-app-background);
+  color: var(--colors-app-color);
+  border-color: var(--colors-app-border-color);
 `;
 const ToggleButton = styled.button`
   display: none;
@@ -64,29 +61,27 @@ const ToggleButton = styled.button`
     border: 0;
   }
 `;
-
-export function Layout({ children }) {
-  const [theme, toggleTheme] = useTheme();
-  const [toggle, setToggle] = React.useState(true);
-
-  const globalStyles = `
+const globalStyles = `
   @import url('https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap');
   body {
     font-family: 'Inter', sans-serif;
     margin: 0;
-    background: ${colors(`app.background-color`)({ theme })};
-    color: ${colors(`app.color`)({ theme })};
+    background: var(--colors-app-background);
+    color: var(--colors-app-color);
   }  
   * {
     box-sizing: border-box;
   }
 `;
+export function Layout({ children }) {
+  const [toggle, setToggle] = React.useState(true);
+
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Global styles={globalStyles} />
       <Screen>
         <Top>
-          <Header toggleTheme={toggleTheme} />
+          <Header />
         </Top>
         <Side toggle={toggle}>
           <Sidebar />
@@ -96,6 +91,6 @@ export function Layout({ children }) {
       <ToggleButton onClick={() => setToggle(!toggle)}>
         {toggle ? <HamburgerIcon /> : <CloseIcon />}
       </ToggleButton>
-    </ThemeProvider>
+    </>
   );
 }
