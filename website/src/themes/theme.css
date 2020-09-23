@@ -128,6 +128,7 @@
   --colors-text-body: var(--colors-white);
   --colors-text-link: var(--colors-blue-400);
   --colors-text-link-hover: var(--colors-white);
+  --colors-text-hightlight: var(--colors-gray-800);
 
   --colors-error-background: var(--colors-red-100);
   --colors-error-border: var(--colors-red-300);
@@ -147,6 +148,7 @@
   --colors-text-body: var(--colors-gray-800);
   --colors-text-link: var(--colors-blue-500);
   --colors-text-link-hover: var(--colors-blue-700);
+  --colors-text-hightlight: var(--colors-gray-200);
 
   --colors-error-background: var(--colors-red-100);
   --colors-error-border: var(--colors-red-300);
