@@ -6,17 +6,25 @@ import { styled } from '@filbert-js/core';
 
 const MenuItem = styled.span`
   a {
-    display: inline;
+    display: block;
     cursor: pointer;
     text-decoration: none;
     color: var(--colors-text-link);
+
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.2s ease-out;
+    border-radius: 3px;
+    padding: 10px 8px;
+    width: 100%;
   }
   a:hover {
-    color: var(--colors-text-link-hover);
+    background : var(--colors-text-hightlight);
   }
 `;
 const MenuHeading = styled.div`
   margin-bottom: 1rem;
+  font-weight: bold;
 `;
 export const Sidebar = () => {
   const { allDocMap } = useStaticQuery(graphql`
