@@ -9,7 +9,7 @@ const MenuItem = styled.span`
     display: block;
     cursor: pointer;
     text-decoration: none;
-    color: var(--colors-app-color);
+    color: var(--colors-text-link);
 
     font-size: 14px;
     font-weight: 600;
@@ -25,7 +25,6 @@ const MenuItem = styled.span`
 const MenuHeading = styled.div`
   margin-bottom: 1rem;
   font-weight: bold;
-  font-size: 1.1em;
 `;
 export const Sidebar = () => {
   const { allDocMap } = useStaticQuery(graphql`
