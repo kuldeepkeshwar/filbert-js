@@ -4,9 +4,7 @@ title: 'Styled Components'
 
 `styled` is a way to create React components that have styles attached to them
 
-```jsx
-// @live
-
+```jsx editor=live
 import React from 'react';
 import { styled } from '@filbert-js/core';
 

@@ -3,8 +3,7 @@ To use `filbert-js` with `gatsbyjs`, follow below steps
 1. use `@filbert-js/macro` in pages
 2. use `@filbert-js/server-stylesheet` to support SSR/Client Hydration
 
-```jsx
-// @editor
+```jsx editor=static
 // pages/app.js
 import { styled } from '@filbert-js/macro';
 
@@ -18,9 +17,7 @@ export default function App() {
 }
 ```
 
-```js
-// @editor
-
+```js editor=static
 // gatsby-ssr.js
 import { createStylesheet } from '@filbert-js/server-stylesheet';
 

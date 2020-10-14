@@ -2,8 +2,7 @@
 
 `@filbert-js` allows labeling components
 
-```jsx
-// @live
+```jsx editor=live
 import React from 'react';
 import { styled } from '@filbert-js/core';
 

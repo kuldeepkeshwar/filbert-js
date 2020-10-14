@@ -1,7 +1,6 @@
-```jsx
-// @live
-import React from "react"
-import { Global } from "@filbert-js/core"
+```jsx editor=live
+import React from 'react';
+import { Global } from '@filbert-js/core';
 
 render(
   <React.Fragment>
@@ -14,6 +13,6 @@ render(
         `}
     />
     <div className="text">I'm pink</div>
-  </React.Fragment>
-)
+  </React.Fragment>,
+);
 ```

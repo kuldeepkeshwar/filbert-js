@@ -1,5 +1,4 @@
-```js
-// @editor
+```js editor=static
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { StyleSheetProvider } from '@filbert-js/style-sheet-context';

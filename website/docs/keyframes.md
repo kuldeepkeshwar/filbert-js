@@ -1,5 +1,4 @@
-```jsx
-// @live
+```jsx editor=live
 import React from 'react';
 import { styled, Global, keyframes } from '@filbert-js/core';
 

@@ -8,8 +8,7 @@
 yarn add @filbert-js/css-ast
 ```
 
-```js
-// @editor
+```js editor=static
 import { toAST } from '@filbert-js/css-ast';
 
 const css = `

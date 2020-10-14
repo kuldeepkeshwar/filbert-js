@@ -3,8 +3,7 @@ To use `filbert-js` with `next.js`, follow below steps
 1. use `@filbert-js/macro` in pages
 2. use `@filbert-js/server-stylesheet` to support SSR/Client Hydration
 
-```jsx
-// @editor
+```jsx editor=static
 // app.js
 import { styled } from '@filbert-js/macro';
 
@@ -18,8 +17,7 @@ export default function App() {
 }
 ```
 
-```js
-// @editor
+```js editor=static
 // pages/_document.js
 
 import Document from 'next/document';

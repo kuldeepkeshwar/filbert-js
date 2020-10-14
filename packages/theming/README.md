@@ -10,9 +10,7 @@ yarn add @filbert-js/theming
 
 ## Usage
 
-```jsx
-// @editor
-
+```jsx editor=static
 import React from 'react';
 import { styled } from '@filbert-js/core';
 import { ThemeProvider } from '@filbert-js/theming';

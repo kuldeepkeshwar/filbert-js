@@ -10,8 +10,7 @@ A [Babel](https://babeljs.io/) plugin for filbert, converts `styled.div` syntax 
 
 Edit `.babelrc.json`
 
-```js
-// @editor
+```js editor=static
 {
   "presets": [...],
   "plugins": ["babel-plugin-filbert"]
@@ -20,9 +19,7 @@ Edit `.babelrc.json`
 
 And now you can create your components using `styled.*` syntax:
 
-```jsx
-// @editor
-
+```jsx editor=static
 import React from 'react';
 import { styled } from 'filbert';
 

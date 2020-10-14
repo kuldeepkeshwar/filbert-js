@@ -1,25 +1,22 @@
 const visit = require('unist-util-visit');
 const escapeGoat = require('escape-goat');
 const Babel = require('babel-standalone');
-const livePattern = /^\s*\/\/ @live/;
-const editorPattern = /^\s*\/\/ @editor/;
+const livePattern = /editor=live/;
 
-module.exports = ({ markdownAST }) => {
-  visit(markdownAST, `code`, (node) => {
-    if (node.lang === 'jsx' || node.lang === 'js') {
-      if (livePattern.test(node.value)) {
-        const cleanValue = node.value.replace('// @live', '').trim();
-        node.type = `html`;
-        node.value = escapeGoat.escapeTag`<live-code code="${cleanValue}" compiled="${
-          Babel.transform(cleanValue, {
+module.exports = (options) => {
+  function transformer(tree) {
+    visit(tree, `code`, (node, index, parent) => {
+      if (node.lang === 'jsx' || node.lang === 'js') {
+        if (livePattern.test(node.meta)) {
+          const code = node.value;
+          const compiled = Babel.transform(code, {
             presets: ['es2015', 'react', 'stage-1'],
-          }).code
-        }"></live-code>`;
-      } else if (editorPattern.test(node.value)) {
-        node.type = `html`;
-        const cleanValue = node.value.replace('// @editor', '').trim();
-        node.value = escapeGoat.escapeTag`<static-code code="${cleanValue}"></static-code>`;
+          }).code;
+          node.meta = `${node.meta} compiled=${compiled}`;
+          node.value = code;
+        }
       }
-    }
-  });
+    });
+  }
+  return transformer;
 };

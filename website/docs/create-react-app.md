@@ -1,7 +1,6 @@
 To use `filbert-js` with `Create React App(CRA)`, all you need is `@filbert-js/macro`
 
-```jsx
-// @editor
+```jsx editor=static
 // app.js
 import { styled } from '@filbert-js/macro';
 

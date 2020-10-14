@@ -54,10 +54,9 @@ module.exports = {
         resolve: `gatsby-plugin-mdx`,
         options: {
           extensions: ['.mdx', '.md'],
+          remarkPlugins: [require('./plugins/gatsby-remark-live-code')],
           gatsbyRemarkPlugins: [
-            { resolve: require.resolve('./plugins/gatsby-remark-live-code') },
             { resolve: 'gatsby-remark-autolink-headers' },
-            { resolve: 'gatsby-remark-prismjs' },
             { resolve: 'gatsby-remark-smartypants' },
           ],
         },
