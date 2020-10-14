@@ -1,5 +1,4 @@
-```jsx
-// @live
+```jsx editor=live
 /* This comment tells babel to convert jsx to calls 
 to a function called jsx instead of React.createElement*/
 /** @jsx jsx */
@@ -16,8 +15,7 @@ render(<button css={styles}>This is a Button component.</button>);
 
 Or you can use `@filbert-js/macro`
 
-```jsx
-// @editor
+```jsx editor=static
 import React from 'react';
 import { css } from '@filbert-js/macro';
 
@@ -31,8 +29,7 @@ render(<button css={styles}>This is a Button component.</button>);
 
 Or you can use `@filbert-js/core` along with `babel-plugin-filbert`
 
-```jsx
-// @editor
+```jsx editor=static
 import React from 'react';
 import { css } from '@filbert-js/core';
 

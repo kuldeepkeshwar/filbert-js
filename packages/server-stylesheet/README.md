@@ -10,9 +10,7 @@ yarn add @filbert-js/server-stylesheet
 
 ## Usage
 
-```jsx
-// @editor
-
+```jsx editor=static
 import { renderToString } from 'react-dom/server';
 import { createStylesheet } from '@filbert-js/server-stylesheet';
 import App from './App';

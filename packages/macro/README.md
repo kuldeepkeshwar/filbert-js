@@ -8,9 +8,7 @@ A [Babel](https://babeljs.io/) macro for filbert, converts `styled.div` syntax t
 
 ## How to use
 
-```jsx
-// @editor
-
+```jsx editor=static
 import React from 'react';
 import { styled } from '@filbert-js/macro';
 

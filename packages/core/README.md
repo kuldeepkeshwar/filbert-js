@@ -10,9 +10,7 @@ yarn add @filbert-js/core
 
 ## Usage
 
-```jsx
-// @editor
-
+```jsx editor=static
 import React from 'react';
 import { styled, Global } from '@filbert-js/core';
 

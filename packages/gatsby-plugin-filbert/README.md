@@ -12,9 +12,7 @@ yarn add gatsby-plugin-filbert
 
 Edit `gatsby-config.js`
 
-```js
-// @editor
-
+```js editor=static
 module.exports = {
   plugins: [`gatsby-plugin-filbert`],
 };

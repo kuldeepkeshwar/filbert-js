@@ -6,13 +6,12 @@ import {
   Pre,
 } from '../components/markdown-overrides';
 
+import { Code } from '../components/Code';
 import { Layout } from '../components/Layout';
 import { MDXProvider } from '@mdx-js/react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Playground from '../components/Playground';
 import React from 'react';
 import { SEO } from '../components/SEO';
-import StaticCode from '../components/StaticCode';
 import { graphql } from 'gatsby';
 
 export default ({ data: { doc } }) => {
@@ -29,8 +28,7 @@ export default ({ data: { doc } }) => {
       <Layout>
         <MDXProvider
           components={{
-            'live-code': Playground,
-            'static-code': StaticCode,
+            code: Code,
             blockquote: Blockquote,
             p: Paragraph,
             pre: Pre,

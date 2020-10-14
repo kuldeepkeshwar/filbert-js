@@ -1,8 +1,6 @@
 ### Vanilla: Server-Side Rendering
 
-```js
-// @editor
-
+```js editor=static
 import { renderToString } from 'react-dom/server';
 import { createStylesheet } from '@filbert-js/server-stylesheet';
 import App from './App';
@@ -27,8 +25,7 @@ const html = `
 
 In `Next.js` world, create a file `pages/_document.js`
 
-```js
-// @editor
+```js editor=static
 // pages/_document.js
 
 import Document from 'next/document';
@@ -73,9 +70,7 @@ Check out [official nextjs example](https://github.com/vercel/next.js/tree/canar
 
 In `Gatsby.js` world, create a file `gatsby-ssr.js`
 
-```js
-// @editor
-
+```js editor=static
 // gatsby-ssr.js
 import { createStylesheet } from '@filbert-js/server-stylesheet';
 

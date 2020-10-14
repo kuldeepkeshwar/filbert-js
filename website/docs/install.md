@@ -14,7 +14,6 @@ yarn add @filbert-js/core
 
 Usage
 
-```js
-// @editor
+```js editor=static
 import { styled, Global, keyframes } from '@filbert-js/core';
 ```

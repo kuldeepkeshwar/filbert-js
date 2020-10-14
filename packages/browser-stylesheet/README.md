@@ -10,9 +10,7 @@ yarn add @filbert-js/browser-stylesheet
 
 ## Usage
 
-```jsx
-// @editor
-
+```jsx editor=static
 import { createStylesheet } from '@filbert-js/browser-stylesheet';
 import { StyleSheetProvider } from '@filbert-js/style-sheet-context';
 import App from './App';

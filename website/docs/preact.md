@@ -1,7 +1,6 @@
 To use `filbert-js` with `preact`, all you need is `@filbert-js/macro`
 
-```jsx
-// @editor
+```jsx editor=static
 // app.js
 import { styled } from '@filbert-js/macro';
 

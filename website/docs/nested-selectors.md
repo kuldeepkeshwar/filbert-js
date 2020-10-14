@@ -1,8 +1,6 @@
 Use nested selectors to target elements inside the current class or React component. An example with an element selector is shown below.
 
-```jsx
-// @live
-
+```jsx editor=live
 import React from 'react';
 import { styled } from '@filbert-js/core';
 
@@ -25,9 +23,7 @@ render(
 
 Use `&` to select the current class nested in another element:
 
-```jsx
-// @live
-
+```jsx editor=live
 import React from 'react';
 import { styled } from '@filbert-js/core';
 
