@@ -1,8 +1,8 @@
 import {
   RAW,
+  TYPES_CSS,
   TYPES_GLOBAL,
   TYPES_KEYFRAMES,
-  TYPES_STYLES,
 } from '@filbert-js/types';
 
 export function StyleSheet({
@@ -14,7 +14,7 @@ export function StyleSheet({
 }) {
   const _css = css || {
     [TYPES_GLOBAL]: {},
-    [TYPES_STYLES]: {},
+    [TYPES_CSS]: {},
     [TYPES_KEYFRAMES]: {},
   };
   const root = getRoot();
@@ -29,11 +29,11 @@ export function StyleSheet({
     return el;
   }
   function createStyles(id, css, sourceOrder, label) {
-    if (!_css[TYPES_STYLES][id]) {
-      const el = createStyleTag(id, TYPES_STYLES, label);
+    if (!_css[TYPES_CSS][id]) {
+      const el = createStyleTag(id, TYPES_CSS, label);
       const styles = cssParser({ css, namespace: `.${id}` });
       el.append(styles);
-      _css[TYPES_STYLES][id] = styles;
+      _css[TYPES_CSS][id] = styles;
 
       // ensure source order
       if (sourceOrder) {
@@ -74,7 +74,7 @@ export function StyleSheet({
     }
   }
   function removeStyles(hash, type) {
-    if (TYPES_STYLES === type && _css[type][hash]) {
+    if (TYPES_CSS === type && _css[type][hash]) {
       const elUsingCls = findElementByStyleId(hash);
       if (!elUsingCls) {
         delete _css[type][hash];

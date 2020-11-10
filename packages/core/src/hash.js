@@ -1,7 +1,7 @@
 //https://stackoverflow.com/questions/7616461/generate-a-hash-from-string-in-javascript
-import { CLASS_PREFIX } from '@filbert-js/types';
+
 const cache = {};
-export function hash(str, prefix = CLASS_PREFIX) {
+export function hash(str) {
   let hash = cache[str] || 0;
   if (!hash) {
     for (let i = 0; i < str.length; i++) {
@@ -11,5 +11,5 @@ export function hash(str, prefix = CLASS_PREFIX) {
     }
     cache[str] = hash;
   }
-  return `${prefix}-${hash}`;
+  return hash;
 }

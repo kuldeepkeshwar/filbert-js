@@ -1,4 +1,4 @@
-import { TYPES_GLOBAL, TYPES_KEYFRAMES, TYPES_STYLES } from '@filbert-js/types';
+import { TYPES_CSS, TYPES_GLOBAL, TYPES_KEYFRAMES } from '@filbert-js/types';
 
 import { StyleSheet } from '@filbert-js/stylesheet';
 import { createParser } from '@filbert-js/css-parser';
@@ -25,7 +25,7 @@ const init = () => {
   const root = isBrowser() ? overrides(document.head) : undefined;
   const css = {
     [TYPES_GLOBAL]: {},
-    [TYPES_STYLES]: {},
+    [TYPES_CSS]: {},
     [TYPES_KEYFRAMES]: {},
   };
   if (isBrowser()) {
