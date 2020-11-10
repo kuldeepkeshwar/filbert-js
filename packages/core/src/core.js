@@ -1,10 +1,10 @@
-import { RAW, TYPE, TYPES_KEYFRAMES, TYPES_STYLES } from '@filbert-js/types';
+import { RAW, TYPE, TYPES_CSS, TYPES_KEYFRAMES } from '@filbert-js/types';
 
 import React from 'react';
 import { __sheet } from '@filbert-js/style-sheet-context';
 import { factory } from './factory';
 
-export const css = factory(TYPES_STYLES);
+export const css = factory(TYPES_CSS);
 export const keyframes = factory(TYPES_KEYFRAMES);
 export function jsx() {
   const { css, className = '', ...props } = arguments[1] || {};

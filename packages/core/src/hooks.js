@@ -1,4 +1,4 @@
-import { TYPES_GLOBAL, TYPES_STYLES } from '@filbert-js/types';
+import { TYPES_CSS, TYPES_GLOBAL } from '@filbert-js/types';
 
 import React from 'react';
 import { __sheet } from '@filbert-js/style-sheet-context';
@@ -8,19 +8,13 @@ import { __sheet } from '@filbert-js/style-sheet-context';
 export function useGlobalStylesheet(id, styles) {
   __sheet.createGlobalStyles(id, styles);
 
-  React.useEffect(
-    () => {
-      __sheet.createGlobalStyles(id, styles);
-    },
-    [styles, id],
-  );
+  React.useEffect(() => {
+    __sheet.createGlobalStyles(id, styles);
+  }, [styles, id]);
 
-  React.useEffect(
-    () => {
-      return () => __sheet.removeStyles(id, TYPES_GLOBAL);
-    },
-    [id],
-  );
+  React.useEffect(() => {
+    return () => __sheet.removeStyles(id, TYPES_GLOBAL);
+  }, [id]);
 }
 
 export function useStylesheet(
@@ -37,20 +31,17 @@ export function useStylesheet(
 
   latestRef.current = className;
 
-  React.useEffect(
-    () => {
-      const previous = className;
-      return () => {
-        const latest = latestRef.current;
-        if (previous !== latest) {
-          __sheet.removeStyles(previous, TYPES_STYLES);
-        }
-      };
-    },
-    [className],
-  );
+  React.useEffect(() => {
+    const previous = className;
+    return () => {
+      const latest = latestRef.current;
+      if (previous !== latest) {
+        __sheet.removeStyles(previous, TYPES_CSS);
+      }
+    };
+  }, [className]);
 
   React.useEffect(() => {
-    return () => __sheet.removeStyles(latestRef.current, TYPES_STYLES);
+    return () => __sheet.removeStyles(latestRef.current, TYPES_CSS);
   }, []);
 }
