@@ -1,5 +1,12 @@
 # benchmarks-filbert
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [985f0e3]
+  - @filbert-js/core@0.0.11
+
 ## 0.0.10
 
 ### Patch Changes

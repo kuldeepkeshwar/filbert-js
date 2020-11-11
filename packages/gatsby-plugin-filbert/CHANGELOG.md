@@ -1,5 +1,11 @@
 # gatsby-plugin-filbert
 
+## 0.0.13
+
+### Patch Changes
+
+- @filbert-js/server-stylesheet@0.0.8
+
 ## 0.0.12
 
 ### Patch Changes

@@ -1,5 +1,13 @@
 # @filbert-js/browser-stylesheet
 
+## 0.0.8
+
+### Patch Changes
+
+- 985f0e3: reuse filbert-types/merge type+label
+- Updated dependencies [985f0e3]
+  - @filbert-js/stylesheet@0.0.6
+
 ## 0.0.7
 
 ### Patch Changes
