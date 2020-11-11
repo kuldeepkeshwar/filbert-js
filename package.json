@@ -15,7 +15,8 @@
     "**/@filbert-js/browser-stylesheet": "^0.0.7",
     "**/@filbert-js/style-sheet-context": "^0.0.7",
     "**/@filbert-js/css-ast":"^0.0.7",
-    "**/@filbert-js/css-parser":"^0.0.7"
+    "**/@filbert-js/css-parser":"^0.0.7",
+    "**/@filbert-js/types":"^0.0.5"
   },
   "scripts": {
     "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
