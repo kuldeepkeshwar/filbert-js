@@ -1,5 +1,15 @@
 # @filbert-js/core
 
+## 0.0.11
+
+### Patch Changes
+
+- 67bbe4a: add @filbert-js/types to deps
+- 985f0e3: reuse filbert-types/merge type+label
+- Updated dependencies [985f0e3]
+  - @filbert-js/types@0.0.6
+  - @filbert-js/style-sheet-context@0.0.8
+
 ## 0.0.10
 
 ### Patch Changes

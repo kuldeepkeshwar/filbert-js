@@ -1,5 +1,13 @@
 # @filbert-js/style-sheet-context
 
+## 0.0.8
+
+### Patch Changes
+
+- Updated dependencies [67bbe4a]
+- Updated dependencies [985f0e3]
+  - @filbert-js/browser-stylesheet@0.0.8
+
 ## 0.0.7
 
 ### Patch Changes
