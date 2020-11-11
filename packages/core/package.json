@@ -17,14 +17,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.7",
     "@filbert-js/style-sheet-context": "^0.0.7",
     "@filbert-js/theming": "^0.0.5",
     "@filbert-js/types": "^0.0.5",
     "react": "^16.8.6"
   },
   "peerDependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.7",
     "@filbert-js/style-sheet-context": "^0.0.7",
     "@filbert-js/theming": "^0.0.5",
     "@filbert-js/types": "^0.0.5",
