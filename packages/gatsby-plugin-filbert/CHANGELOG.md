@@ -1,5 +1,16 @@
 # gatsby-plugin-filbert
 
+## 0.0.13
+
+### Patch Changes
+
+- 67bbe4a: add @filbert-js/types to deps
+- Updated dependencies [67bbe4a]
+- Updated dependencies [985f0e3]
+  - @filbert-js/browser-stylesheet@0.0.8
+  - @filbert-js/style-sheet-context@0.0.8
+  - @filbert-js/server-stylesheet@0.0.8
+
 ## 0.0.12
 
 ### Patch Changes

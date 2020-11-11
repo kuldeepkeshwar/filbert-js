@@ -1,5 +1,13 @@
 # @filbert-js/website
 
+## 0.0.13
+
+### Patch Changes
+
+- Updated dependencies [67bbe4a]
+- Updated dependencies [985f0e3]
+  - @filbert-js/core@0.0.11
+
 ## 0.0.12
 
 ### Patch Changes

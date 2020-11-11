@@ -1,5 +1,14 @@
 # benchmarks-performance
 
+## 0.0.11
+
+### Patch Changes
+
+- Updated dependencies [67bbe4a]
+- Updated dependencies [985f0e3]
+  - @filbert-js/core@0.0.11
+  - @filbert-js/server-stylesheet@0.0.8
+
 ## 0.0.10
 
 ### Patch Changes
