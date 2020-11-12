@@ -32,7 +32,7 @@
   "devDependencies": {
     "husky": "^4.2.5",
     "lerna": "^3.16.4",
-    "prettier": "2.0.5"
+    "prettier": "2.1.2"
   },
   "eslintConfig": {
     "extends": "react-app"
