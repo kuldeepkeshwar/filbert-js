@@ -10075,9 +10075,9 @@ gatsby-remark-prismjs@^3.5.6:
     unist-util-visit "^1.4.1"
 
 gatsby-remark-smartypants@^2.3.6:
-  version "2.3.13"
-  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-2.3.13.tgz#4b2d28fead58d281fddc9af1cb226254a154c1f7"
-  integrity sha512-V+Ekdx46fV/ErYqrxQ60lTXRRwOj+uC+zeukc0oBKAk5YKgmftbF0vEe+n0aRNegYqQEhrZjflHYzAzxArGWdA==
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-smartypants/-/gatsby-remark-smartypants-2.4.0.tgz#01c3010ece3a4d387ab00a54d72de012f440312e"
+  integrity sha512-EPaJtRU3T2I2U3vy9Jf3nUpwyEA0dsA9N7vn1UZQhPx47jA7NKsQ9LZIdhdB4PZrdbuVVMPHrAG+7OrBII55bA==
   dependencies:
     "@babel/runtime" "^7.11.2"
     retext "^5.0.0"
