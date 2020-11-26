@@ -20280,10 +20280,10 @@ style-to-object@0.3.0, style-to-object@^0.3.0:
   dependencies:
     inline-style-parser "0.1.1"
 
-style-vendorizer@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/style-vendorizer/-/style-vendorizer-1.0.1.tgz#5e80d7abd233cc6a7826539f67a0edfa6ce0577c"
-  integrity sha512-JC+Czt1q7nghLiBEwzEcZ3Nng2fTubQe5mohd2Htp+jlCmzmjZpoZu/t9vP+a7RNw+UCwbGJASaioUhZsjWHng==
+style-vendorizer@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/style-vendorizer/-/style-vendorizer-2.0.0.tgz#0c46cec94069f1c768d31c3d307ed045646f503c"
+  integrity sha512-CeqwnrtXd/DKIadVNdJDtHnpCmsc28rWVWLmgpF2HdzTiWFVCE1F1OzWWwskOEtWpOpgm6NrjccfkNGo8qW4MA==
 
 styled-components@^5.1.1:
   version "5.2.1"
