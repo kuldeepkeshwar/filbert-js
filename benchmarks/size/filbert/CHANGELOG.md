@@ -1,5 +1,13 @@
 # benchmarks-filbert
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies [b3e80f1]
+  - @filbert-js/core@0.0.12
+  - @filbert-js/theming@0.0.6
+
 ## 0.0.11
 
 ### Patch Changes

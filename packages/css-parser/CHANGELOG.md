@@ -1,5 +1,11 @@
 # @filbert-js/css-parser
 
+## 0.0.8
+
+### Patch Changes
+
+- b3e80f1: Remove react from dependencies list in core
+
 ## 0.0.7
 
 ### Patch Changes

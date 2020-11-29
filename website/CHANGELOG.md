@@ -1,5 +1,13 @@
 # @filbert-js/website
 
+## 0.0.14
+
+### Patch Changes
+
+- b3e80f1: Remove react from dependencies list in core
+- Updated dependencies [b3e80f1]
+  - @filbert-js/core@0.0.12
+
 ## 0.0.13
 
 ### Patch Changes
