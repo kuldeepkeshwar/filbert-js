@@ -29,6 +29,14 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {	
+    "@filbert-js/browser-stylesheet": "^0.0.8",	
+    "babel-plugin-filbert": "0.0.7",	
+    "@filbert-js/autoprefixer": "^0.0.6",	
+    "@filbert-js/style-sheet-context": "^0.0.8",	
+    "@filbert-js/server-stylesheet": "^0.0.8",	
+    "@filbert-js/css-parser": "^0.0.7"	
+  },
   "peerDependencies": {
     "@filbert-js/css-parser": "^0.0.7",
     "@filbert-js/browser-stylesheet": "^0.0.8",
