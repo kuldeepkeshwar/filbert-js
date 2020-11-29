@@ -14,9 +14,6 @@
     "build": "microbundle --no-sourcemap --jsx React.createElement",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "react": "^16.8.6"
-  },
   "peerDependencies": {
     "react": "^16.8.6"
   },

@@ -17,15 +17,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@filbert-js/browser-stylesheet": "^0.0.8",
     "@filbert-js/style-sheet-context": "^0.0.8",
-    "@filbert-js/theming": "^0.0.5",
-    "@filbert-js/types": "^0.0.6",
-    "react": "^16.8.6"
+    "@filbert-js/css-ast":"^0.0.7",
+    "@filbert-js/css-parser":"^0.0.7",
+    "@filbert-js/types":"^0.0.6",
+    "@filbert-js/theming": "^0.0.5"
   },
   "peerDependencies": {
+    "@filbert-js/browser-stylesheet": "^0.0.8",
     "@filbert-js/style-sheet-context": "^0.0.8",
+    "@filbert-js/css-ast":"^0.0.7",
+    "@filbert-js/css-parser":"^0.0.7",
+    "@filbert-js/types":"^0.0.6",
     "@filbert-js/theming": "^0.0.5",
-    "@filbert-js/types": "^0.0.6",
     "react": "^16.8.6"
   },
   "devDependencies": {

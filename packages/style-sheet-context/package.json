@@ -14,10 +14,6 @@
     "build": "microbundle --no-sourcemap --jsx React.createElement",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.8",
-    "react": "^16.8.6"
-  },
   "peerDependencies": {
     "@filbert-js/browser-stylesheet": "^0.0.8",
     "react": "^16.8.6"
