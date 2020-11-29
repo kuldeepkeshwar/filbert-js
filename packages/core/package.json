@@ -17,9 +17,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/style-sheet-context": "^0.0.8",
-    "@filbert-js/theming": "^0.0.5",
-    "@filbert-js/types": "^0.0.6"
+    "@filbert-js/style-sheet-context": "^0.0.8"
   },
   "peerDependencies": {
     "@filbert-js/style-sheet-context": "^0.0.8",

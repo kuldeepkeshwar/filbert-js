@@ -15,9 +15,6 @@
     "build": "microbundle --no-sourcemap",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@filbert-js/types": "^0.0.6"
-  },
   "peerDependencies": {
     "@filbert-js/types": "^0.0.6"
   },
