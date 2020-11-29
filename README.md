@@ -1,7 +1,7 @@
 [![version](https://img.shields.io/npm/v/@filbert-js/core)](https://www.npmjs.com/package/@filbert-js/core)
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![gzip size](https://img.badgesize.io/https://unpkg.com/@filbert-js/core@latest/dist/index.es.js?compression=gzip)](https://unpkg.com/@filbert-js/core)
@@ -96,6 +96,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Darth-koder007"><img src="https://avatars2.githubusercontent.com/u/9719845?v=4" width="100px;" alt=""/><br /><sub><b>Vijay Singh</b></sub></a><br /><a href="#content-Darth-koder007" title="Content">🖋</a></td>
     <td align="center"><a href="https://in.linkedin.com/in/kuldeepkeshwar"><img src="https://avatars1.githubusercontent.com/u/10448534?v=4" width="100px;" alt=""/><br /><sub><b>anotherjsguy</b></sub></a><br /><a href="https://github.com/kuldeepkeshwar/filbert-js/commits?author=kuldeepkeshwar" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/vivek32ta"><img src="https://avatars1.githubusercontent.com/u/32357540?v=4" width="100px;" alt=""/><br /><sub><b>Vivek T A</b></sub></a><br /><a href="https://github.com/kuldeepkeshwar/filbert-js/commits?author=vivek32ta" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/danedavid"><img src="https://avatars3.githubusercontent.com/u/19928280?v=4" width="100px;" alt=""/><br /><sub><b>Dane David</b></sub></a><br /><a href="https://github.com/kuldeepkeshwar/filbert-js/commits?author=danedavid" title="Code">💻</a></td>
   </tr>
 </table>
 
