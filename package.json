@@ -8,7 +8,16 @@
     "css",
     "css-in-js"
   ],
-  
+  "resolutions": {	
+    "**/react": "16.12.0",	
+    "**/react-dom": "16.12.0",	
+    "**/@filbert-js/core": "^0.0.10",	
+    "**/@filbert-js/browser-stylesheet": "^0.0.7",	
+    "**/@filbert-js/style-sheet-context": "^0.0.7",	
+    "**/@filbert-js/css-ast":"^0.0.7",	
+    "**/@filbert-js/css-parser":"^0.0.7",	
+    "**/@filbert-js/types":"^0.0.5"	
+  },
   "scripts": {
     "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
     "postinstall": "lerna bootstrap --force-local && lerna link --force-local && yarn build-packages",
