@@ -4,7 +4,7 @@ import {
   cssValuePrefixFlags,
 } from 'style-vendorizer';
 
-export function prefix(property, value) {
+export function prefix(property: string, value: string) {
   let cssText = '';
 
   /* Resolve aliases, e.g. `gap` -> `grid-gap` */

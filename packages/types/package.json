@@ -4,19 +4,21 @@
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
-  "source": "index.js",
+  "source": "src/index.ts",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "scripts": {
     "prepare": "npm run build",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./dist *.tsbuildinfo",
     "develop": "microbundle watch",
-    "build": "microbundle --no-sourcemap",
+    "build": "microbundle",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "microbundle": "^0.11.0"
+    "microbundle": "^0.11.0",
+    "typescript": "^4.1.2"
   },
   "publishConfig": {
     "access": "public"

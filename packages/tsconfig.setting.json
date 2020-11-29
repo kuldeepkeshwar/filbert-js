@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "ESNEXT",
+    "types": [],
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "target": "ESNEXT",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "declaration": true
+  }
+}

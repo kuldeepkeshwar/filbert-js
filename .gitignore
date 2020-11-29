@@ -67,3 +67,4 @@ yarn-error.log
 .yarn-integrity
 
 dist
+.rts2_cache_*

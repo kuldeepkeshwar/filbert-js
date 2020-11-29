@@ -4,12 +4,14 @@
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
-  "source": "index.js",
+  
+  "source": "src/index.ts",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "scripts": {
     "prepare": "npm run build",
-    "clean": "rm -rf ./dist",
+    "clean": "rm -rf ./dist *.tsbuildinfo",
     "develop": "microbundle watch --jsx React.createElement",
     "build": "microbundle --no-sourcemap --jsx React.createElement",
     "test": "echo \"Error: no test specified\" && exit 1"

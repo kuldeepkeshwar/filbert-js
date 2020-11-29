@@ -110,12 +110,12 @@ export const createStylesheet = (options = {}) => {
     ...options,
   });
   const _getStyles = sheet.getStyles;
-  sheet.getStyles = function() {
+  sheet.getStyles = function () {
     const { root } = _getStyles.call(this);
     return root.toString();
   };
 
-  sheet.getReactElements = function() {
+  sheet.getReactElements = function () {
     const { root } = _getStyles.call(this);
     return root.toReactElements();
   };
