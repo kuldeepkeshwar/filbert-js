@@ -1,5 +1,13 @@
 # @filbert-js/style-sheet-context
 
+## 0.0.9
+
+### Patch Changes
+
+- b3e80f1: Remove react from dependencies list in core
+- Updated dependencies [b3e80f1]
+  - @filbert-js/browser-stylesheet@0.0.9
+
 ## 0.0.8
 
 ### Patch Changes

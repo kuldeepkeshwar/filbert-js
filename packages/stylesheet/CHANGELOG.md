@@ -1,5 +1,11 @@
 # @filbert-js/stylesheet
 
+## 0.0.7
+
+### Patch Changes
+
+- b3e80f1: Remove react from dependencies list in core
+
 ## 0.0.6
 
 ### Patch Changes
