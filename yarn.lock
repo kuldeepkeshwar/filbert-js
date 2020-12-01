@@ -1645,20 +1645,27 @@
     which "^1.3.1"
 
 "@filbert-js/browser-stylesheet@^0.0.5":
-  version "0.0.8"
+  version "0.0.9"
 
 "@filbert-js/core@^0.0.7":
-  version "0.0.11"
+  version "0.0.12"
   dependencies:
-    "@filbert-js/browser-stylesheet" "^0.0.8"
+    "@filbert-js/browser-stylesheet" "^0.0.9"
     "@filbert-js/css-ast" "^0.0.7"
-    "@filbert-js/css-parser" "^0.0.7"
-    "@filbert-js/style-sheet-context" "^0.0.8"
-    "@filbert-js/theming" "^0.0.5"
+    "@filbert-js/css-parser" "^0.0.8"
+    "@filbert-js/style-sheet-context" "^0.0.9"
+    "@filbert-js/theming" "^0.0.6"
     "@filbert-js/types" "^0.0.6"
 
 "@filbert-js/style-sheet-context@^0.0.5":
-  version "0.0.8"
+  version "0.0.9"
+
+"@filbert-js/theming@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@filbert-js/theming/-/theming-0.0.5.tgz#daa63f010dd6490547cebdb3974752795accdfe6"
+  integrity sha512-/0UrrSmooaMIIgGFoO4jFCLIcYoow7lbvqtIKK+JbAYtmgKABNiq/iH0TlKErr7R8jfedp7Q8BE82w8wgL++8Q==
+  dependencies:
+    react "^16.8.6"
 
 "@filbert-js/types@^0.0.5":
   version "0.0.6"
@@ -17920,7 +17927,7 @@ react-simple-code-editor@^0.10.0:
   resolved "https://registry.yarnpkg.com/react-simple-code-editor/-/react-simple-code-editor-0.10.0.tgz#73e7ac550a928069715482aeb33ccba36efe2373"
   integrity sha512-bL5W5mAxSW6+cLwqqVWY47Silqgy2DKDTR4hDBrLrUqC5BXc29YVx17l2IZk5v36VcDEq1Bszu2oHm1qBwKqBA==
 
-react@16.12.0, react@^16.12.0, react@^16.13.1:
+react@16.12.0, react@^16.12.0, react@^16.13.1, react@^16.8.6:
   version "16.12.0"
   resolved "https://registry.yarnpkg.com/react/-/react-16.12.0.tgz#0c0a9c6a142429e3614834d5a778e18aa78a0b83"
   integrity sha512-fglqy3k5E+81pA8s+7K0/T3DBCF0ZDOher1elBFzF7O6arXJgzyu/FW+COxFvAWXJoJN9KIZbT2LXlukwphYTA==
