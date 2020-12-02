@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/core",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
   "sideEffects": false,

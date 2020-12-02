@@ -1,5 +1,11 @@
 # @filbert-js/core
 
+## 0.0.13
+
+### Patch Changes
+
+- fcf4d50: Add @filbert-js/stylesheet to @filbert-js/core dependency list.
+
 ## 0.0.12
 
 ### Patch Changes
