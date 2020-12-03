@@ -232,14 +232,7 @@
   dependencies:
     "@babel/types" "^7.12.7"
 
-"@babel/helper-module-imports@7.10.4":
-  version "7.10.4"
-  resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.10.4.tgz#4c5c54be04bd31670a7382797d75b9fa2e5b5620"
-  integrity sha512-nEQJHqYavI217oD9+s5MUBzk6x1IlvoS9WTPfgG43CbMEeStE0v+r+TucWdx8KFGowPGvyOkDT9+7DHedIDnVw==
-  dependencies:
-    "@babel/types" "^7.10.4"
-
-"@babel/helper-module-imports@^7.0.0", "@babel/helper-module-imports@^7.0.0-beta.49", "@babel/helper-module-imports@^7.12.1", "@babel/helper-module-imports@^7.12.5", "@babel/helper-module-imports@^7.8.3":
+"@babel/helper-module-imports@7.12.5", "@babel/helper-module-imports@^7.0.0", "@babel/helper-module-imports@^7.0.0-beta.49", "@babel/helper-module-imports@^7.12.1", "@babel/helper-module-imports@^7.12.5", "@babel/helper-module-imports@^7.8.3":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/helper-module-imports/-/helper-module-imports-7.12.5.tgz#1bfc0229f794988f76ed0a4d4e90860850b54dfb"
   integrity sha512-SR713Ogqg6++uexFRORf/+nPXMmWIn80TALu0uaFb+iQIUoR7bOC7zBWyzBs5b3tBBJXuyD0cRu1F15GyzjOWA==
@@ -1647,8 +1640,10 @@
 "@filbert-js/browser-stylesheet@^0.0.5":
   version "0.0.9"
 
-"@filbert-js/core@^0.0.7":
+"@filbert-js/core@^0.0.12", "@filbert-js/core@^0.0.7":
   version "0.0.12"
+  resolved "https://registry.yarnpkg.com/@filbert-js/core/-/core-0.0.12.tgz#5a09b42904b20dd9df4360e288647ab05a11a926"
+  integrity sha512-DaSKCz26MNxg6AdBpjZFVJKruSsZuE1o2mj/53Ff4fgXtc7eAojd+4BEiFR6+YU6RJNA+uP+qBN255g9glbAuw==
   dependencies:
     "@filbert-js/browser-stylesheet" "^0.0.9"
     "@filbert-js/css-ast" "^0.0.7"
