@@ -1,0 +1,4 @@
+{
+  "buildCommand": "build",
+  "sandboxes": ["filbert-js-demo-7qihx"]
+}
