@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/macro",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "babel plugin macro for filbert-js",
   "sideEffects": false,
@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-filbert": "0.0.7",
+    "babel-plugin-filbert": "0.0.8",
     "@babel/helper-module-imports": "7.12.5",
     "babel-plugin-macros": "2.8.0"
   }
