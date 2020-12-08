@@ -1,5 +1,11 @@
 # babel-plugin-filbert
 
+## 0.0.8
+
+### Patch Changes
+
+- 001085a: bug: add missing dependencies
+
 ## 0.0.7
 
 ### Patch Changes
