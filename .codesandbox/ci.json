@@ -1,0 +1,24 @@
+{
+  "packages": [
+    "packages/core",
+    "packages/theming",
+    "packages/server-stylesheet",
+    "packages/browser-stylesheet",
+    "packages/autoprefixer",
+    "packages/css-ast",
+    "packages/style-sheet-context",
+    "packages/css-parser",
+    "packages/stylesheet",
+    "packages/types",
+    "packages/macro",
+    "packages/babel-plugin-filbert",
+    "packages/gatsby-plugin-filbert"
+  ],
+  "buildCommand": "build",
+  "sandboxes": [
+    "github/kuldeepkeshwar/filbert-js-examples-with-cra",
+    "github/kuldeepkeshwar/filbert-js-examples-with-preact",
+    "github/kuldeepkeshwar/filbert-js-examples-with-nextjs",
+    "github/kuldeepkeshwar/filbert-js-examples-with-gatsby"
+  ]
+}

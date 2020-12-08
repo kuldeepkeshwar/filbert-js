@@ -26,6 +26,10 @@
     "styled-components"
   ],
   "license": "MIT",
+  "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.10.4",
+    "@babel/core": "^7.0.0-0"
+  },
   "peerDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/core": "^7.0.0-0"
