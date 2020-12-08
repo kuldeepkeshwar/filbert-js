@@ -9,7 +9,10 @@
     "packages/style-sheet-context",
     "packages/css-parser",
     "packages/stylesheet",
-    "packages/types"
+    "packages/types",
+    "packages/macro",
+    "packages/babel-plugin-filbert",
+    "packages/gatsby-plugin-filbert"
   ],
   "buildCommand": "build",
   "sandboxes": [
