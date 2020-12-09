@@ -50,7 +50,7 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
-"@babel/core@7.12.9", "@babel/core@^7.1.0", "@babel/core@^7.12.3", "@babel/core@^7.2.2", "@babel/core@^7.4.5":
+"@babel/core@7.12.9", "@babel/core@^7.0.0-0", "@babel/core@^7.1.0", "@babel/core@^7.12.3", "@babel/core@^7.2.2", "@babel/core@^7.4.5":
   version "7.12.9"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.12.9.tgz#fd450c4ec10cdbb980e2928b7aa7a28484593fc8"
   integrity sha512-gTXYh3M5wb7FRXQy+FErKFAv90BnlOuNn1QkCK2lREoPAjrQCO49+HVSrFoe5uakFAF5eenS75KbO2vQiLrTMQ==
@@ -847,7 +847,7 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/plugin-transform-react-jsx@^7.12.5", "@babel/plugin-transform-react-jsx@^7.12.7", "@babel/plugin-transform-react-jsx@^7.9.1":
+"@babel/plugin-transform-react-jsx@^7.10.4", "@babel/plugin-transform-react-jsx@^7.12.5", "@babel/plugin-transform-react-jsx@^7.12.7", "@babel/plugin-transform-react-jsx@^7.9.1":
   version "7.12.7"
   resolved "https://registry.yarnpkg.com/@babel/plugin-transform-react-jsx/-/plugin-transform-react-jsx-7.12.7.tgz#8b14d45f6eccd41b7f924bcb65c021e9f0a06f7f"
   integrity sha512-YFlTi6MEsclFAPIDNZYiCRbneg1MFGao9pPG9uD5htwE0vDbPaMUMeYd6itWjw7K4kro4UbdQf3ljmFl9y48dQ==
@@ -10132,9 +10132,9 @@ gatsby-transformer-sharp@^2.5.6:
     sharp "^0.26.3"
 
 gatsby-transformer-yaml@^2.4.8:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.6.0.tgz#7c60c1ee41b0d120b384734906d8f48310a47b0e"
-  integrity sha512-yaPR2wQCX9Izlgt5KDeO5HiMXKruPEWo5DoZa4zezs7gvPegQ7ezpXL/s89Qpa/SqWu9oh8K/NstcSqEJp5xgA==
+  version "2.7.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.7.0.tgz#330c31d176a71730a800775afbb8530e9d876f7d"
+  integrity sha512-t1MY6CCCzEboSVwS9rNrUpe630TOoptnb7wWHnoa4Xe6zDYSBFTteK+jH4xdnwVaFaAYDVX/cgXojlxZehY/hA==
   dependencies:
     "@babel/runtime" "^7.12.5"
     js-yaml "^3.14.0"
