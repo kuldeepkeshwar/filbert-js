@@ -16,7 +16,7 @@ import { styled } from '@filbert-js/core';
 import { ThemeProvider } from '@filbert-js/theming';
 const Button = styled('button')`
   background: ${({ theme }) => theme.colors.brand};
-  border: solid 1px grey;
+  border: solid 1px gray;
 `;
 const theme = {
   colors: {

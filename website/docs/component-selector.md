@@ -10,7 +10,7 @@ const Button = styled('button')`
   outline: none;
 `;
 const Paragraph = styled('p')`
-  color: grey;
+  color: gray;
   ${Button} {
     color: #1f368f;
     background: white;
@@ -21,7 +21,7 @@ render(
   <React.Fragment>
     <Button>A button</Button>
     <Paragraph>
-      I'm grey!!
+      I'm gray!!
       <Button>I'm inside paragraph</Button>
     </Paragraph>
   </React.Fragment>,

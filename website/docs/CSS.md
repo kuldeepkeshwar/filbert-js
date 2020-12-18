@@ -7,7 +7,7 @@ import { css, jsx } from '@filbert-js/core';
 
 const styles = css`
   background: pink;
-  border: solid 1px grey;
+  border: solid 1px gray;
 `;
 
 render(<button css={styles}>This is a Button component.</button>);
@@ -21,7 +21,7 @@ import { css } from '@filbert-js/macro';
 
 const styles = css`
   background: pink;
-  border: solid 1px grey;
+  border: solid 1px gray;
 `;
 
 render(<button css={styles}>This is a Button component.</button>);
@@ -35,7 +35,7 @@ import { css } from '@filbert-js/core';
 
 const styles = css`
   background: pink;
-  border: solid 1px grey;
+  border: solid 1px gray;
 `;
 
 render(<button css={styles}>This is a Button component.</button>);

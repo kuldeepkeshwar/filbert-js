@@ -5,7 +5,7 @@ import React from 'react';
 import { styled } from '@filbert-js/core';
 
 const Paragraph = styled('p')`
-  color: grey;
+  color: gray;
   button {
     margin: 0 1rem;
     background: #1f368f;
@@ -15,7 +15,7 @@ const Paragraph = styled('p')`
 
 render(
   <Paragraph>
-    I'm grey!!
+    I'm gray!!
     <button>A button</button>
   </Paragraph>,
 );
@@ -28,7 +28,7 @@ import React from 'react';
 import { styled } from '@filbert-js/core';
 
 const Paragraph = styled('p')`
-  color: grey;
+  color: gray;
   header & {
     color: red;
   }
@@ -39,7 +39,7 @@ render(
     <header>
       <Paragraph>I'm red !!</Paragraph>
     </header>
-    <Paragraph>I'm grey !!</Paragraph>
+    <Paragraph>I'm gray !!</Paragraph>
   </div>,
 );
 ```
