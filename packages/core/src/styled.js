@@ -25,7 +25,13 @@ export function styled(Component, options = {}) {
 
       const className = obj.toString();
 
-      useStylesheet(keyframes, className, styles, props[SOURCE_ORDER], S.label);
+      useStylesheet(
+        keyframes,
+        className,
+        styles,
+        props[SOURCE_ORDER],
+        ForwardRef.label,
+      );
       const {
         className: passedClassName = '',
         [SOURCE_ORDER]: sourceOrder,
@@ -36,7 +42,9 @@ export function styled(Component, options = {}) {
 
       const finalProps = Object.assign(
         {
-          className: [S.label, className, passedClassName].join(' ').trim(),
+          className: [ForwardRef.label, className, passedClassName]
+            .join(' ')
+            .trim(),
           [SOURCE_ORDER]: Component[IS_STYLED_COMPONENT]
             ? className
             : undefined,
@@ -44,12 +52,14 @@ export function styled(Component, options = {}) {
         },
         _props,
       );
+
       return React.createElement(as || Component, finalProps, children);
     }
-    S[IS_STYLED_COMPONENT] = true;
-    S.label = options.label ? options.label : `${LABEL_PREFIX}${id}`;
+    const ForwardRef = React.forwardRef(S);
+    ForwardRef[IS_STYLED_COMPONENT] = true;
+    ForwardRef.label = options.label ? options.label : `${LABEL_PREFIX}${id}`;
 
     id++;
-    return React.forwardRef(S);
+    return ForwardRef;
   };
 }
