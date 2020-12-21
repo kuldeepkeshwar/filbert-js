@@ -1,5 +1,12 @@
 # @filbert-js/css-parser
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [5ba6c20]
+  - @filbert-js/css-ast@0.0.8
+
 ## 0.0.8
 
 ### Patch Changes

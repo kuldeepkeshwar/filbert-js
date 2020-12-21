@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/core",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
   "sideEffects": false,
@@ -17,22 +17,22 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.9",
-    "@filbert-js/style-sheet-context": "^0.0.9",
-    "@filbert-js/stylesheet": "^0.0.7",
-    "@filbert-js/css-ast": "^0.0.7",
-    "@filbert-js/css-parser": "^0.0.8",
+    "@filbert-js/browser-stylesheet": "^0.0.10",
+    "@filbert-js/style-sheet-context": "^0.0.10",
+    "@filbert-js/stylesheet": "^0.0.8",
+    "@filbert-js/css-ast": "^0.0.8",
+    "@filbert-js/css-parser": "^0.0.9",
     "@filbert-js/types": "^0.0.6",
-    "@filbert-js/theming": "^0.0.6"
+    "@filbert-js/theming": "^0.0.7"
   },
   "peerDependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.9",
-    "@filbert-js/style-sheet-context": "^0.0.9",
-    "@filbert-js/css-ast": "^0.0.7",
-    "@filbert-js/stylesheet": "^0.0.7",
-    "@filbert-js/css-parser": "^0.0.8",
+    "@filbert-js/browser-stylesheet": "^0.0.10",
+    "@filbert-js/style-sheet-context": "^0.0.10",
+    "@filbert-js/css-ast": "^0.0.8",
+    "@filbert-js/stylesheet": "^0.0.8",
+    "@filbert-js/css-parser": "^0.0.9",
     "@filbert-js/types": "^0.0.6",
-    "@filbert-js/theming": "^0.0.6",
+    "@filbert-js/theming": "^0.0.7",
     "react": "^16.8.6"
   },
   "devDependencies": {

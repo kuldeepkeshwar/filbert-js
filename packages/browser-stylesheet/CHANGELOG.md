@@ -1,5 +1,14 @@
 # @filbert-js/browser-stylesheet
 
+## 0.0.10
+
+### Patch Changes
+
+- 5ba6c20: fix stylesheet ordering
+- Updated dependencies [5ba6c20]
+  - @filbert-js/stylesheet@0.0.8
+  - @filbert-js/css-parser@0.0.9
+
 ## 0.0.9
 
 ### Patch Changes

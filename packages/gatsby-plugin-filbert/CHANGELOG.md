@@ -1,5 +1,15 @@
 # gatsby-plugin-filbert
 
+## 0.0.16
+
+### Patch Changes
+
+- Updated dependencies [5ba6c20]
+  - @filbert-js/browser-stylesheet@0.0.10
+  - @filbert-js/server-stylesheet@0.0.10
+  - @filbert-js/style-sheet-context@0.0.10
+  - @filbert-js/css-parser@0.0.9
+
 ## 0.0.15
 
 ### Patch Changes
