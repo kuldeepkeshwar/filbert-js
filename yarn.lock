@@ -10502,9 +10502,9 @@ gatsby-transformer-sharp@^2.5.6:
     sharp "^0.26.3"
 
 gatsby-transformer-yaml@^2.4.8:
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.7.0.tgz#330c31d176a71730a800775afbb8530e9d876f7d"
-  integrity sha512-t1MY6CCCzEboSVwS9rNrUpe630TOoptnb7wWHnoa4Xe6zDYSBFTteK+jH4xdnwVaFaAYDVX/cgXojlxZehY/hA==
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/gatsby-transformer-yaml/-/gatsby-transformer-yaml-2.8.0.tgz#6b0a353efdbbcc2f38896d65087169b4c09bf9a6"
+  integrity sha512-z7XhhGFshOw2yGKcerD7LDbFjJHhntwcrriktDic+dvbN3/UKrfJdiF4aJrSnP/MFwpclqti17Zo7BJSWXLiow==
   dependencies:
     "@babel/runtime" "^7.12.5"
     js-yaml "^3.14.0"
