@@ -19,6 +19,21 @@ function overrides(el) {
   el.getChildById = function getChildById(id) {
     return document.getElementById(id);
   };
+  el.isBeforeChild = function (node1, node2) {
+    const children = this.children;
+    let a = -1,
+      b = -1;
+    for (let index = 0; index < children.length; index++) {
+      const element = children[index];
+      if (element === node1) {
+        b = index;
+      }
+      if (element === node2) {
+        a = index;
+      }
+    }
+    return a < b;
+  };
   return el;
 }
 const init = () => {

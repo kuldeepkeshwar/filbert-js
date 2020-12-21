@@ -3,7 +3,7 @@ import React from 'react';
 import { styled } from '@filbert-js/core';
 
 const Box = styled('div')`
-  background: grey;
+  background: gray;
   color: white;
   border: solid 1px gray;
   padding: 0.5rem;
@@ -11,6 +11,10 @@ const Box = styled('div')`
 
 const BlueBox = styled(Box)`
   background: #1f368f;
+`;
+
+const RedBox = styled(Box)`
+  background: red;
 `;
 
 const Container = styled('div')`
@@ -22,8 +26,9 @@ const Container = styled('div')`
 
 render(
   <Container>
-    <Box>I'm grey!!</Box>
+    <RedBox>I'm red!!</RedBox>
     <BlueBox>I'm blue!!</BlueBox>
+    <Box>I'm gray!!</Box>
   </Container>,
 );
 ```

@@ -34,7 +34,6 @@ export function StyleSheet({
       const styles = cssParser({ css, namespace: `.${id}` });
       el.append(styles);
       _css[TYPES_CSS][id] = styles;
-
       // ensure source order
       if (sourceOrder) {
         root.insertBefore(el, root.getChildById(sourceOrder));
@@ -43,9 +42,11 @@ export function StyleSheet({
       }
     } else {
       // ensure source order
-      if (sourceOrder) {
-        const el = root.getChildById(id);
-        root.insertBefore(el, root.getChildById(sourceOrder));
+      const el = root.getChildById(id);
+      const elBefore = root.getChildById(sourceOrder);
+      // check before changing element order
+      if (sourceOrder && root.isBeforeChild(el, elBefore)) {
+        root.insertBefore(el, elBefore);
       }
     }
   }

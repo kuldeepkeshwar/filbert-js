@@ -37,6 +37,21 @@ class Tag {
     }
     return undefined;
   }
+  isBeforeChild(node1, node2) {
+    const children = this._children;
+    let a = -1,
+      b = -1;
+    for (let index = 0; index < children.length; index++) {
+      const element = children[index];
+      if (element === node1) {
+        b = index;
+      }
+      if (element === node2) {
+        a = index;
+      }
+    }
+    return a < b;
+  }
   insertBefore(el, after) {
     const index = this._children.findIndex((item) => item === after);
     this._children.splice(index, 0, el);
@@ -110,12 +125,12 @@ export const createStylesheet = (options = {}) => {
     ...options,
   });
   const _getStyles = sheet.getStyles;
-  sheet.getStyles = function() {
+  sheet.getStyles = function () {
     const { root } = _getStyles.call(this);
     return root.toString();
   };
 
-  sheet.getReactElements = function() {
+  sheet.getReactElements = function () {
     const { root } = _getStyles.call(this);
     return root.toReactElements();
   };

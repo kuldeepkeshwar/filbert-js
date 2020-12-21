@@ -9,7 +9,7 @@ import { styled } from '@filbert-js/core';
 const Base = ({ className }) => <div className={className}>{className}</div>;
 
 const Box = styled(Base)`
-  background: grey;
+  background: gray;
   color: white;
   border: solid 1px gray;
   padding: 0.5rem;

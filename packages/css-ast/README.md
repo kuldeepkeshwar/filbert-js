@@ -12,7 +12,7 @@ yarn add @filbert-js/css-ast
 import { toAST } from '@filbert-js/css-ast';
 
 const css = `
-color: grey;
+color: gray;
 button {
     margin: 0 1rem;
     background: #1f368f;
@@ -34,11 +34,11 @@ children: Array[2]
 rules: Array[1]
     0: Object
 name: "color"
-value: "grey"
+value: "gray"
 start: 0
 end: 168
 raw: "
-  color: grey;
+  color: gray;
   button {
     margin: 0 1rem;
     background: #1f368f;

@@ -10,7 +10,7 @@ import { styled } from '@filbert-js/core';
 
 const Button = styled('button')`
   background: pink;
-  border: solid 1px grey;
+  border: solid 1px gray;
 `;
 
 render(<Button>This is a Button component.</Button>);
