@@ -11,7 +11,7 @@
   "resolutions": {	
     "**/react": "16.12.0",	
     "**/react-dom": "16.12.0",	
-    "**/@filbert-js/core": "^0.0.12",	
+    "**/@filbert-js/core": "^0.0.13",	
     "**/@filbert-js/browser-stylesheet": "^0.0.9",	
     "**/@filbert-js/style-sheet-context": "^0.0.9",	
     "**/@filbert-js/css-ast":"^0.0.7",	
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
-    "postinstall": "lerna bootstrap --force-local && yarn build-packages",
+    "postinstall": "yarn build-packages",
     "build": "lerna run build",
     "build-packages": "lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
     "develop-packages": "lerna run --parallel --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",

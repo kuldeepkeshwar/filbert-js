@@ -13,6 +13,10 @@ const BlueBox = styled(Box)`
   background: #1f368f;
 `;
 
+const RedBox = styled(Box)`
+  background: red;
+`;
+
 const Container = styled('div')`
   display: flex;
   > * + * {
@@ -22,8 +26,9 @@ const Container = styled('div')`
 
 render(
   <Container>
-    <Box>I'm gray!!</Box>
+    <RedBox>I'm red!!</RedBox>
     <BlueBox>I'm blue!!</BlueBox>
+    <Box>I'm gray!!</Box>
   </Container>,
 );
 ```
