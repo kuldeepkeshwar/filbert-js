@@ -1,10 +1,10 @@
 {
   "name": "benchmarks-filbert",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "private": true,
   "dependencies": {
-    "@filbert-js/core": "^0.0.13",
-    "@filbert-js/theming": "^0.0.6",
+    "@filbert-js/core": "^0.0.14",
+    "@filbert-js/theming": "^0.0.7",
     "@testing-library/jest-dom": "^5.11.2",
     "@testing-library/react": "^11.0.2",
     "@testing-library/user-event": "^7.1.2",

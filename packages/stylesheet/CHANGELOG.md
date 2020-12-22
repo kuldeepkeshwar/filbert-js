@@ -1,5 +1,11 @@
 # @filbert-js/stylesheet
 
+## 0.0.8
+
+### Patch Changes
+
+- 5ba6c20: fix stylesheet ordering
+
 ## 0.0.7
 
 ### Patch Changes

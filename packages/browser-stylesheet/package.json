@@ -1,6 +1,6 @@
 {
   "name": "@filbert-js/browser-stylesheet",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
   "description": "",
   "sideEffects": false,
@@ -16,9 +16,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "peerDependencies": {
-    "@filbert-js/css-parser": "^0.0.8",
+    "@filbert-js/css-parser": "^0.0.9",
     "@filbert-js/types": "^0.0.6",
-    "@filbert-js/stylesheet": "^0.0.7"
+    "@filbert-js/stylesheet": "^0.0.8"
   },
   "devDependencies": {
     "microbundle": "^0.11.0"

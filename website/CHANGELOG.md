@@ -1,5 +1,13 @@
 # @filbert-js/website
 
+## 0.0.16
+
+### Patch Changes
+
+- 5ba6c20: fix stylesheet ordering
+- Updated dependencies [5ba6c20]
+  - @filbert-js/core@0.0.14
+
 ## 0.0.15
 
 ### Patch Changes
