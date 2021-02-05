@@ -57,7 +57,7 @@
     "prettier": "2.0.5",
     "prop-types": "^15.7.2",
     "unist-util-visit": "^2.0.2",
-    "webpack-bundle-analyzer": "^3.8.0"
+    "webpack-bundle-analyzer": "^4.4.0"
   },
   "scripts": {
     "build": "gatsby build",
