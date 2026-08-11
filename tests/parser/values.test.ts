@@ -6,7 +6,7 @@ import { createParser } from '@filbert-js/css-parser';
 import { toAST } from '@filbert-js/css-ast';
 
 const parse = createParser();
-const norm = (s) => s.replace(/\s+/g, ' ').trim();
+const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 describe('url() values', () => {
   it('preserves url() with a plain path', () => {

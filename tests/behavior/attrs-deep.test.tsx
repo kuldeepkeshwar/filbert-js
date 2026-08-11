@@ -25,7 +25,7 @@ describe('.attrs() chained more than twice', () => {
 describe('.attrs() with function attrs', () => {
   it('function attrs receive the CALLER props (not the already-merged shape)', () => {
     let receivedProps: any = null;
-    const Btn = styled.button.attrs((p) => {
+    const Btn = styled.button.attrs((p: any) => {
       receivedProps = p;
       return { type: 'submit' };
     })`

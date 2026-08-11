@@ -22,7 +22,7 @@ describe('${Component} interpolation', () => {
     );
     const css = collectAllCSS();
     // The parent rule must reference the child's class in some form.
-    const childCls = document.querySelector('span').className.split(' ').find(Boolean);
+    const childCls = document.querySelector('span')!.className.split(' ').find(Boolean);
     expect(childCls).toBeTruthy();
     expect(css).toContain(childCls);
   });
@@ -42,7 +42,7 @@ describe('${Component} interpolation', () => {
       </Parent>,
     );
     const css = collectAllCSS();
-    const childCls = document.querySelector('span').className.split(' ').find(Boolean);
+    const childCls = document.querySelector('span')!.className.split(' ').find(Boolean);
     expect(css).toContain(childCls);
   });
 

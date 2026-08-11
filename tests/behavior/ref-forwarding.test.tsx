@@ -31,7 +31,7 @@ describe('ref forwarding', () => {
       color: red;
     `;
     let received = null;
-    renderWithSheet(<Div ref={(n) => (received = n)} data-testid="d" />);
+    renderWithSheet(<Div ref={(n: HTMLDivElement | null) => (received = n)} data-testid="d" />);
     expect(received).toBeInstanceOf(HTMLDivElement);
   });
 

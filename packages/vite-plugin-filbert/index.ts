@@ -46,16 +46,30 @@ const RESOLVED_PREFIX = '\0' + VIRTUAL_PREFIX;
 
 interface ExtractionResult {
   code: string;
+  map: babel.BabelFileResult['map'];
   cssBody: string;
-  didExtract: boolean;
+  didRewrite: boolean;
+}
+
+interface ExtractionOptions {
+  inputSourceMap?: any;
+  sourceMaps?: boolean;
+  // Return false to skip emitting the rule for a class (cross-module dedup)
+  // while still rewriting the JS to `preInjected` + `className`.
+  shouldEmitRule?: (cls: string) => boolean;
 }
 
 // Post-babel pass: for each `.withConfig({ ..., css: '<body>' })`, replace
 // the `css` property with `preInjected` + `className` and collect the body.
 // Runs as a self-contained babel plugin so we get real AST walking rather
 // than regex over generated source.
-function extractCssFromWithConfig(code: string, filename: string): ExtractionResult {
+function extractCssFromWithConfig(
+  code: string,
+  filename: string,
+  opts: ExtractionOptions = {},
+): ExtractionResult {
   const rules: string[] = [];
+  let didRewrite = false;
 
   const stripper: babel.PluginObj = {
     visitor: {
@@ -89,7 +103,10 @@ function extractCssFromWithConfig(code: string, filename: string): ExtractionRes
         if (cssIdx === -1 || cssStr == null) return;
 
         const cls = `fj-${shortHash(cssStr)}`;
-        rules.push(`.${cls} { ${cssStr} }`);
+        didRewrite = true;
+        if (!opts.shouldEmitRule || opts.shouldEmitRule(cls)) {
+          rules.push(`.${cls} { ${cssStr} }`);
+        }
 
         const t = babel.types;
         arg.properties.splice(cssIdx, 1);
@@ -105,18 +122,20 @@ function extractCssFromWithConfig(code: string, filename: string): ExtractionRes
     filename,
     babelrc: false,
     configFile: false,
-    sourceMaps: false,
+    sourceMaps: opts.sourceMaps ?? false,
+    inputSourceMap: opts.inputSourceMap ?? undefined,
     ast: false,
     plugins: [stripper],
     parserOpts: { sourceType: 'module', allowReturnOutsideFunction: true },
   });
   if (!out || !out.code) {
-    return { code, cssBody: '', didExtract: false };
+    return { code, map: null, cssBody: '', didRewrite: false };
   }
   return {
     code: out.code,
+    map: out.map,
     cssBody: rules.join('\n'),
-    didExtract: rules.length > 0,
+    didRewrite,
   };
 }
 
@@ -128,6 +147,12 @@ export default function filbert(options: FilbertViteOptions = {}): Plugin {
 
   // Per-module CSS body, keyed by hash. resolveId/load serve it back.
   const cssByHash = new Map<string, string>();
+  // Class → owning module. Identical templates in different modules hash to
+  // the same class, so only the first module emits the rule; later modules
+  // still get the JS rewrite but skip the duplicate CSS. Ownership (rather
+  // than a bare Set) keeps a dev-server re-transform of the owner from
+  // dropping its own rules.
+  const ruleOwner = new Map<string, string>();
   let config: ResolvedConfig | undefined;
 
   return {
@@ -171,7 +196,9 @@ export default function filbert(options: FilbertViteOptions = {}): Plugin {
           filename: cleanId,
           babelrc: false,
           configFile: false,
-          sourceMaps: !!(config && config.build && config.build.sourcemap),
+          // Always produce a map — Vite composes plugin maps and drops them
+          // itself when sourcemaps are disabled for the build.
+          sourceMaps: true,
           ast: false,
           presets: [
             ['@babel/preset-typescript', { isTSX: isTsx, allExtensions: true }],
@@ -189,19 +216,35 @@ export default function filbert(options: FilbertViteOptions = {}): Plugin {
         return { code: babelOut.code, map: babelOut.map as any };
       }
 
-      const { code: strippedCode, cssBody, didExtract } = extractCssFromWithConfig(
+      const { code: strippedCode, map, cssBody, didRewrite } = extractCssFromWithConfig(
         babelOut.code,
         cleanId,
+        {
+          inputSourceMap: babelOut.map,
+          sourceMaps: true,
+          shouldEmitRule: (cls) => {
+            const owner = ruleOwner.get(cls);
+            if (owner && owner !== cleanId) return false;
+            ruleOwner.set(cls, cleanId);
+            return true;
+          },
+        },
       );
-      if (!didExtract) {
+      if (!didRewrite) {
         return { code: babelOut.code, map: babelOut.map as any };
+      }
+      if (!cssBody) {
+        // Every rule in this module is owned elsewhere — JS rewrite only.
+        return { code: strippedCode, map: map as any };
       }
 
       const key = shortHash(cleanId + '::' + cssBody);
       cssByHash.set(key, cssBody);
 
-      const importLine = `import ${JSON.stringify(`${VIRTUAL_PREFIX}?id=${key}`)};\n`;
-      return { code: importLine + strippedCode, map: null };
+      // Appended (not prepended) so the extraction map's line numbers stay
+      // valid; ES import position is irrelevant to module linking.
+      const importLine = `\nimport ${JSON.stringify(`${VIRTUAL_PREFIX}?id=${key}`)};\n`;
+      return { code: strippedCode + importLine, map: map as any };
     },
   };
 }

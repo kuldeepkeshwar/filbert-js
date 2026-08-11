@@ -40,11 +40,21 @@ function shortHash(str: string): string {
 
 interface ExtractionResult {
   code: string;
+  map: babel.BabelFileResult['map'];
   cssBody: string;
   didExtract: boolean;
 }
 
-function extractCssFromWithConfig(code: string, filename: string): ExtractionResult {
+interface ExtractionOptions {
+  inputSourceMap?: any;
+  sourceMaps?: boolean;
+}
+
+function extractCssFromWithConfig(
+  code: string,
+  filename: string,
+  opts: ExtractionOptions = {},
+): ExtractionResult {
   const rules: string[] = [];
 
   const stripper: babel.PluginObj = {
@@ -95,14 +105,16 @@ function extractCssFromWithConfig(code: string, filename: string): ExtractionRes
     filename,
     babelrc: false,
     configFile: false,
-    sourceMaps: false,
+    sourceMaps: opts.sourceMaps ?? false,
+    inputSourceMap: opts.inputSourceMap ?? undefined,
     ast: false,
     plugins: [stripper],
     parserOpts: { sourceType: 'module', allowReturnOutsideFunction: true },
   });
-  if (!out || !out.code) return { code, cssBody: '', didExtract: false };
+  if (!out || !out.code) return { code, map: null, cssBody: '', didExtract: false };
   return {
     code: out.code,
+    map: out.map,
     cssBody: rules.join('\n'),
     didExtract: rules.length > 0,
   };
@@ -111,6 +123,7 @@ function extractCssFromWithConfig(code: string, filename: string): ExtractionRes
 function filbertLoader(
   this: LoaderContext<FilbertWebpackLoaderOptions>,
   source: string,
+  inputMap?: any,
 ) {
   const callback = this.async();
   if (!callback) throw new Error('webpack-loader-filbert requires this.async()');
@@ -130,6 +143,7 @@ function filbertLoader(
         babelrc: false,
         configFile: false,
         sourceMaps: this.sourceMap,
+        inputSourceMap: inputMap ?? undefined,
         ast: false,
         presets: [
           ['@babel/preset-typescript', { isTSX: isTsx, allExtensions: true }],
@@ -146,9 +160,10 @@ function filbertLoader(
       return callback(null, babelOut.code, babelOut.map as any);
     }
 
-    const { code: strippedCode, cssBody, didExtract } = extractCssFromWithConfig(
+    const { code: strippedCode, map: strippedMap, cssBody, didExtract } = extractCssFromWithConfig(
       babelOut.code,
       filename,
+      { inputSourceMap: babelOut.map ?? undefined, sourceMaps: this.sourceMap },
     );
     if (!didExtract) {
       return callback(null, babelOut.code, babelOut.map as any);
@@ -174,7 +189,9 @@ function filbertLoader(
       mod.buildInfo.filbertCssBody = cssBody;
     }
 
-    callback(null, strippedCode, babelOut.map as any);
+    // The composed map (filbert babel pass + extraction rewrite), not the
+    // first pass's map — the first pass doesn't describe the stripped code.
+    callback(null, strippedCode, (strippedMap ?? babelOut.map) as any);
   })();
 }
 

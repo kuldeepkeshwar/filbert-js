@@ -5,7 +5,7 @@ import { describe, expect, it } from 'vitest';
 import { createParser } from '@filbert-js/css-parser';
 
 const parse = createParser();
-const norm = (s) => s.replace(/\s+/g, ' ').trim();
+const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 describe('@media (supported today)', () => {
   it('emits the media query surrounding the namespaced rules', () => {

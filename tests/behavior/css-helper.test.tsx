@@ -4,7 +4,7 @@ import React from 'react';
 import { describe, expect, it } from 'vitest';
 import { screen } from '@testing-library/react';
 import { styled } from '../helpers/styled';
-import { css } from '@filbert-js/core';
+import { css, jsx } from '@filbert-js/core';
 import { renderWithSheet, collectAllCSS } from '../helpers/render';
 
 describe('css() fragment interpolation into styled templates', () => {
@@ -40,10 +40,22 @@ describe('css() fragment interpolation into styled templates', () => {
   });
 });
 
-describe('css() as a JSX prop — requires the babel-plugin-filbert pragma', () => {
-  // The `css` JSX prop is enabled by the babel plugin's JSXAttribute visitor
-  // rewriting the pragma. In this vitest environment we're not running the
-  // plugin — the `css` prop path is exercised via the runtime `jsx` function.
-  // Skipping the plugin-driven case; the babel plugin has its own concerns.
-  it.todo('css prop end-to-end via the babel plugin pragma (needs plugin in the pipeline)');
+describe('css() as a JSX prop — via the runtime jsx pragma', () => {
+  // Full babel-pragma-in-bundler coverage lives in the babel-plugin tests.
+  it('css prop via the jsx pragma (direct runtime call)', () => {
+    const frag = css`
+      color: red;
+    `;
+    // The pragma registers styles at element-creation time against the live
+    // __sheet binding, so create the element inside the provider-wrapped tree.
+    const WithCssProp = () => jsx('div', { css: frag, 'data-testid': 'd' }, 'hi');
+    renderWithSheet(<WithCssProp />);
+
+    const el = screen.getByTestId('d');
+    expect(el.classList.contains(frag.toString())).toBe(true);
+
+    const rules = collectAllCSS();
+    const cls = frag.toString().replace(/[.*+?^${}()|[\]\\-]/g, '\\$&');
+    expect(rules).toMatch(new RegExp(`\\.${cls}[^{]*\\{[^}]*color\\s*:\\s*red`));
+  });
 });

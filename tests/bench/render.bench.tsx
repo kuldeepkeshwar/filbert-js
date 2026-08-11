@@ -15,12 +15,12 @@ const Simple = styled.div`
 `;
 
 const Dynamic = styled.div`
-  color: ${(p) => p.$c};
-  padding: ${(p) => p.$p}px;
+  color: ${(p: any) => p.$c};
+  padding: ${(p: any) => p.$p}px;
 `;
 
 const Complex = styled.div`
-  color: ${(p) => p.$c};
+  color: ${(p: any) => p.$c};
   padding: 8px 16px;
   border: 1px solid #e0e0e0;
   &:hover { background: #f5f5f5; }
@@ -29,7 +29,7 @@ const Complex = styled.div`
   }
 `;
 
-function mountAndUnmount(node) {
+function mountAndUnmount(node: any) {
   const host = document.createElement('div');
   document.body.appendChild(host);
   const root = createRoot(host);
@@ -41,7 +41,7 @@ function mountAndUnmount(node) {
   host.remove();
 }
 
-function withSheet(children) {
+function withSheet(children: any) {
   const sheet = createStylesheet();
   return <StyleSheetProvider stylesheet={sheet}>{children}</StyleSheetProvider>;
 }
@@ -113,7 +113,7 @@ describe('memory — <style> tag count after mount', () => {
     });
     root.render(withSheet(<>{items}</>));
     // Snapshot count for post-hoc inspection.
-    globalThis.__filbertBenchLastTagCount = document.head.querySelectorAll(
+    (globalThis as any).__filbertBenchLastTagCount = document.head.querySelectorAll(
       'style[data-type="styled-css"]',
     ).length;
     root.unmount();

@@ -7,7 +7,7 @@ const parse = createParser();
 const NS = '.abc';
 
 // Whitespace/formatting is not part of the contract — normalize before compare.
-const norm = (s) => s.replace(/\s+/g, ' ').trim();
+const norm = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 describe('flat declarations', () => {
   it('wraps rules in the namespace selector', () => {

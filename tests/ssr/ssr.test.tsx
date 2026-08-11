@@ -98,7 +98,7 @@ describe('server-stylesheet — keyframes SSR', () => {
 describe('client rehydration parity', () => {
   it('rendering the same tree on the server and client produces the same className', () => {
     const Div = styled.div`
-      color: ${(p) => p.$c};
+      color: ${(p: any) => p.$c};
     `;
 
     // Server render
@@ -110,7 +110,7 @@ describe('client rehydration parity', () => {
         </Div>
       </StyleSheetProvider>,
     );
-    const serverClass = serverHtml.match(/class="([^"]+)"/)[1];
+    const serverClass = serverHtml.match(/class="([^"]+)"/)![1];
 
     // Client render (jsdom is our client env)
     const clientSheet = createClientSheet();
@@ -122,7 +122,7 @@ describe('client rehydration parity', () => {
         </Div>
       </StyleSheetProvider>,
     );
-    const clientClass = clientHtml.match(/class="([^"]+)"/)[1];
+    const clientClass = clientHtml.match(/class="([^"]+)"/)![1];
 
     expect(clientClass).toBe(serverClass);
   });

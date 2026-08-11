@@ -5,9 +5,9 @@
 // kebab-case like the plugin's MemberExpression visitor does.
 import { styled as _styled } from '@filbert-js/core';
 
-const toKebab = (s) => s.replace(/[A-Z]/g, (m) => '-' + m.toLowerCase());
+const toKebab = (s: string) => s.replace(/[A-Z]/g, (m: string) => '-' + m.toLowerCase());
 
-function callable(fn) {
+function callable(fn: any) {
   return fn;
 }
 
@@ -17,7 +17,7 @@ export const styled = new Proxy(callable(_styled), {
     // Anything already on the function (name/length/etc) passes through.
     if (prop in target) return Reflect.get(target, prop, receiver);
     // `styled.div` → `styled('div')`; `styled.MainButton` → `styled('main-button')`
-    return _styled(/[A-Z]/.test(prop) ? toKebab(prop) : prop);
+    return _styled((/[A-Z]/.test(prop) ? toKebab(prop) : prop) as any);
   },
   apply(target, thisArg, args) {
     return Reflect.apply(target, thisArg, args);

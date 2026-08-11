@@ -69,7 +69,7 @@ const FIXTURES = {
 // rules, then join. Prefixing is off (parity with filbert's default).
 function stylisCompile(css: string, namespace: string): string {
   const rules: string[] = [];
-  const collect = rulesheet((rule) => rules.push(rule));
+  const collect = rulesheet((rule: string) => rules.push(rule));
   serialize(
     compile(`${namespace}{${css}}`),
     middleware([stringify, collect]),

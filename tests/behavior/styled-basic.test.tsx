@@ -111,9 +111,9 @@ describe('className merging', () => {
       color: red;
     `;
     const { rerender } = renderWithSheet(<Button data-testid="b" />);
-    const first = document.querySelector('[data-testid="b"]').className;
+    const first = document.querySelector('[data-testid="b"]')!.className;
     rerender(<Button data-testid="b" />);
-    const second = document.querySelector('[data-testid="b"]').className;
+    const second = document.querySelector('[data-testid="b"]')!.className;
     expect(second).toBe(first);
   });
 });

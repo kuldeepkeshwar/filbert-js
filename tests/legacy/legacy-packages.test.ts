@@ -7,6 +7,7 @@ import { describe, expect, it, beforeAll } from 'vitest';
 describe('@filbert-js/autoprefixer (legacy)', () => {
   let mod: any;
   beforeAll(async () => {
+    // @ts-expect-error legacy JS module without types
     mod = await import('../../packages/autoprefixer/index.js');
   });
 
@@ -51,11 +52,13 @@ describe('@filbert-js/macro (legacy babel-plugin-macros wrapper)', () => {
 describe('@filbert-js/gatsby-plugin-filbert (legacy Gatsby integration)', () => {
   it('index.js is a no-op export (Gatsby entry marker)', async () => {
     await expect(
+      // @ts-expect-error legacy JS module without types
       import('../../packages/gatsby-plugin-filbert/index.js'),
     ).resolves.toBeDefined();
   });
 
   it('gatsby-node.js exports onCreateBabelConfig hook that sets the babel plugin', async () => {
+    // @ts-expect-error legacy JS module without types
     const mod: any = await import('../../packages/gatsby-plugin-filbert/gatsby-node.js');
     expect(typeof mod.onCreateBabelConfig).toBe('function');
 
@@ -66,12 +69,14 @@ describe('@filbert-js/gatsby-plugin-filbert (legacy Gatsby integration)', () => 
 
   it('gatsby-browser.js loads (client-side lifecycle)', async () => {
     await expect(
+      // @ts-expect-error legacy JS module without types
       import('../../packages/gatsby-plugin-filbert/gatsby-browser.js'),
     ).resolves.toBeDefined();
   });
 
   it('gatsby-ssr.js loads (SSR lifecycle)', async () => {
     await expect(
+      // @ts-expect-error legacy JS module without types
       import('../../packages/gatsby-plugin-filbert/gatsby-ssr.js'),
     ).resolves.toBeDefined();
   });

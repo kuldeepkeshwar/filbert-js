@@ -156,7 +156,7 @@ describe('non-value-position dynamics fall back (no inversion)', () => {
     const css = collectAllCSS();
     // The child's class-selector must appear in the parent's rule text (not
     // as a var).
-    const childCls = document.querySelector('span').className.split(' ').find(Boolean);
+    const childCls = document.querySelector('span')!.className.split(' ').find(Boolean);
     expect(css).toContain(childCls);
   });
 });
