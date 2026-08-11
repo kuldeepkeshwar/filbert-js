@@ -1,0 +1,35 @@
+{
+  "name": "oxc-plugin-filbert",
+  "version": "0.1.0",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "oxc-parser + magic-string rewriter for filbert-js. Same transforms as babel-plugin-filbert, 5–10x faster.",
+  "sideEffects": false,
+  "source": "index.ts",
+  "main": "index.ts",
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "oxc",
+    "oxc-parser",
+    "magic-string",
+    "filbert-js",
+    "styled",
+    "static-extraction"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "oxc-parser": "^0.100.0",
+    "magic-string": "^0.30.0"
+  },
+  "peerDependencies": {
+    "babel-plugin-filbert": "^0.1.0",
+    "@babel/core": "^7.0.0-0"
+  },
+  "peerDependenciesMeta": {
+    "babel-plugin-filbert": { "optional": true },
+    "@babel/core": { "optional": true }
+  }
+}

@@ -1,0 +1,59 @@
+Benchmarking is an experimental feature.
+Breaking changes might not follow SemVer, please pin Vitest's version when using it.
+
+ RUN  v1.6.1 /private/tmp/filbert-js/tests
+
+ ✓ bench/render.bench.jsx > mount — cold (fresh sheet per iteration) 2445ms
+     name                                                              hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · 100 simple styled components                                7,026.85  0.0921  3.1762  0.1423  0.1169  1.6261  1.7883  2.3214  ±5.04%     3514   fastest
+   · 1000 simple styled components                               1,142.01  0.6475  3.4055  0.8756  0.7323  3.2827  3.3720  3.4055  ±5.60%      573
+   · 1000 DYNAMIC styled components (prop-driven)                  976.62  0.6880  7.0726  1.0239  0.8038  4.0142  5.3667  7.0726  ±6.87%      489   slowest
+   · 1000 COMPLEX styled components (nested + @media + dynamic)    983.94  0.6940  5.3374  1.0163  0.7851  4.8927  4.9233  5.3374  ±8.12%      492
+ ✓ bench/render.bench.jsx > update — prop change on 500 mounted components 612ms
+     name                               hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · rerender with new prop values  830.68  0.7199  7.4094  1.2038  0.8513  5.8180  6.3381  7.4094  ±9.90%      416
+ ✓ bench/render.bench.jsx > memory — <style> tag count after mount 609ms
+     name                                                  hz     min     max    mean     p75     p99    p995    p999      rme  samples
+   · 1000 UNIQUE styled components — mount then count  845.07  0.7211  7.1692  1.1833  0.8322  6.3059  6.4855  7.1692  ±10.86%      423
+ ✓ bench/parser.bench.js > toAST — raw parser 2501ms
+     name                                          hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · flat body                             286,500.81  0.0029  0.2519  0.0035  0.0035  0.0045  0.0046  0.0115  ±0.32%   143251   fastest
+   · one-level nesting                     139,646.91  0.0060  0.2477  0.0072  0.0072  0.0098  0.0157  0.0560  ±0.47%    69824
+   · with @media                           217,843.50  0.0038  0.2099  0.0046  0.0047  0.0060  0.0062  0.0145  ±0.29%   108922
+   · general (nested + gradients + media)   83,415.83  0.0102  0.2270  0.0120  0.0121  0.0162  0.0215  0.1060  ±0.42%    41708   slowest
+ ✓ bench/parser.bench.js > createParser — full pipeline (AST + namespace emit) 2491ms
+     name                                          hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · flat body                             253,456.42  0.0033  1.6443  0.0039  0.0040  0.0050  0.0053  0.0128  ±0.67%   126729   fastest
+   · one-level nesting                     115,494.72  0.0075  0.2050  0.0087  0.0088  0.0111  0.0123  0.0210  ±0.28%    57748
+   · with @media                           186,825.00  0.0045  1.5600  0.0054  0.0053  0.0071  0.0106  0.0372  ±0.76%    93413
+   · general (nested + gradients + media)   65,589.56  0.0121  0.4200  0.0152  0.0154  0.0222  0.0307  0.1822  ±0.58%    32795   slowest
+ ✓ bench/parser.bench.js > createParser — repeated calls (cache-hit surface) 1208ms
+     name                            hz     min     max    mean     p75     p99    p995    p999     rme  samples
+   · same input 100x — flat    2,436.08  0.3534  1.2222  0.4105  0.4138  0.6365  0.7365  0.9888  ±0.78%     1219   fastest
+   · same input 100x — nested  1,149.55  0.7724  1.0370  0.8699  0.8827  1.0118  1.0250  1.0370  ±0.41%      575
+
+
+ BENCH  Summary
+
+  flat body - bench/parser.bench.js > toAST — raw parser
+    1.32x faster than with @media
+    2.05x faster than one-level nesting
+    3.43x faster than general (nested + gradients + media)
+
+  flat body - bench/parser.bench.js > createParser — full pipeline (AST + namespace emit)
+    1.36x faster than with @media
+    2.19x faster than one-level nesting
+    3.86x faster than general (nested + gradients + media)
+
+  same input 100x — flat - bench/parser.bench.js > createParser — repeated calls (cache-hit surface)
+    2.12x faster than same input 100x — nested
+
+  100 simple styled components - bench/render.bench.jsx > mount — cold (fresh sheet per iteration)
+    6.15x faster than 1000 simple styled components
+    7.14x faster than 1000 COMPLEX styled components (nested + @media + dynamic)
+    7.20x faster than 1000 DYNAMIC styled components (prop-driven)
+
+  rerender with new prop values - bench/render.bench.jsx > update — prop change on 500 mounted components
+
+  1000 UNIQUE styled components — mount then count - bench/render.bench.jsx > memory — <style> tag count after mount
+

@@ -1,0 +1,30 @@
+{
+  "name": "webpack-loader-filbert",
+  "version": "0.1.0",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "Webpack loader for filbert-js — runs babel-plugin-filbert and emits a .filbert.css sidecar with the hoisted static CSS.",
+  "sideEffects": false,
+  "source": "index.ts",
+  "main": "index.ts",
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "webpack",
+    "webpack-loader",
+    "filbert-js",
+    "css-in-js",
+    "static-extraction",
+    "zero-runtime"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.0.0-0",
+    "babel-plugin-filbert": "^0.1.0"
+  },
+  "peerDependencies": {
+    "webpack": "^4.0.0 || ^5.0.0"
+  }
+}

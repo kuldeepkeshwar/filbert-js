@@ -1,0 +1,256 @@
+
+ RUN  v1.6.1 /private/tmp/filbert-js/tests
+
+ ✓ parser/css-parser.test.js  (14 tests) 6ms
+ ✓ parser/ast.test.js  (12 tests) 7ms
+ ✓ parser/at-rules.test.js  (7 tests) 8ms
+ ✓ parser/bugs.test.js  (8 tests) 9ms
+ ✓ parser/selectors.test.js  (13 tests) 10ms
+ ✓ parser/values.test.js  (20 tests) 10ms
+stderr | ssr/ssr.test.jsx > client rehydration parity > rendering the same tree on the server and client produces the same className
+Warning: Invalid attribute name: `$c`
+    at div
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+ ✓ ssr/ssr.test.jsx  (6 tests) 12ms
+ ✓ behavior/keyframes.test.jsx  (5 tests) 26ms
+ ✓ behavior/cascade-and-as.test.jsx  (6 tests) 29ms
+ ✓ behavior/styled-basic.test.jsx  (10 tests) 33ms
+stderr | behavior/theming.test.jsx > missing ThemeProvider > resolves p.theme.x to empty when no provider is present — CURRENT BUG
+Error: Uncaught [TypeError: Cannot read properties of undefined (reading 'brand')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of undefined (reading 'brand')
+    at /private/tmp/filbert-js/tests/behavior/theming.test.jsx:63:31
+    at resolveValue (/private/tmp/filbert-js/packages/core/src/interpolate.js:21:13)
+    at /private/tmp/filbert-js/packages/core/src/interpolate.js:8:19
+    at Array.reduce (<anonymous>)
+    at Object.interpolate (/private/tmp/filbert-js/packages/core/src/interpolate.js:6:35)
+    at /private/tmp/filbert-js/packages/core/src/factory.js:8:42
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:22:10)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+    at beginWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:21675:16)
+Error: Uncaught [TypeError: Cannot read properties of undefined (reading 'brand')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of undefined (reading 'brand')
+    at /private/tmp/filbert-js/tests/behavior/theming.test.jsx:63:31
+    at resolveValue (/private/tmp/filbert-js/packages/core/src/interpolate.js:21:13)
+    at /private/tmp/filbert-js/packages/core/src/interpolate.js:8:19
+    at Array.reduce (<anonymous>)
+    at Object.interpolate (/private/tmp/filbert-js/packages/core/src/interpolate.js:6:35)
+    at /private/tmp/filbert-js/packages/core/src/factory.js:8:42
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:22:10)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+    at beginWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:21675:16)
+The above error occurred in the <ForwardRef(S)> component:
+
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | behavior/theming.test.jsx > theme + props > gives function interpolations access to both theme and own props
+Warning: Received `true` for a non-boolean attribute `$dark`.
+
+If you want to write it to the DOM, pass a string instead: $dark="true" or $dark={value.toString()}.
+    at div
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at ThemeProvider (/private/tmp/filbert-js/packages/theming/index.js:7:26)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+Warning: Invalid attribute name: `$dark`
+    at div
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at ThemeProvider (/private/tmp/filbert-js/packages/theming/index.js:7:26)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+ ✓ behavior/theming.test.jsx  (6 tests) 40ms
+ ✓ stylesheet/lifecycle.test.jsx  (11 tests) 49ms
+stderr | behavior/interpolations.test.jsx > function interpolations — prop-driven styles > calls the function with (props, theme?) and inlines the result
+Warning: Invalid attribute name: `$c`
+    at div
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+stderr | behavior/interpolations.test.jsx > nullish interpolations > drops null interpolations
+Error: Uncaught [TypeError: Cannot read properties of null (reading 'Symbol(__styled_type)')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of null (reading 'Symbol(__styled_type)')
+    at resolveValue (/private/tmp/filbert-js/packages/core/src/interpolate.js:15:7)
+    at /private/tmp/filbert-js/packages/core/src/interpolate.js:8:19
+    at Array.reduce (<anonymous>)
+    at Object.interpolate (/private/tmp/filbert-js/packages/core/src/interpolate.js:6:35)
+    at /private/tmp/filbert-js/packages/core/src/factory.js:8:42
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:22:10)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+    at beginWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+Error: Uncaught [TypeError: Cannot read properties of null (reading 'Symbol(__styled_type)')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of null (reading 'Symbol(__styled_type)')
+    at resolveValue (/private/tmp/filbert-js/packages/core/src/interpolate.js:15:7)
+    at /private/tmp/filbert-js/packages/core/src/interpolate.js:8:19
+    at Array.reduce (<anonymous>)
+    at Object.interpolate (/private/tmp/filbert-js/packages/core/src/interpolate.js:6:35)
+    at /private/tmp/filbert-js/packages/core/src/factory.js:8:42
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:22:10)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+    at beginWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+The above error occurred in the <ForwardRef(S)> component:
+
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+stderr | behavior/interpolations.test.jsx > nullish interpolations > drops undefined interpolations
+Error: Uncaught [TypeError: Cannot read properties of undefined (reading 'Symbol(__styled_type)')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of undefined (reading 'Symbol(__styled_type)')
+    at resolveValue (/private/tmp/filbert-js/packages/core/src/interpolate.js:15:7)
+    at /private/tmp/filbert-js/packages/core/src/interpolate.js:8:19
+    at Array.reduce (<anonymous>)
+    at Object.interpolate (/private/tmp/filbert-js/packages/core/src/interpolate.js:6:35)
+    at /private/tmp/filbert-js/packages/core/src/factory.js:8:42
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:22:10)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+    at beginWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+Error: Uncaught [TypeError: Cannot read properties of undefined (reading 'Symbol(__styled_type)')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of undefined (reading 'Symbol(__styled_type)')
+    at resolveValue (/private/tmp/filbert-js/packages/core/src/interpolate.js:15:7)
+    at /private/tmp/filbert-js/packages/core/src/interpolate.js:8:19
+    at Array.reduce (<anonymous>)
+    at Object.interpolate (/private/tmp/filbert-js/packages/core/src/interpolate.js:6:35)
+    at /private/tmp/filbert-js/packages/core/src/factory.js:8:42
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:22:10)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+    at beginWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:21675:16)
+    at HTMLUnknownElement.callCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4164:14)
+The above error occurred in the <ForwardRef(S)> component:
+
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ ✓ behavior/interpolations.test.jsx  (11 tests) 57ms
+ ✓ behavior/css-helper.test.jsx  (3 tests | 1 skipped) 20ms
+stderr | behavior/css-helper.test.jsx > css() fragment interpolation into styled templates > same fragment used twice does not crash — CURRENT BUG (throws in buildRules)
+Error: Uncaught [TypeError: Cannot read properties of undefined (reading 'trim')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of undefined (reading 'trim')
+    at /private/tmp/filbert-js/packages/css-ast/ast.js:86:21
+    at Array.reduce (<anonymous>)
+    at buildRules (/private/tmp/filbert-js/packages/css-ast/ast.js:78:42)
+    at Module.toAST (/private/tmp/filbert-js/packages/css-ast/ast.js:60:3)
+    at /private/tmp/filbert-js/packages/css-parser/index.js:16:16
+    at Object.createStyles (/private/tmp/filbert-js/packages/stylesheet/index.js:34:22)
+    at Module.useStylesheet (/private/tmp/filbert-js/packages/core/src/hooks.js:30:11)
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:28:7)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+Error: Uncaught [TypeError: Cannot read properties of undefined (reading 'trim')]
+    at reportException (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/helpers/runtime-script-errors.js:66:24)
+    at innerInvokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:353:9)
+    at invokeEventListeners (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:286:3)
+    at HTMLUnknownElementImpl._dispatch (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:233:9)
+    at HTMLUnknownElementImpl.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/events/EventTarget-impl.js:104:17)
+    at HTMLUnknownElement.dispatchEvent (/private/tmp/filbert-js/tests/node_modules/jsdom/lib/jsdom/living/generated/EventTarget.js:241:34)
+    at Object.invokeGuardedCallbackDev (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4213:16)
+    at invokeGuardedCallback (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:4277:31)
+    at beginWork$1 (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:27490:7)
+    at performUnitOfWork (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:26599:12) TypeError: Cannot read properties of undefined (reading 'trim')
+    at /private/tmp/filbert-js/packages/css-ast/ast.js:86:21
+    at Array.reduce (<anonymous>)
+    at buildRules (/private/tmp/filbert-js/packages/css-ast/ast.js:78:42)
+    at Module.toAST (/private/tmp/filbert-js/packages/css-ast/ast.js:60:3)
+    at /private/tmp/filbert-js/packages/css-parser/index.js:16:16
+    at Object.createStyles (/private/tmp/filbert-js/packages/stylesheet/index.js:34:22)
+    at Module.useStylesheet (/private/tmp/filbert-js/packages/core/src/hooks.js:30:11)
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:28:7)
+    at renderWithHooks (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:15486:18)
+    at updateForwardRef (/private/tmp/filbert-js/tests/node_modules/react-dom/cjs/react-dom.development.js:19245:20)
+The above error occurred in the <ForwardRef(S)> component:
+
+    at S (/private/tmp/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/private/tmp/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+ ✓ behavior/component-selector.test.jsx  (3 tests) 13ms
+ ✓ behavior/ref-forwarding.test.jsx  (4 tests) 13ms
+ ✓ behavior/global.test.jsx  (4 tests) 14ms
+
+ Test Files  17 passed (17)
+      Tests  142 passed | 1 todo (143)
+   Start at  21:30:32
+   Duration  915ms (transform 333ms, setup 1.45s, collect 897ms, tests 356ms, environment 4.01s, prepare 1.06s)
+

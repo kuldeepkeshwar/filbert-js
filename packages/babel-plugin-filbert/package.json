@@ -1,11 +1,12 @@
 {
   "name": "babel-plugin-filbert",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
-  "description": "babel plugin for filbert-js",
+  "description": "Babel plugin for filbert-js: displayName injection, static extraction, variant .d.ts sidecars",
   "sideEffects": false,
-  "source": "index.js",
-  "main": "index.js",
+  "source": "index.ts",
+  "main": "index.ts",
+  "types": "index.ts",
   "publishConfig": {
     "access": "public"
   },
@@ -14,24 +15,17 @@
     "babel-plugin",
     "javascript",
     "react",
-    "preact",
     "css",
     "css-in-js",
     "filbert-js",
-    "1kb",
-    "light-weight",
-    "styling",
     "styled",
-    "emotion",
-    "styled-components"
+    "static-extraction"
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/core": "^7.0.0-0"
   },
   "peerDependencies": {
-    "@babel/plugin-transform-react-jsx": "^7.10.4",
     "@babel/core": "^7.0.0-0"
   }
 }

@@ -1,0 +1,52 @@
+
+ RUN  v1.6.1 /Users/kuldeepkeshwar/work/filbert-js/tests
+
+ ✓ parser/at-rules.test.js  (7 tests) 5ms
+ ✓ parser/bugs.test.js  (8 tests) 5ms
+ ✓ parser/selectors.test.js  (13 tests) 6ms
+ ✓ parser/ast.test.js  (12 tests) 7ms
+ ✓ parser/css-parser.test.js  (14 tests) 7ms
+ ✓ parser/values.test.js  (20 tests) 7ms
+stderr | ssr/ssr.test.jsx > client rehydration parity > rendering the same tree on the server and client produces the same className
+Warning: Invalid attribute name: `$c`
+    at div
+    at S (/Users/kuldeepkeshwar/work/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/Users/kuldeepkeshwar/work/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+ ✓ ssr/ssr.test.jsx  (6 tests) 19ms
+ ✓ behavior/keyframes.test.jsx  (5 tests) 23ms
+ ✓ behavior/cascade-and-as.test.jsx  (6 tests) 23ms
+ ✓ behavior/styled-basic.test.jsx  (10 tests) 28ms
+ ✓ stylesheet/lifecycle.test.jsx  (11 tests) 28ms
+stderr | behavior/interpolations.test.jsx > function interpolations — prop-driven styles > calls the function with (props, theme?) and inlines the result
+Warning: Invalid attribute name: `$c`
+    at div
+    at S (/Users/kuldeepkeshwar/work/filbert-js/packages/core/src/styled.js:16:51)
+    at StyleSheetProvider (/Users/kuldeepkeshwar/work/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+ ✓ behavior/interpolations.test.jsx  (11 tests) 34ms
+stderr | behavior/theming.test.jsx > theme + props > gives function interpolations access to both theme and own props
+Warning: Received `true` for a non-boolean attribute `$dark`.
+
+If you want to write it to the DOM, pass a string instead: $dark="true" or $dark={value.toString()}.
+    at div
+    at S (/Users/kuldeepkeshwar/work/filbert-js/packages/core/src/styled.js:16:51)
+    at ThemeProvider (/Users/kuldeepkeshwar/work/filbert-js/packages/theming/index.js:7:26)
+    at StyleSheetProvider (/Users/kuldeepkeshwar/work/filbert-js/packages/style-sheet-context/index.js:11:31)
+Warning: Invalid attribute name: `$dark`
+    at div
+    at S (/Users/kuldeepkeshwar/work/filbert-js/packages/core/src/styled.js:16:51)
+    at ThemeProvider (/Users/kuldeepkeshwar/work/filbert-js/packages/theming/index.js:7:26)
+    at StyleSheetProvider (/Users/kuldeepkeshwar/work/filbert-js/packages/style-sheet-context/index.js:11:31)
+
+ ✓ behavior/theming.test.jsx  (6 tests) 40ms
+ ✓ behavior/css-helper.test.jsx  (3 tests | 1 skipped) 14ms
+ ✓ behavior/component-selector.test.jsx  (3 tests) 15ms
+ ✓ behavior/ref-forwarding.test.jsx  (4 tests) 14ms
+ ✓ behavior/global.test.jsx  (4 tests) 16ms
+
+ Test Files  17 passed (17)
+      Tests  142 passed | 1 todo (143)
+   Start at  22:12:17
+   Duration  1.01s (transform 330ms, setup 1.68s, collect 863ms, tests 291ms, environment 4.63s, prepare 1.18s)
+

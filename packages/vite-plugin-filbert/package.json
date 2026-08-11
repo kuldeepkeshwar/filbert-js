@@ -1,0 +1,30 @@
+{
+  "name": "vite-plugin-filbert",
+  "version": "0.1.0",
+  "repository": "https://github.com/kuldeepkeshwar/filbert-js",
+  "description": "Vite plugin for filbert-js — runs babel-plugin-filbert and hoists static CSS out of the JS bundle into a linked stylesheet.",
+  "sideEffects": false,
+  "source": "index.ts",
+  "main": "index.ts",
+  "types": "index.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>",
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "filbert-js",
+    "css-in-js",
+    "static-extraction",
+    "zero-runtime"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.0.0-0",
+    "babel-plugin-filbert": "^0.1.0"
+  },
+  "peerDependencies": {
+    "vite": "^4.0.0 || ^5.0.0 || ^6.0.0"
+  }
+}
