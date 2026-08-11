@@ -146,7 +146,12 @@ async function buildFixture(files: Record<string, string>, opts: { emitCssFile?:
               // TypeScript via its own parser? No — webpack does not. Use ts-
               // shape-friendly source only. Our entry.tsx uses plain JS shapes.
               loader: loaderPath,
-              options: { emitCssFile: opts.emitCssFile },
+              // Force the babel engine in this test — the webpack loader is
+              // resolved via CJS `require()` in a tmp dir with no way to
+              // reach oxc-plugin-filbert's transitive TS source. Real
+              // consumers install both packages via npm and use engine: 'oxc'
+              // (default).
+              options: { emitCssFile: opts.emitCssFile, engine: 'babel' },
             },
           ],
         },

@@ -1,6 +1,7 @@
 {
-  "name": "root",
+  "name": "filbert-js",
   "private": true,
+  "packageManager": "pnpm@10.15.1",
   "keywords": [
     "styles",
     "filbert",
@@ -8,65 +9,30 @@
     "css",
     "css-in-js"
   ],
-  "resolutions": {	
-    "**/react": "16.12.0",	
-    "**/react-dom": "16.12.0",	
-    "**/@filbert-js/core": "^0.0.14",	
-    "**/@filbert-js/browser-stylesheet": "^0.0.10",	
-    "**/@filbert-js/style-sheet-context": "^0.0.10",	
-    "**/@filbert-js/css-ast":"^0.0.8",	
-    "**/@filbert-js/css-parser":"^0.0.9",	
-    "**/@filbert-js/types":"^0.0.6"	
-  },
   "scripts": {
-    "develop": "lerna run --stream --parallel --ignore @filbert-js/examples-* --ignore benchmarks-* develop",
-    "postinstall": "yarn build-packages",
-    "build": "lerna run build",
-    "build-packages": "lerna run --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* build",
-    "develop-packages": "lerna run --parallel --stream --ignore @filbert-js/website --ignore benchmarks-* --ignore @filbert-js/examples-* develop",
-    "benchmarks": "yarn build-packages && yarn benchmarks-size && yarn benchmarks-performance",
-    "benchmarks-size": "lerna run capture-stats && lerna run print-delta --stream",
-    "benchmarks-performance": "lerna run performance --stream",
+    "test": "pnpm --filter @filbert-js/tests test",
+    "test:watch": "pnpm --filter @filbert-js/tests test:watch",
+    "bench": "pnpm --filter @filbert-js/tests bench",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "lint": "oxlint packages tests --ignore-path .oxlintignore",
     "release": "changeset publish"
   },
   "devDependencies": {
-    "husky": "^4.2.5",
-    "lerna": "^3.16.4",
-    "prettier": "2.0.5"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*",
-      "website",
-      "examples/*",
-      "benchmarks/size/*",
-      "benchmarks/performance"
-    ],
-    "nohoist": [
-      "**/dtslint"
-    ]
-  },
-  "lint-staged": {
-    "*.{js,ts,tsx,md}": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "post-commit": "git update-index --again",
-      "pre-commit": "lint-staged"
-    }
-  },
-  "dependencies": {
-    "@changesets/cli": "^2.9.2",
-    "lint-staged": "^10.2.11"
+    "@babel/types": "^8.0.4",
+    "@changesets/cli": "^2.27.0",
+    "@types/babel__core": "^7.20.5",
+    "oxlint": "^0.15.0",
+    "prettier": "^3.3.0",
+    "typescript": "^5.4.0"
   },
   "collective": {
     "type": "opencollective",
     "url": "https://opencollective.com/filbert-js"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "oxc-parser"
+    ]
   }
 }

@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn",
+    "style": "off",
+    "restriction": "off",
+    "nursery": "off"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "no-empty": "off",
+    "no-cond-assign": "off",
+    "no-control-regex": "off",
+    "no-useless-escape": "off",
+    "no-prototype-builtins": "off",
+    "typescript/no-explicit-any": "off",
+    "typescript/no-non-null-assertion": "off",
+    "react/no-unknown-property": "off",
+    "unicorn/no-empty-file": "off",
+    "unicorn/consistent-function-scoping": "off"
+  },
+  "settings": {
+    "jsx-a11y": {
+      "polymorphicPropName": "as"
+    }
+  },
+  "overrides": [
+    {
+      "files": ["tests/**/*.{ts,tsx,js,jsx}"],
+      "rules": {
+        "no-console": "off"
+      }
+    },
+    {
+      "files": ["packages/babel-plugin-filbert/**/*.ts", "packages/oxc-plugin-filbert/**/*.ts"],
+      "rules": {
+        "no-bitwise": "off"
+      }
+    }
+  ]
+}

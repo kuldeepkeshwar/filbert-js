@@ -1,10 +1,16 @@
 // vite-plugin-filbert
 //
-// Runs babel-plugin-filbert on every project source file, then walks the
-// output for `.withConfig({ ..., css: '<body>' })` calls, hoists each css
-// string into a virtual CSS module (so Vite links it as a static stylesheet)
-// and replaces the property with `preInjected: true, className: 'fj-<hash>'`
-// so the runtime skips createStyles for those rules.
+// Runs the filbert TRANSFORM on every project source file — by default via
+// `oxc-plugin-filbert` (native-parser + magic-string, ~5-10× faster than
+// babel on styled-heavy files, ~2000× faster on non-styled files thanks to
+// the charcode pre-filter). Falls back to `babel-plugin-filbert` when oxc
+// can't parse the file (rare — oxc handles TS/JSX/decorators natively).
+//
+// Then walks the output for `.withConfig({ ..., css: '<body>' })` calls,
+// hoists each css string into a virtual CSS module (so Vite links it as a
+// static stylesheet) and replaces the property with
+// `preInjected: true, className: 'fj-<hash>'` so the runtime skips
+// createStyles for those rules.
 //
 // The className scheme mirrors the runtime fast-path in styled.tsx:
 //   className = `fj-${(hash(cssBody) >>> 0).toString(36)}`
@@ -14,16 +20,23 @@
 import type { Plugin, ResolvedConfig } from 'vite';
 import * as babel from '@babel/core';
 import filbertPlugin, { type FilbertPluginOptions } from 'babel-plugin-filbert';
+import { transform as oxcTransform } from 'oxc-plugin-filbert';
 
 export interface FilbertViteOptions {
   // File filter. Defaults match tsx/ts/jsx/js and skip node_modules.
   include?: RegExp;
   exclude?: RegExp;
-  // Set false to skip the CSS-hoisting step (still runs babel-plugin-filbert).
+  // Set false to skip the CSS-hoisting step (still runs the transform).
   // Useful when a downstream toolchain wants the raw `css:` string intact.
   emitCssFile?: boolean;
-  // Forwarded to babel-plugin-filbert.
+  // Which transform engine to use. Defaults to 'oxc' — much faster and now
+  // the recommended path. 'babel' switches to the reference implementation
+  // for environments where oxc's native binary isn't available.
+  engine?: 'oxc' | 'babel';
+  // Forwarded to whichever plugin is active.
   babelPluginOptions?: FilbertPluginOptions;
+  // Log oxc→babel fallbacks (fires when oxc can't parse a file).
+  onFallback?: (info: { filename: string; reason: string }) => void;
 }
 
 // Djb2, matches packages/core/src/hash.ts and babel-plugin-filbert's hash32.
@@ -143,6 +156,7 @@ export default function filbert(options: FilbertViteOptions = {}): Plugin {
   const include = options.include ?? /\.(t|j)sx?$/;
   const exclude = options.exclude ?? /node_modules/;
   const emitCssFile = options.emitCssFile !== false;
+  const engine = options.engine ?? 'oxc';
   const babelOpts = options.babelPluginOptions ?? {};
 
   // Per-module CSS body, keyed by hash. resolveId/load serve it back.
@@ -190,37 +204,63 @@ export default function filbert(options: FilbertViteOptions = {}): Plugin {
       }
 
       const isTsx = cleanId.endsWith('.tsx') || cleanId.endsWith('.jsx');
-      let babelOut: babel.BabelFileResult | null;
-      try {
-        babelOut = await babel.transformAsync(code, {
-          filename: cleanId,
-          babelrc: false,
-          configFile: false,
-          // Always produce a map — Vite composes plugin maps and drops them
-          // itself when sourcemaps are disabled for the build.
-          sourceMaps: true,
-          ast: false,
-          presets: [
-            ['@babel/preset-typescript', { isTSX: isTsx, allExtensions: true }],
-          ],
-          plugins: [[filbertPlugin, babelOpts]],
-          parserOpts: { sourceType: 'module' },
-        });
-      } catch (e) {
-        this.error?.((e as Error).message);
-        return null;
+
+      // Preferred path: oxc-plugin-filbert. Native parser + magic-string
+      // rewrites — dramatically faster than @babel/core on the same file.
+      // Falls back to babel automatically on parse errors it can't handle.
+      let transformedCode: string;
+      let transformedMap: any = null;
+      if (engine === 'oxc') {
+        try {
+          const oxcOut = oxcTransform(code, cleanId, {
+            ...babelOpts,
+            fallbackToBabel: true,
+            onFallback: options.onFallback,
+            sourceMap: true,
+          });
+          if (oxcOut.bailed) return null;
+          transformedCode = oxcOut.code;
+          transformedMap = oxcOut.map ?? null;
+        } catch (e) {
+          this.error?.((e as Error).message);
+          return null;
+        }
+      } else {
+        // Explicit opt-out — direct babel pipeline for consumers who need
+        // Babel-only behavior (e.g. their own babel plugins already in the
+        // preset chain).
+        let babelOut: babel.BabelFileResult | null;
+        try {
+          babelOut = await babel.transformAsync(code, {
+            filename: cleanId,
+            babelrc: false,
+            configFile: false,
+            sourceMaps: true,
+            ast: false,
+            presets: [
+              ['@babel/preset-typescript', { isTSX: isTsx, allExtensions: true }],
+            ],
+            plugins: [[filbertPlugin, babelOpts]],
+            parserOpts: { sourceType: 'module' },
+          });
+        } catch (e) {
+          this.error?.((e as Error).message);
+          return null;
+        }
+        if (!babelOut || babelOut.code == null) return null;
+        transformedCode = babelOut.code;
+        transformedMap = babelOut.map ?? null;
       }
-      if (!babelOut || babelOut.code == null) return null;
 
       if (!emitCssFile) {
-        return { code: babelOut.code, map: babelOut.map as any };
+        return { code: transformedCode, map: transformedMap };
       }
 
       const { code: strippedCode, map, cssBody, didRewrite } = extractCssFromWithConfig(
-        babelOut.code,
+        transformedCode,
         cleanId,
         {
-          inputSourceMap: babelOut.map,
+          inputSourceMap: transformedMap,
           sourceMaps: true,
           shouldEmitRule: (cls) => {
             const owner = ruleOwner.get(cls);
@@ -231,7 +271,7 @@ export default function filbert(options: FilbertViteOptions = {}): Plugin {
         },
       );
       if (!didRewrite) {
-        return { code: babelOut.code, map: babelOut.map as any };
+        return { code: transformedCode, map: transformedMap };
       }
       if (!cssBody) {
         // Every rule in this module is owned elsewhere — JS rewrite only.

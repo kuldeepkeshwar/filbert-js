@@ -1,6 +1,0 @@
-{
-  "npmClient": "yarn",
-  "useWorkspaces": true,
-  "version": "independent",
-  "repository": "https://github.com/kuldeepkeshwar/filbert-js"
-}

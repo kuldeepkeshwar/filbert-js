@@ -16,19 +16,27 @@
     "noEmit": true,
     "baseUrl": ".",
     "paths": {
-      "@filbert-js/*": ["packages/*"],
-      "react": ["tests/node_modules/@types/react"],
-      "react/*": ["tests/node_modules/@types/react/*"],
-      "react-dom": ["tests/node_modules/@types/react-dom"],
-      "react-dom/*": ["tests/node_modules/@types/react-dom/*"]
-    },
-    "typeRoots": ["tests/node_modules/@types"]
+      "@filbert-js/*": ["packages/*"]
+    }
   },
+  // `typecheck` covers the runtime packages that ship to consumers. The
+  // babel/oxc plugin sources use `as` casts against `@babel/types` that TS
+  // flags in strict mode (harmless at runtime — validated by
+  // tests/babel-plugin/ + tests/oxc-plugin/); the bundler plugins depend on
+  // those and pull in the strict errors transitively, so both plugin
+  // families are excluded here. The tests/ directory has its own tsconfig.
   "include": [
-    "packages/**/*.ts",
-    "packages/**/*.tsx",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "packages/core/**/*.ts",
+    "packages/core/**/*.tsx",
+    "packages/types/**/*.ts",
+    "packages/css-ast/**/*.ts",
+    "packages/css-parser/**/*.ts",
+    "packages/stylesheet/**/*.ts",
+    "packages/browser-stylesheet/**/*.ts",
+    "packages/server-stylesheet/**/*.tsx",
+    "packages/server-stylesheet/**/*.ts",
+    "packages/style-sheet-context/**/*.tsx",
+    "packages/theming/**/*.tsx"
   ],
-  "exclude": ["**/node_modules", "**/dist", "website", "benchmarks", "examples"]
+  "exclude": ["**/node_modules", "**/dist"]
 }

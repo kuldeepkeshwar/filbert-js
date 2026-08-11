@@ -79,7 +79,7 @@ export default function filbertPlugin(
     css: 'css',
     keyframes: 'keyframes',
     Global: 'Global',
-    ...(options.imports || {}),
+    ...options.imports,
   };
   const styledName = importNames.styled;
   const importAllowlist = new Set(Object.values(importNames));

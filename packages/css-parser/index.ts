@@ -110,7 +110,9 @@ function resolveSelectors(rawSelector: string, namespace: string): string {
 }
 
 function defaultPrefix(name: string, value: string): string {
-  return `${name}${RULE_SEPARATOR}${value}${RULE_END}`;
+  // Inlined — RULE_SEPARATOR = ':' and RULE_END = ';' — the constants module
+  // is no longer imported after the single-pass emitter rewrite.
+  return `${name}:${value};`;
 }
 
 // Flat = no `{` `}` `&` `@` and no `/*` comment. The common declaration-only

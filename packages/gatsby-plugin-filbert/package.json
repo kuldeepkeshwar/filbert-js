@@ -30,19 +30,19 @@
     "access": "public"
   },
   "dependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.10",
-    "babel-plugin-filbert": "0.0.8",
-    "@filbert-js/autoprefixer": "^0.0.6",
-    "@filbert-js/style-sheet-context": "^0.0.10",
-    "@filbert-js/server-stylesheet": "^0.0.10",
-    "@filbert-js/css-parser": "^0.0.9"
+    "@filbert-js/browser-stylesheet": "workspace:*",
+    "babel-plugin-filbert": "workspace:*",
+    "@filbert-js/autoprefixer": "workspace:*",
+    "@filbert-js/style-sheet-context": "workspace:*",
+    "@filbert-js/server-stylesheet": "workspace:*",
+    "@filbert-js/css-parser": "workspace:*"
   },
   "peerDependencies": {
-    "@filbert-js/css-parser": "^0.0.9",
-    "@filbert-js/browser-stylesheet": "^0.0.10",
-    "@filbert-js/style-sheet-context": "^0.0.10",
-    "babel-plugin-filbert": "0.0.8",
-    "@filbert-js/autoprefixer": "^0.0.6",
-    "@filbert-js/server-stylesheet": "^0.0.10"
+    "@filbert-js/css-parser": "workspace:*",
+    "@filbert-js/browser-stylesheet": "workspace:*",
+    "@filbert-js/style-sheet-context": "workspace:*",
+    "babel-plugin-filbert": "workspace:*",
+    "@filbert-js/autoprefixer": "workspace:*",
+    "@filbert-js/server-stylesheet": "workspace:*"
   }
 }

@@ -52,18 +52,14 @@ alias['react-dom/client'] = path.join(__dirname, 'node_modules/react-dom/client.
 alias['react/jsx-runtime'] = path.join(__dirname, 'node_modules/react/jsx-runtime.js');
 alias['react/jsx-dev-runtime'] = path.join(__dirname, 'node_modules/react/jsx-dev-runtime.js');
 
-// oxc-plugin-filbert lives under packages/ but imports magic-string + oxc-parser;
-// neither package has its own node_modules, so pin the resolution here.
-alias['magic-string'] = path.join(__dirname, 'node_modules/magic-string');
-alias['oxc-parser'] = path.join(__dirname, 'node_modules/oxc-parser');
 // Optional babel fallback path — babel-plugin-filbert lives in the workspace.
 alias['babel-plugin-filbert'] = path.join(repoRoot, 'packages/babel-plugin-filbert/index.ts');
-alias['@babel/core'] = path.join(__dirname, 'node_modules/@babel/core');
-// Legacy packages have their own third-party deps not in the workspace root.
-alias['style-vendorizer'] = path.join(__dirname, 'node_modules/style-vendorizer');
-alias['babel-plugin-macros'] = path.join(__dirname, 'node_modules/babel-plugin-macros');
 // @filbert-js/autoprefixer is a legacy JS module used only by gatsby-plugin-filbert.
 alias['@filbert-js/autoprefixer'] = path.join(repoRoot, 'packages/autoprefixer/index.js');
+// Under pnpm each workspace package gets its own symlinked node_modules so
+// transitive deps (magic-string / oxc-parser / stylis / babel-plugin-macros /
+// style-vendorizer / @babel/core) resolve naturally from their consumer's
+// directory. No manual aliases needed — vitest walks the parent chain.
 
 export default defineConfig({
   resolve: {

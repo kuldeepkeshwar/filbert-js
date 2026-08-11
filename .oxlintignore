@@ -1,0 +1,21 @@
+# Third-party bundle artifacts.
+node_modules/
+dist/
+build/
+coverage/
+
+# Legacy JS packages that are shipped as-is (checked by smoke tests, not lint).
+packages/autoprefixer/
+packages/gatsby-plugin-filbert/
+packages/macro/
+
+# Website / examples / benchmarks scaffolding from the pre-refactor repo.
+website/
+examples/
+benchmarks/
+
+# Test-side generated fixtures / temp dirs.
+tests/tmp/
+
+# oxc-plugin source uses idiomatic bitwise ops the linter flags as
+# "no-bitwise" — intentional here.

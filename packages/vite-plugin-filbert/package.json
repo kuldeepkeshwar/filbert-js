@@ -2,7 +2,7 @@
   "name": "vite-plugin-filbert",
   "version": "0.1.0",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
-  "description": "Vite plugin for filbert-js — runs babel-plugin-filbert and hoists static CSS out of the JS bundle into a linked stylesheet.",
+  "description": "Vite plugin for filbert-js \u2014 runs babel-plugin-filbert and hoists static CSS out of the JS bundle into a linked stylesheet.",
   "sideEffects": false,
   "source": "index.ts",
   "main": "index.ts",
@@ -22,7 +22,8 @@
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.0.0-0",
-    "babel-plugin-filbert": "^0.1.0"
+    "babel-plugin-filbert": "workspace:*",
+    "oxc-plugin-filbert": "workspace:*"
   },
   "peerDependencies": {
     "vite": "^4.0.0 || ^5.0.0 || ^6.0.0"

@@ -2,7 +2,7 @@
   "name": "@filbert-js/core",
   "version": "0.0.14",
   "repository": "https://github.com/kuldeepkeshwar/filbert-js",
-  "description": "A light weight(~1KB) css-in-js solution(framework)🎨",
+  "description": "A light weight(~1KB) css-in-js solution(framework)\ud83c\udfa8",
   "sideEffects": false,
   "homepage": "https://filbert-js.vercel.app",
   "source": "index.js",
@@ -10,29 +10,25 @@
   "umd:main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "prepare": "npm run build",
-    "clean": "rm -rf ./dist",
-    "develop": "microbundle watch --jsx React.createElement",
-    "build": "microbundle  --no-sourcemap --jsx React.createElement",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.10",
-    "@filbert-js/style-sheet-context": "^0.0.10",
-    "@filbert-js/stylesheet": "^0.0.8",
-    "@filbert-js/css-ast": "^0.0.8",
-    "@filbert-js/css-parser": "^0.0.9",
-    "@filbert-js/types": "^0.0.6",
-    "@filbert-js/theming": "^0.0.7"
+    "@filbert-js/browser-stylesheet": "workspace:*",
+    "@filbert-js/style-sheet-context": "workspace:*",
+    "@filbert-js/stylesheet": "workspace:*",
+    "@filbert-js/css-ast": "workspace:*",
+    "@filbert-js/css-parser": "workspace:*",
+    "@filbert-js/types": "workspace:*",
+    "@filbert-js/theming": "workspace:*"
   },
   "peerDependencies": {
-    "@filbert-js/browser-stylesheet": "^0.0.10",
-    "@filbert-js/style-sheet-context": "^0.0.10",
-    "@filbert-js/css-ast": "^0.0.8",
-    "@filbert-js/stylesheet": "^0.0.8",
-    "@filbert-js/css-parser": "^0.0.9",
-    "@filbert-js/types": "^0.0.6",
-    "@filbert-js/theming": "^0.0.7",
+    "@filbert-js/browser-stylesheet": "workspace:*",
+    "@filbert-js/style-sheet-context": "workspace:*",
+    "@filbert-js/css-ast": "workspace:*",
+    "@filbert-js/stylesheet": "workspace:*",
+    "@filbert-js/css-parser": "workspace:*",
+    "@filbert-js/types": "workspace:*",
+    "@filbert-js/theming": "workspace:*",
     "react": "^16.8.6"
   },
   "devDependencies": {

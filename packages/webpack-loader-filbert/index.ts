@@ -17,9 +17,32 @@ import * as babel from '@babel/core';
 import * as path from 'path';
 import filbertPlugin, { type FilbertPluginOptions } from 'babel-plugin-filbert';
 
+// oxc-plugin-filbert is loaded lazily — the module is TypeScript ESM and the
+// webpack loader itself is transpiled to CJS by consumers; unconditional
+// top-level `import` would crash the CJS resolver before the engine option
+// is read. `type-only import` gives us the type signature without a runtime
+// dependency until we actually use it.
+type OxcTransform = typeof import('oxc-plugin-filbert').transform;
+let _oxcTransform: OxcTransform | null = null;
+function loadOxcTransform(): OxcTransform | null {
+  if (_oxcTransform !== null) return _oxcTransform;
+  try {
+
+
+    _oxcTransform = require('oxc-plugin-filbert').transform as OxcTransform;
+    return _oxcTransform;
+  } catch {
+    return null;
+  }
+}
+
 export interface FilbertWebpackLoaderOptions {
   babelPluginOptions?: FilbertPluginOptions;
-  // Set false to skip the CSS-hoisting step (still runs babel-plugin-filbert).
+  // Which transform engine to use. Defaults to 'oxc' (native-parser,
+  // 5-10× faster than babel on styled-heavy files; falls back to babel
+  // when oxc can't parse). 'babel' opts out.
+  engine?: 'oxc' | 'babel';
+  // Set false to skip the CSS-hoisting step (still runs the transform).
   emitCssFile?: boolean;
   // Extension for the sidecar. Defaults to `.filbert.css`.
   sidecarExt?: string;
@@ -130,43 +153,65 @@ function filbertLoader(
 
   const opts = (this.getOptions?.() ?? {}) as FilbertWebpackLoaderOptions;
   const emitCssFile = opts.emitCssFile !== false;
+  const engine = opts.engine ?? 'oxc';
   const babelOpts = opts.babelPluginOptions ?? {};
   const sidecarExt = opts.sidecarExt ?? '.filbert.css';
   const filename = this.resourcePath;
   const isTsx = filename.endsWith('.tsx') || filename.endsWith('.jsx');
 
   (async () => {
-    let babelOut: babel.BabelFileResult | null;
-    try {
-      babelOut = await babel.transformAsync(source, {
-        filename,
-        babelrc: false,
-        configFile: false,
-        sourceMaps: this.sourceMap,
-        inputSourceMap: inputMap ?? undefined,
-        ast: false,
-        presets: [
-          ['@babel/preset-typescript', { isTSX: isTsx, allExtensions: true }],
-        ],
-        plugins: [[filbertPlugin, babelOpts]],
-        parserOpts: { sourceType: 'module' },
-      });
-    } catch (e) {
-      return callback(e as Error);
+    let transformedCode: string;
+    let transformedMap: any = null;
+
+    const oxcTransform = engine === 'oxc' ? loadOxcTransform() : null;
+    if (oxcTransform) {
+      try {
+        const oxcOut = oxcTransform(source, filename, {
+          ...babelOpts,
+          fallbackToBabel: true,
+          sourceMap: !!this.sourceMap,
+        });
+        if (oxcOut.bailed) return callback(null, source);
+        transformedCode = oxcOut.code;
+        transformedMap = oxcOut.map ?? null;
+      } catch (e) {
+        return callback(e as Error);
+      }
+    } else {
+      let babelOut: babel.BabelFileResult | null;
+      try {
+        babelOut = await babel.transformAsync(source, {
+          filename,
+          babelrc: false,
+          configFile: false,
+          sourceMaps: this.sourceMap,
+          inputSourceMap: inputMap ?? undefined,
+          ast: false,
+          presets: [
+            ['@babel/preset-typescript', { isTSX: isTsx, allExtensions: true }],
+          ],
+          plugins: [[filbertPlugin, babelOpts]],
+          parserOpts: { sourceType: 'module' },
+        });
+      } catch (e) {
+        return callback(e as Error);
+      }
+      if (!babelOut || babelOut.code == null) return callback(null, source);
+      transformedCode = babelOut.code;
+      transformedMap = babelOut.map ?? null;
     }
-    if (!babelOut || babelOut.code == null) return callback(null, source);
 
     if (!emitCssFile) {
-      return callback(null, babelOut.code, babelOut.map as any);
+      return callback(null, transformedCode, transformedMap);
     }
 
     const { code: strippedCode, map: strippedMap, cssBody, didExtract } = extractCssFromWithConfig(
-      babelOut.code,
+      transformedCode,
       filename,
-      { inputSourceMap: babelOut.map ?? undefined, sourceMaps: this.sourceMap },
+      { inputSourceMap: transformedMap ?? undefined, sourceMaps: this.sourceMap },
     );
     if (!didExtract) {
-      return callback(null, babelOut.code, babelOut.map as any);
+      return callback(null, transformedCode, transformedMap);
     }
 
     const base = path.basename(filename).replace(/\.[^.]+$/, '');
@@ -191,7 +236,7 @@ function filbertLoader(
 
     // The composed map (filbert babel pass + extraction rewrite), not the
     // first pass's map — the first pass doesn't describe the stripped code.
-    callback(null, strippedCode, (strippedMap ?? babelOut.map) as any);
+    callback(null, strippedCode, (strippedMap ?? transformedMap) as any);
   })();
 }
 

@@ -1,0 +1,11 @@
+# pnpm workspaces — filbert monorepo.
+# The `tests` directory is a first-class workspace package that consumes every
+# `packages/*` via workspace-protocol references, so `pnpm install` at the root
+# wires the whole graph together.
+#
+# `website`, `examples/`, `benchmarks/**` from the original yarn/lerna setup
+# are excluded — they were pinned to React 16 and the microbundle build; the
+# refactor moved everything relevant into `packages/*` + `tests`.
+packages:
+  - 'packages/*'
+  - 'tests'

@@ -28,7 +28,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "babel-plugin-filbert": "0.0.8",
+    "babel-plugin-filbert": "workspace:*",
     "@babel/helper-module-imports": "7.12.5",
     "babel-plugin-macros": "3.0.0"
   }
